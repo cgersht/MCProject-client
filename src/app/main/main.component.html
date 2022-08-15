@@ -1,0 +1,7 @@
+<section>
+    <app-menu (change)="onChange($event)"  [selectChangingProject]="goToMenu"></app-menu>
+    <app-view [selected]="selected" [children]="children" (sendProjectName)="sendToTheMenu($event)" ></app-view>
+</section>
+<!-- (sendMaterial)="toSend($event)" -->
+<!-- [sendToMenu]="sendMaterial($event)" -->
+<!-- [sendToMenu]="projectName" -->

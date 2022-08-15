@@ -1,0 +1,67 @@
+@import './../../../../style/elements.scss';
+
+div {
+    margin-top: 1vh;
+    width: 6vw;
+    height: 10vh;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10%;
+    margin-bottom: 20px;
+}
+
+
+mat-form-field {
+    margin-right: 37px;
+    margin-top: -50px;
+    margin-bottom: 25px;
+    width: 115px;
+
+}
+
+
+.childActionIcon {
+    visibility: hidden;
+    margin-right: 75px;
+    position: relative;
+    justify-content: space-between;
+
+    .menuitem-text {
+        justify-content: space-between;
+    }
+}
+
+.actionIcon {
+    position: relative;
+    display: block;
+
+    .menuitem-text {
+        text-align: center;
+        opacity: 0;
+        margin-top: -40px;
+        font-size: 1.5rem;
+
+    }
+
+    .menuitem-img {
+        width: 4rem;
+        height: 4rem;
+        // margin-right: 3rem;
+    }
+
+    &:hover {
+        .childActionIcon {
+            visibility: visible;
+        }
+
+        .menuitem-text {
+            opacity: 1;
+        }
+
+        .menuitem-img {
+            opacity: 0;
+        }
+    }
+}
+

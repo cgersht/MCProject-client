@@ -1,0 +1,35 @@
+[
+    {
+        "header":"מספר מזהה", 
+        "name":"projectID"
+    },
+    {
+        "header":"חברה המבצעת", 
+        "name":"projectCompany"
+    },
+    {
+        "header":"שם הפרויקט", 
+        "name":"projectName"
+    },
+    {
+        "header":"מייל", 
+        "name":"projectMail"
+    },
+    {
+        "header":"טלפון", 
+        "name":"projectPhone"
+    },
+    {
+        "header":"כתובת", 
+        "name":"projectAddress"
+    } ,   
+    {
+        "header":"מזכירה ראשית", 
+        "name":"projectSecretary"
+    }, 
+    {
+        "header":"סוג הפרויקט", 
+        "name":"projectType"
+    }   
+
+]

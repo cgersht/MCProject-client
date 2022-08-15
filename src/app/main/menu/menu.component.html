@@ -1,0 +1,10 @@
+<section>
+    <app-logo libCopy>hello</app-logo>
+    <div *ngFor="let item of menuOption">
+        <app-button-menu [option]="item" (click)="changeSelected(item)" [selectingProject]="selectChangingProject">
+        </app-button-menu>
+        <div class="div">
+            <span *ngIf="item.name=='פרויקטים'" class="pn" (click)="onClick()">{{selectChangingProject?.projectName}}</span>
+        </div>
+    </div>
+</section>

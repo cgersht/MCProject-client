@@ -1,0 +1,31 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    // text-align: start;
+
+    h1 {
+        font-size: 33px;
+        font-weight: 900;
+        text-align: inherit;
+    }
+
+    .h1 {
+        font-size: 65px;
+        margin-top: -50px;
+    }
+
+    .div {
+        font-size: 36px;
+        margin-top: -50px;
+    }
+    div {
+        font-size: 25px;
+        margin-top: -20px;
+    }
+}
+img {
+    width: 3rem;
+    height: 3rem;
+    right: 150rem;
+    top: 5vh;
+}

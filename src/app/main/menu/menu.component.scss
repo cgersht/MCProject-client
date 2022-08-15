@@ -1,0 +1,22 @@
+@import './../../../style/elements.scss';
+
+section {
+    width: 15vw;
+    height: 95vh;
+    border-radius: 50px;
+    background-color: $light-gray;
+    flex-direction: column;
+}
+
+.pn {
+    text-align: center;
+}
+
+.div {
+    position: absolute;
+    flex-direction: row !important;
+    margin-top: 75px;
+    // margin-right: 110px;
+    border:  1px solid $dark-gray;
+       
+}

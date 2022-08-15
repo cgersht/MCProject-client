@@ -1,0 +1,14 @@
+[
+    {
+        "header":"מספר מזהה", 
+        "name":"counselorID"
+    },
+    {
+        "header":"שם היועץ", 
+        "name":"counselorName"
+    },
+    {
+        "header":"סוג היועץ", 
+        "name":"counselorType"
+    }  
+]
