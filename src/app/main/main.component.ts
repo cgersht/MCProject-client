@@ -11,6 +11,7 @@ export class MainComponent implements OnInit {
   singleProject={}
   selected = '';
   children = [];
+  // oneProjectfromProjects={};
   constructor() { }
 
   ngOnInit() {
@@ -22,13 +23,26 @@ export class MainComponent implements OnInit {
     } else {
       this.children = [];
     }
-
   }
+  oneProjectfromProjects(p){
+    console.log("ppppppppppppppppppppppppppppppppp");
+    console.log(p);
+    console.log("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
 
+    // this.sendToTheMenu(this.goToMenu)
+  }
   sendToTheMenu(nameOfTheProject){
     this.goToMenu=nameOfTheProject;
+    // this.oneProjectfromProjects-nameOfTheProject
     console.log(this.goToMenu);
     console.log("this.goToMenu");
     
+  }
+
+
+  sendToo(project){
+    console.log("sendToTheMenu");  
+    // console.log(this.oneProjectfromProjects,"P:><LOIKM");  
+    this.sendToTheMenu(project)
   }
 }

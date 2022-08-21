@@ -11,6 +11,7 @@ import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } fro
 })
 export class ViewComponent implements OnInit {
   items: any = [];
+  @Input() oneProjectfromProjects;
   @Input() selected = '';
   @Input() children = [];
   @Output() change: EventEmitter<any> = new EventEmitter();
@@ -35,7 +36,5 @@ export class ViewComponent implements OnInit {
     console.log("im in initSelectedProject");
     this.sendProjectName.emit(this.project)
   }
-  // oneProjectToProjects(project) {
-  //   this.projectsToProject
-  // }
+
 }

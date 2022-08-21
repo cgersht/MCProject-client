@@ -12,7 +12,7 @@ export class MenuComponent implements OnInit {
   projName:string='';
   @Input() selectChangingProject={} ;
   @Output() change: EventEmitter<any>  = new EventEmitter ();
-  // @Output() sendTo: EventEmitter<any>  = new EventEmitter ();
+  @Output() sendTo: EventEmitter<any>  = new EventEmitter ();
   constructor(private getOptionsService: GetOptionsService) { }
 
   ngOnInit() {
@@ -28,13 +28,15 @@ export class MenuComponent implements OnInit {
   }
   onClick(){
     console.log(this.selectChangingProject,"selectChangingProject");
-    
+    this.sendTo.emit(this.selectChangingProject)    
   }
-  selectingProject(project){
-    console.log("sendToMenu");    
-    this.selectChangingProject=project;
-  }
-  //**************************************************************/
+
+  //***************************************************************/
+  // selectingProject(project){
+  //   console.log("sendToMenu");    
+  //   this.selectChangingProject=project;
+  // }
+  //***************************************************************/
   // goToMenu(project){
   //   console.log(project.projectName);
   //   this.selectingProject=project.projectName

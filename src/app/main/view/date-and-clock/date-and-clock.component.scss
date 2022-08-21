@@ -333,8 +333,9 @@ body {
 svg {
   display: block;
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top:120px;
+  left: 150px;
+  // width: 100px;
   transform: translate(-50%, -50%);
 }
 
@@ -347,14 +348,10 @@ svg {
   right: 0;
 }
 #circle{
-    background-color: $dark-gray;
-}
-svg{
-    top:120px;
-    left: 150px;
-}
-filter{
     background-color: crimson !important;
+    height: 5px !important;
 }
+ 
+  
 
 

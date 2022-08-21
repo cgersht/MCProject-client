@@ -1,6 +1,6 @@
 <section>
-    <app-menu (change)="onChange($event)"  [selectChangingProject]="goToMenu"></app-menu>
-    <app-view [selected]="selected" [children]="children" (sendProjectName)="sendToTheMenu($event)" ></app-view>
+    <app-menu (change)="onChange($event)"  [selectChangingProject]="goToMenu" (sendTo)="sendToo($event)"></app-menu>
+    <app-view [selected]="selected" [children]="children" (sendProjectName)="sendToTheMenu($event)" [oneProjectfromProjects]="oneProjectfromProjects($event)" ></app-view>
 </section>
 <!-- (sendMaterial)="toSend($event)" -->
 <!-- [sendToMenu]="sendMaterial($event)" -->
