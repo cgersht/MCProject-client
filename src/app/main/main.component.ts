@@ -24,9 +24,10 @@ export class MainComponent implements OnInit {
       this.children = [];
     }
   }
-  oneProjectfromProjects(p){
+  // oneProjectfromProjects(p){
+    oneProjectfromProjects(){
     console.log("ppppppppppppppppppppppppppppppppp");
-    console.log(p);
+    // console.log(p);
     console.log("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
 
     // this.sendToTheMenu(this.goToMenu)
