@@ -2,14 +2,14 @@
 // import { Entrepreneur } from "./entrepreneur";
 
 export interface  Project{
-        projectID: number ,
-        projectCompany:string,
-        projectName: string ,
-        projectMail:string,
-        projectPhone: string ,
-        projectAddress:string,
-        projectSecretary:string,
-        projectType:string
+        ProjectID: number ,
+        ProjectComPany:string,
+        ProjectName: string ,
+        ProjectMail:string,
+        ProjectPhone: string ,
+        ProjectAddress:string,
+        ProjectSecretary:string,
+        ProjectType:string
 
     
 

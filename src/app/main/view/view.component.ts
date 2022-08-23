@@ -7,7 +7,6 @@ import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } fro
   selector: 'app-view',
   templateUrl: './view.component.html',
   styleUrls: ['./view.component.scss'],
-
 })
 export class ViewComponent implements OnInit {
   items: any = [];

@@ -1,35 +1,35 @@
 [
     {
         "header":"מספר מזהה", 
-        "name":"projectID"
+        "name":"ProjectID"
     },
     {
         "header":"חברה המבצעת", 
-        "name":"projectCompany"
+        "name":"ProjectCompany"
     },
     {
         "header":"שם הפרויקט", 
-        "name":"projectName"
+        "name":"ProjectName"
     },
     {
         "header":"מייל", 
-        "name":"projectMail"
+        "name":"ProjectMail"
     },
     {
         "header":"טלפון", 
-        "name":"projectPhone"
+        "name":"ProjectPhone"
     },
     {
         "header":"כתובת", 
-        "name":"projectAddress"
+        "name":"ProjectAddress"
     } ,   
     {
         "header":"מזכירה ראשית", 
-        "name":"projectSecretary"
+        "name":"ProjectSecretary"
     }, 
     {
         "header":"סוג הפרויקט", 
-        "name":"projectType"
+        "name":"ProjectType"
     }   
 
 ]

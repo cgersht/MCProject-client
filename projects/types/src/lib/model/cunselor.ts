@@ -1,5 +1,5 @@
 export interface Cunselor {
- counselorID: Number ,
- counselorName: String ,
- counselorType: string ,
+ CounselorID: Number ,
+ CounselorName: String ,
+ CounselorType: string ,
 }

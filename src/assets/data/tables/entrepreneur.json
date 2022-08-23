@@ -1,31 +1,31 @@
 [
     {
         "header":"מספר מזהה", 
-        "name":"entrepreneurID"
+        "name":"EntrepreneurID"
     },
     {
         "header":"חברה היוזמת", 
-        "name":"entrepreneurCompany"
+        "name":"EntrepreneurCompany"
     },
     {
         "header":"שם היזם", 
-        "name":"entrepreneurName"
+        "name":"EntrepreneurName"
     },
     {
         "header":"מייל", 
-        "name":"entrepreneurMail"
+        "name":"EntrepreneurMail"
     },
     {
         "header":"טלפון", 
-        "name":"entrepreneurPhone"
+        "name":"EntrepreneurPhone"
     },
     {
         "header":"כתובת", 
-        "name":"entrepreneurAddress"
+        "name":"EntrepreneurAddress"
     } ,   
     {
         "header":"מזכירה ראשית", 
-        "name":"entrepreneurSecretary"
+        "name":"EntrepreneurSecretary"
     }   
 
 ]

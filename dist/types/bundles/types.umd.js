@@ -450,11 +450,11 @@
     function Cunselor() { }
     if (false) {
         /** @type {?} */
-        Cunselor.prototype.counselorID;
+        Cunselor.prototype.CounselorID;
         /** @type {?} */
-        Cunselor.prototype.counselorName;
+        Cunselor.prototype.CounselorName;
         /** @type {?} */
-        Cunselor.prototype.counselorType;
+        Cunselor.prototype.CounselorType;
     }
 
     /**
@@ -512,19 +512,19 @@
     function Entrepreneur() { }
     if (false) {
         /** @type {?} */
-        Entrepreneur.prototype.entrepreneurID;
+        Entrepreneur.prototype.EntrepreneurID;
         /** @type {?} */
-        Entrepreneur.prototype.entrepreneurCompany;
+        Entrepreneur.prototype.EntrepreneurCompany;
         /** @type {?} */
-        Entrepreneur.prototype.entrepreneurName;
+        Entrepreneur.prototype.EntrepreneurName;
         /** @type {?} */
-        Entrepreneur.prototype.entrepreneurMail;
+        Entrepreneur.prototype.EntrepreneurMail;
         /** @type {?} */
-        Entrepreneur.prototype.entrepreneurPhone;
+        Entrepreneur.prototype.EntrepreneurPhone;
         /** @type {?} */
-        Entrepreneur.prototype.entrepreneurAddress;
+        Entrepreneur.prototype.EntrepreneurAddress;
         /** @type {?} */
-        Entrepreneur.prototype.entrepreneurSecretary;
+        Entrepreneur.prototype.EntrepreneurSecretary;
     }
 
     /**
@@ -540,21 +540,21 @@
     function Project() { }
     if (false) {
         /** @type {?} */
-        Project.prototype.projectID;
+        Project.prototype.ProjectID;
         /** @type {?} */
-        Project.prototype.projectCompany;
+        Project.prototype.ProjectComPany;
         /** @type {?} */
-        Project.prototype.projectName;
+        Project.prototype.ProjectName;
         /** @type {?} */
-        Project.prototype.projectMail;
+        Project.prototype.ProjectMail;
         /** @type {?} */
-        Project.prototype.projectPhone;
+        Project.prototype.ProjectPhone;
         /** @type {?} */
-        Project.prototype.projectAddress;
+        Project.prototype.ProjectAddress;
         /** @type {?} */
-        Project.prototype.projectSecretary;
+        Project.prototype.ProjectSecretary;
         /** @type {?} */
-        Project.prototype.projectType;
+        Project.prototype.ProjectType;
     }
 
     exports.HttpRequestModel = HttpRequestModel;
