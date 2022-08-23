@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { GetEntrepreneurService } from 'projects/services/src/public-api';
-// import { GetEntrepreneurService } from 'services';
+import { GetEntrepreneurService } from 'services';
 import { NEVER, Observable } from 'rxjs';
 import {  map, tap } from 'rxjs/operators';
-// import { GetCunselorService } from 'services';
 import { ReadColumnsService } from 'src/app/services/read-columns.service';
 import { environment } from 'src/environments/environment';
 import { Entrepreneur, Column } from 'types';

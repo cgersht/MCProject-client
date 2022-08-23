@@ -527,7 +527,7 @@
      */
     function Entrepreneur() { }
     if (false) {
-        /** @type {?} */
+        /** @type {?|undefined} */
         Entrepreneur.prototype.EntrepreneurId;
         /** @type {?} */
         Entrepreneur.prototype.EntrepreneurCompany;
@@ -537,13 +537,13 @@
         Entrepreneur.prototype.EntrepreneurPhone;
         /** @type {?} */
         Entrepreneur.prototype.EntrepreneurMail;
-        /** @type {?} */
+        /** @type {?|undefined} */
         Entrepreneur.prototype.OfficeAdress;
         /** @type {?} */
         Entrepreneur.prototype.EntrepreneurSecretary;
-        /** @type {?} */
+        /** @type {?|undefined} */
         Entrepreneur.prototype.EntrepreneurSecretaryPhone;
-        /** @type {?} */
+        /** @type {?|undefined} */
         Entrepreneur.prototype.EntrepreneurSecretaryMail;
     }
 
@@ -552,29 +552,23 @@
      * Generated from: lib/model/project.ts
      * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
-    // import { Cunselor } from "types";
-    // import { Entrepreneur } from "./entrepreneur";
     /**
      * @record
      */
     function Project() { }
     if (false) {
-        /** @type {?} */
-        Project.prototype.ProjectID;
-        /** @type {?} */
-        Project.prototype.ProjectComPany;
+        /** @type {?|undefined} */
+        Project.prototype.ProjectId;
         /** @type {?} */
         Project.prototype.ProjectName;
         /** @type {?} */
-        Project.prototype.ProjectMail;
+        Project.prototype.ProjectCompany;
         /** @type {?} */
-        Project.prototype.ProjectPhone;
-        /** @type {?} */
-        Project.prototype.ProjectAddress;
-        /** @type {?} */
-        Project.prototype.ProjectSecretary;
+        Project.prototype.ProjectAdress;
         /** @type {?} */
         Project.prototype.ProjectType;
+        /** @type {?} */
+        Project.prototype.EntrepreneurId;
     }
 
     exports.HttpRequestModel = HttpRequestModel;

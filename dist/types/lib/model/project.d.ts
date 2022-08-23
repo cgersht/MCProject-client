@@ -1,10 +1,8 @@
 export interface Project {
-    ProjectID: number;
-    ProjectComPany: string;
+    ProjectId?: number;
     ProjectName: string;
-    ProjectMail: string;
-    ProjectPhone: string;
-    ProjectAddress: string;
-    ProjectSecretary: string;
-    ProjectType: string;
+    ProjectCompany: string;
+    ProjectAdress: string;
+    ProjectType: number;
+    EntrepreneurId: string;
 }

@@ -1,9 +1,5 @@
 [
     {
-        "header":"מספר מזהה", 
-        "name":"ProjectID"
-    },
-    {
         "header":"חברה המבצעת", 
         "name":"ProjectCompany"
     },
@@ -12,24 +8,17 @@
         "name":"ProjectName"
     },
     {
-        "header":"מייל", 
-        "name":"ProjectMail"
-    },
-    {
-        "header":"טלפון", 
-        "name":"ProjectPhone"
-    },
-    {
         "header":"כתובת", 
-        "name":"ProjectAddress"
+        "name":"ProjectAdress"
     } ,   
     {
-        "header":"מזכירה ראשית", 
-        "name":"ProjectSecretary"
-    }, 
-    {
         "header":"סוג הפרויקט", 
-        "name":"ProjectType"
-    }   
+        "name":"ProjectTypeName"
+    }  ,
+    {
+        "header":"שם היזם", 
+        "name":"EntrepreneurName"
+    } 
+    
 
 ]

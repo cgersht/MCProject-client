@@ -1,15 +1,12 @@
 [
     {
-        "header":"מספר מזהה", 
-        "name":"EntrepreneurID"
-    },
-    {
         "header":"חברה היוזמת", 
         "name":"EntrepreneurCompany"
     },
     {
         "header":"שם היזם", 
         "name":"EntrepreneurName"
+        
     },
     {
         "header":"מייל", 
@@ -21,7 +18,7 @@
     },
     {
         "header":"כתובת", 
-        "name":"EntrepreneurAddress"
+        "name":"OfficeAdress"
     } ,   
     {
         "header":"מזכירה ראשית", 
