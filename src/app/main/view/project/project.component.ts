@@ -9,7 +9,7 @@ import { Project } from 'types';
   styleUrls: ['./project.component.scss']
 })
 export class ProjectComponent implements OnInit { 
-  secretaryImg={imgPath:environment.imgesPath,img:'/secretary.png'};               
+  yazamImg={imgPath:environment.imgesPath,img:'/yazam.png'};               
   phoneImg={imgPath:environment.imgesPath,img:'/phone.png'};
   emailImg={imgPath:environment.imgesPath,img:'/email.png'}; 
   companyImg={imgPath:environment.imgesPath,img:'/company.png'}; 
@@ -18,7 +18,7 @@ export class ProjectComponent implements OnInit {
   
   company=this.companyImg.imgPath+this.companyImg.img
   email=this.emailImg.imgPath+this.emailImg.img
-  sec=this.secretaryImg.imgPath+this.secretaryImg.img
+  yazam=this.yazamImg.imgPath+this.yazamImg.img
   Type=this.TypeImg.imgPath+this.TypeImg.img
   @Output() selectSingleProject= new EventEmitter<Project>();
   @Output() send= new EventEmitter<any>();
