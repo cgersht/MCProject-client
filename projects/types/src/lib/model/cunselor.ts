@@ -1,5 +1,14 @@
 export interface Cunselor {
- CounselorID: Number ,
- CounselorName: String ,
- CounselorType: string ,
+    CounselorOfficeId: Number ,
+    CounselorOfficeName: String ,
+    CounselorOfficeAdress?: string ,
+    CounselorOfficePhone?:string,
+    CounselorOfficeType?:string,
+    CounselorOfficeManager?:string,
+    CounselorOfficeManagerPhone?:string,
+    CounselorOfficeManagerMail?:string,
+    CounselorOfficeMainSecretary?:string,
+    CounselorOfficeMainSecretaryPhone?:string,
+    CounselorOfficeMainSecretaryMail?:string,
+
 }

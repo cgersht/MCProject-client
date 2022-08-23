@@ -450,11 +450,27 @@
     function Cunselor() { }
     if (false) {
         /** @type {?} */
-        Cunselor.prototype.CounselorID;
+        Cunselor.prototype.CounselorOfficeId;
         /** @type {?} */
-        Cunselor.prototype.CounselorName;
-        /** @type {?} */
-        Cunselor.prototype.CounselorType;
+        Cunselor.prototype.CounselorOfficeName;
+        /** @type {?|undefined} */
+        Cunselor.prototype.CounselorOfficeAdress;
+        /** @type {?|undefined} */
+        Cunselor.prototype.CounselorOfficePhone;
+        /** @type {?|undefined} */
+        Cunselor.prototype.CounselorOfficeType;
+        /** @type {?|undefined} */
+        Cunselor.prototype.CounselorOfficeManager;
+        /** @type {?|undefined} */
+        Cunselor.prototype.CounselorOfficeManagerPhone;
+        /** @type {?|undefined} */
+        Cunselor.prototype.CounselorOfficeManagerMail;
+        /** @type {?|undefined} */
+        Cunselor.prototype.CounselorOfficeMainSecretary;
+        /** @type {?|undefined} */
+        Cunselor.prototype.CounselorOfficeMainSecretaryPhone;
+        /** @type {?|undefined} */
+        Cunselor.prototype.CounselorOfficeMainSecretaryMail;
     }
 
     /**
@@ -512,19 +528,23 @@
     function Entrepreneur() { }
     if (false) {
         /** @type {?} */
-        Entrepreneur.prototype.EntrepreneurID;
+        Entrepreneur.prototype.EntrepreneurId;
         /** @type {?} */
         Entrepreneur.prototype.EntrepreneurCompany;
         /** @type {?} */
         Entrepreneur.prototype.EntrepreneurName;
         /** @type {?} */
-        Entrepreneur.prototype.EntrepreneurMail;
-        /** @type {?} */
         Entrepreneur.prototype.EntrepreneurPhone;
         /** @type {?} */
-        Entrepreneur.prototype.EntrepreneurAddress;
+        Entrepreneur.prototype.EntrepreneurMail;
+        /** @type {?} */
+        Entrepreneur.prototype.OfficeAdress;
         /** @type {?} */
         Entrepreneur.prototype.EntrepreneurSecretary;
+        /** @type {?} */
+        Entrepreneur.prototype.EntrepreneurSecretaryPhone;
+        /** @type {?} */
+        Entrepreneur.prototype.EntrepreneurSecretaryMail;
     }
 
     /**
