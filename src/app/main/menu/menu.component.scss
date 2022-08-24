@@ -7,16 +7,13 @@ section {
     background-color: $light-gray;
     flex-direction: column;
 }
-
 .pn {
     text-align: center;
 }
-
 .div {
     position: absolute;
     flex-direction: row !important;
     margin-top: 75px;
     // margin-right: 110px;
-    border:  1px solid $dark-gray;
-       
+    border:  1px solid $dark-gray       
 }
