@@ -26,15 +26,14 @@ export class MainComponent implements OnInit {
   }
   // oneProjectfromProjects(p){
     oneProjectfromProjects(){
-    console.log("ppppppppppppppppppppppppppppppppp");
+    // console.log("ppppppppppppppppppppppppppppppppp");
     // console.log(p);
-    console.log("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
+    // console.log("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
 
     // this.sendToTheMenu(this.goToMenu)
   }
   sendToTheMenu(nameOfTheProject){
     this.goToMenu=nameOfTheProject;
-    // this.oneProjectfromProjects-nameOfTheProject
     console.log(this.goToMenu);
     console.log("this.goToMenu");
     
