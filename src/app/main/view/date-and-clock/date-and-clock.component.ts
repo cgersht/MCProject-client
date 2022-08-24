@@ -16,7 +16,7 @@ export class DateAndClockComponent implements OnInit, OnDestroy {
     this.cd.detach();
     this.zone.runOutsideAngular(() => this.setTime());
   }
-
+/////////////////////////////////////////////
   setTime() {
     if (this.isDestroy) { return; }
     const now = new Date();
