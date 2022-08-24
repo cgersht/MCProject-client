@@ -29,8 +29,7 @@ export class MainComponent implements OnInit {
     // console.log("ppppppppppppppppppppppppppppppppp");
     // console.log(p);
     // console.log("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
-
-    // this.sendToTheMenu(this.goToMenu)
+//  this.sendToTheMenu(this.goToMenu)
   }
   sendToTheMenu(nameOfTheProject){
     this.goToMenu=nameOfTheProject;
