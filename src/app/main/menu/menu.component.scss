@@ -9,12 +9,10 @@ section {
 }
 .pn {
     text-align: center;
-    background-color: crimson;
 }
 .div {
     position: absolute;
     flex-direction: row !important;
     margin-top: 75px;
-    // margin-right: 110px;
     border:  1px solid $dark-gray       
 }
