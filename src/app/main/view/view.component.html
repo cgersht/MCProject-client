@@ -9,7 +9,7 @@
     </mat-form-field>
   </div>
   <div class="views">
-<!-- <app-date-and-clock></app-date-and-clock> -->
+<app-date-and-clock></app-date-and-clock>
     <app-payment *ngIf="selected=='תשלומים'"></app-payment>
     <app-projects *ngIf="selected=='פרויקטים'" (selectedProject)="initSelectedProject($event)" [projectInput]="projectInput"></app-projects>
     <app-cunselors *ngIf="selected=='יועצים'" [selectedCunselor]="selectedOption"></app-cunselors>
