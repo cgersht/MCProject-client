@@ -21,4 +21,18 @@ export class GetProjectService extends HttpServiceBase {
       action: 'getProject',
     }));
     // return this.http.get<Project[]>('localhost:3030/project/getProject');
-  }}
+  }
+
+ addProject$(project):Observable<boolean>{
+    return this.post$(new HttpRequestModel({
+      url: this._serverUrl,
+      action: 'addProject',
+      body: project
+  }));
+
+
+
+}
+
+
+  

@@ -4,6 +4,7 @@ import { MatPaginator } from '@angular/material/paginator';
 export declare class TableComponent implements OnInit, OnChanges {
     columns: Column[];
     rows: any[];
+    tableType: any[];
     dbClick: EventEmitter<any>;
     displayedColumns: string[];
     dataSource: any;

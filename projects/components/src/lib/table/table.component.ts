@@ -14,6 +14,7 @@ export class TableComponent implements OnInit, OnChanges {
  
   @Input() columns:Column[];
   @Input() rows:any[];
+  @Input() tableType:tableTypeEnum;
   @Output() dbClick = new EventEmitter<any>();
   displayedColumns: string[] =[]
   dataSource 
@@ -43,5 +44,12 @@ export class TableComponent implements OnInit, OnChanges {
 
   getRecord(row){
       this.dbClick.emit(row);   
+  }
+
+  onNewClick(){
+    switch(this.tableType){
+      case tableTypeEnum.Project:
+        
+    }
   }
 }

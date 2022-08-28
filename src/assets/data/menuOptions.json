@@ -3,17 +3,20 @@
           [
             {
                 "name": "פרויקטים",
-                "img": "building"
+                "img": "building",
+                "displayKey": "project"
             },
             
             {
                 "name": "יזמים",
-                "img": "yazam"               
+                "img": "yazam",
+                "displayKey": "oneYazam"              
             },
             {
                 
                 "name": "יועצים",
                 "img": "yoetz",
+                "displayKey": "oneEntrerure..."  ,
                 "children":["נגישות","חשמל","בטיחות","תנועה","אינסטלציה","קונסטרוקציה","מיזוג אויר","פיתוח"]
             },
             {

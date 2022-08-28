@@ -1,29 +1,17 @@
-//  lib-table {
-//    display: flex;
-//    flex-direction: column;
+:host{
+  display:flex;
+  flex-direction: column;
+  .table{
+    flex: 1 1 auto;
+  }
 
-//    table {
-//      tbody {
-//        color: red;
-//      }
-//    }
+  .actions{
+    flex: 0 0 auto;
+    height:200px;
+  }
+}
 
-// //    .mat-elevation-z8 {
-// // visibility: hidden;
-// //    }
-
-//    .resize-handle {
-//      background-color: aqua;
-//      position: absolute;
-//      top: 0;
-//      right: 0;
-//      height: 100%;
-//      //  cursor: col-resize;
-//      width: 100%;
-//      //  opacity: 0;
-//    }
-//  }
-
+ 
 
 .mat-elevation-z8 {
   margin-top: -260px;

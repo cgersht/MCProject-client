@@ -1,5 +1,5 @@
  
-<div class="mat-elevation-z8">
+<div class="mat-elevation-z8 table">
   <mat-table [dataSource]="dataSource" >
   <ng-container *ngFor="let column of columns" [matColumnDef]=  "column.name">
  
@@ -16,5 +16,8 @@
   </mat-table>  
   <!-- <mat-paginator  [pageSizeOptions]="[5, 10, 20]"  showFirstLastButtons ></mat-paginator>   -->
 
+</div>
+<div class="actions">
+  <button mat-button [innerText]="'חדש'" (click)="onNewClick()"> </button>
 </div>
  
