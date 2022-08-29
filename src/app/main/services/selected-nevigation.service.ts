@@ -1,18 +1,17 @@
 import { Injectable } from '@angular/core';
+import { Cunselor, Entrepreneur, Project } from 'types';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SelectedNevigationService {
   selected=''; 
-  project ={};
-  entrepures ={};
-  counselor ={};
+  project:Project;
+  entrepreneur:Entrepreneur;
+  counselor:Cunselor;
   constructor() { }
-  
+
   updateSelected(selected){
     this.selected=selected;
   }
-
-
 }
