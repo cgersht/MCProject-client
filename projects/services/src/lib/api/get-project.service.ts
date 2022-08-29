@@ -29,10 +29,7 @@ export class GetProjectService extends HttpServiceBase {
       action: 'addProject',
       body: project
   }));
-
-
-
 }
-
+}
 
   

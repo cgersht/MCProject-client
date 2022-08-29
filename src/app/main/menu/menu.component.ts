@@ -35,23 +35,6 @@ export class MenuComponent implements OnInit {
     this.sendTo.emit(this.selectChangingProject)    
   }
 
-  //***************************************************************/
-  // selectingProject(project){
-  //   console.log("sendToMenu");    
-  //   this.selectChangingProject=project;
-  // }
-  //***************************************************************/
-  // goToMenu(project){
-  //   console.log(project.projectName);
-  //   this.selectingProject=project.projectName
-  // }
-
-  // **********************************************
-  // sendMaterial(project){
-  //   this.projectName=project.projectName
-  //   console.log(this.projectName);
-
-    
-  // }
+  
 
 }

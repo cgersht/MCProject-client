@@ -2,6 +2,7 @@ import { componentFactoryName } from '@angular/compiler';
 import { Component, EventEmitter, Input, OnInit, Output, } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Project } from 'types';
+import { SelectedNevigationService } from '../../services/selected-nevigation.service';
 
 @Component({
   selector: 'app-project',
@@ -25,28 +26,20 @@ export class ProjectComponent implements OnInit {
   @Output() projects= new EventEmitter<any>();
 
   @Input() project = {};
-  constructor() { }
+  constructor(
+    public selectedService:SelectedNevigationService
+  ) { }
 
   ngOnInit() {
+    console.log(this.selectedService.project);
     
   }
   ProjName='שם הפרויקט:  ';
-  // selection(pro) {
-  //   // console.log("hello i am in selection    ");   
-  //   this.project = pro;
-    
-    // this.project.emit(pro)
-  // }
+
   sender(se){
     this.send.emit(se);
   }
 
-  clicked(pName){
-    console.log("im in clicked");  
-    console.log(pName);    
-  }
-  // projectsToProject(pro){
-  //   this.projects.emit(pro)
-  // }
+ 
 
 }

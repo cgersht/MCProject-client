@@ -1,14 +1,14 @@
 
-<h1  [innerText]="project.ProjectName" class="h1"></h1>
+<h1  [innerText]="selectedService.project.ProjectName" class="h1"></h1>
 <div>
 <img [src]="company">&nbsp; &nbsp;
 <h1 >חברה המבצעת: </h1></div>
-<div class="text" [innerText]="project.ProjectCompany"> </div>
+<div class="text" [innerText]="selectedService.project.ProjectCompany"> </div>
 <div> 
 <img [src]="yazam" alt="">&nbsp; &nbsp;
 <h1 id="yazam">יזם המבצע:</h1></div>
-<div class="text" [innerText]="project.EntrepreneurName"></div> 
+<div class="text" [innerText]="selectedService.project.EntrepreneurName"></div> 
 <div>
 <img [src]="Type" alt="">&nbsp; &nbsp;
 <h1> סוג פרויקט:  </h1></div>
-<div class="text" [innerText]="project.ProjectTypeName"></div> 
+<div class="text" [innerText]="selectedService.project.ProjectTypeName"></div> 

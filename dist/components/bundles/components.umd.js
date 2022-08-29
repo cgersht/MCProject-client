@@ -168,6 +168,7 @@
      */
     var TableComponent = /** @class */ (function () {
         function TableComponent() {
+            // @Input() tableType:tableTypeEnum;
             this.dbClick = new core.EventEmitter();
             this.displayedColumns = [];
         }
@@ -221,10 +222,20 @@
         function (row) {
             this.dbClick.emit(row);
         };
+        /**
+         * @return {?}
+         */
+        TableComponent.prototype.onNewClick = /**
+         * @return {?}
+         */
+        function () {
+            // switch(this.tableType){
+            // case tableTypeEnum.Project:
+        };
         TableComponent.decorators = [
             { type: core.Component, args: [{
                         selector: 'lib-table',
-                        template: " \r\n<div class=\"mat-elevation-z8 table\">\r\n  <mat-table [dataSource]=\"dataSource\" >\r\n  <ng-container *ngFor=\"let column of columns\" [matColumnDef]=  \"column.name\">\r\n \r\n      <mat-header-cell *matHeaderCellDef [innerText]=\"column.header\"> </mat-header-cell>\r\n       <mat-cell *matCellDef=\"let element\" > \r\n            <span [innerText]=\"element[column.name]\" libCopy></span> \r\n\r\n       </mat-cell> \r\n     \r\n  </ng-container>\r\n    <mat-header-row *matHeaderRowDef=\"displayedColumns\" ></mat-header-row>  \r\n    <mat-row *matRowDef=\"let row; columns: displayedColumns;\" (dblclick)=\"getRecord(row)\"></mat-row>\r\n  \r\n  </mat-table>  \r\n  <!-- <mat-paginator  [pageSizeOptions]=\"[5, 10, 20]\"  showFirstLastButtons ></mat-paginator>   -->\r\n\r\n</div>\r\n<div class=\"actions\">\r\n  <button mat-button [innerText]=\"'\u05D7\u05D3\u05E9'\"> </button>\r\n</div>\r\n ",
+                        template: " \r\n<div class=\"mat-elevation-z8 table\">\r\n  <mat-table [dataSource]=\"dataSource\" >\r\n  <ng-container *ngFor=\"let column of columns\" [matColumnDef]=  \"column.name\">\r\n \r\n      <mat-header-cell *matHeaderCellDef [innerText]=\"column.header\"> </mat-header-cell>\r\n       <mat-cell *matCellDef=\"let element\" > \r\n            <span [innerText]=\"element[column.name]\" libCopy></span> \r\n\r\n       </mat-cell> \r\n     \r\n  </ng-container>\r\n    <mat-header-row *matHeaderRowDef=\"displayedColumns\" ></mat-header-row>  \r\n    <mat-row *matRowDef=\"let row; columns: displayedColumns;\" (dblclick)=\"getRecord(row)\"></mat-row>\r\n  \r\n  </mat-table>  \r\n  <!-- <mat-paginator  [pageSizeOptions]=\"[5, 10, 20]\"  showFirstLastButtons ></mat-paginator>   -->\r\n\r\n</div>\r\n<div class=\"actions\">\r\n  <button mat-button [innerText]=\"'\u05D7\u05D3\u05E9'\" (click)=\"onNewClick()\"> </button>\r\n</div>\r\n ",
                         encapsulation: core.ViewEncapsulation.None,
                         styles: [":host{display:flex;flex-direction:column}:host .table{flex:1 1 auto}:host .actions{flex:0 0 auto;height:200px}.mat-elevation-z8{margin-top:-260px}.mat-table{width:100%;overflow:auto;top:200px}mat-cell,mat-footer-cell,mat-header-cell{width:150px;flex:none;justify-content:center}.mat-table mat-cell:first-child{padding-left:0;border-left:1px solid}.mat-table mat-cell:last-child{padding-right:0}.mat-table mat-header-cell:first-child{padding-left:0;border-left:1px solid}.mat-table mat-header-cell:last-child{padding-right:0}.mat-table mat-header-cell{border-top:1px solid;border-right:1px solid;border-bottom:1px solid;cursor:col-resize}.mat-table mat-cell{border-right:1px solid;border-bottom:1px solid}"]
                     }] }
@@ -234,7 +245,6 @@
         TableComponent.propDecorators = {
             columns: [{ type: core.Input }],
             rows: [{ type: core.Input }],
-            tableType: [{ type: core.Input }],
             dbClick: [{ type: core.Output }],
             paginator: [{ type: core.ViewChild, args: [paginator.MatPaginator, { static: true },] }]
         };
@@ -245,8 +255,6 @@
         TableComponent.prototype.columns;
         /** @type {?} */
         TableComponent.prototype.rows;
-        /** @type {?} */
-        TableComponent.prototype.tableType;
         /** @type {?} */
         TableComponent.prototype.dbClick;
         /** @type {?} */
@@ -275,6 +283,7 @@
                             material.MatButtonModule,
                             directives.DirectivesModule
                         ],
+                        //entryComponents:[NewProject],
                         exports: [TableComponent]
                     },] }
         ];
