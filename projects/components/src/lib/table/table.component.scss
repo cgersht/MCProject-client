@@ -4,25 +4,22 @@
   .table{
     flex: 1 1 auto;
   }
-
+  .newButton{
+    top: 250px;
+  }
   .actions{
-    flex: 0 0 auto;
-    height:200px;
+      flex: 0 0 auto;
+    // height:200px;
+      // top: 250px;
+      box-sizing: border-box;
+      position: absolute;
   }
 }
-
- 
-
-.mat-elevation-z8 {
-  margin-top: -260px;
-}
-
 .mat-table {
   width: 100%;
   overflow: auto;
   top: 200px;
 }
-
 mat-cell,
 mat-footer-cell,
 mat-header-cell {
@@ -60,3 +57,15 @@ mat-header-cell {
   border-right: 1px solid;
   border-bottom: 1px solid;
 }
+
+// .newButton{
+//   top: 250px;
+// }
+.mat-button-base{
+  top: 37vh !important;
+  box-sizing: border-box;
+  position: relative;
+}
+// .mat-button, .mat-flat-button, .mat-icon-button, .mat-stroked-button {
+//   top:250px !important;
+// }

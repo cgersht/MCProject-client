@@ -16,7 +16,7 @@
                 
                 "name": "יועצים",
                 "img": "yoetz",
-                "displayKey": "oneEntrerure..."  ,
+                "displayKey": "oneEntreprure..."  ,
                 "children":["נגישות","חשמל","בטיחות","תנועה","אינסטלציה","קונסטרוקציה","מיזוג אויר","פיתוח"]
             },
             {

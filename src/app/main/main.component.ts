@@ -17,7 +17,7 @@ export class MainComponent implements OnInit {
   ngOnInit() {
   }
   onChange(item) {
-   
+console.log(item,"item");
     if (item.children) {
       this.children = item.children;
     } else {

@@ -21,6 +21,9 @@ export class MenuComponent implements OnInit {
 
   ngOnInit() {
     this.menuOption = this.getOptionsService.getOptions();
+    console.log(this.menuOption,"menuOption");
+    // if(this.selectedServi)
+    
   }
 
   changeSelected(item) {

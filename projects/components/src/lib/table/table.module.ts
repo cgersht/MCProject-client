@@ -2,8 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TableComponent } from './table.component';
 import {MatTableModule} from '@angular/material/table';
-import { MatButtonModule, MatPaginatorModule } from '@angular/material';
+import { MatButtonModule, MatDialogModule, MatPaginatorModule } from '@angular/material';
 import { DirectivesModule } from 'directives';
+// import { PaymentModule } from 'src/app/main/view/payment/payment.module';
+// import { PaymentComponent } from 'src/app/main/view/payment/payment.component';
 
 
 @NgModule({
@@ -13,9 +15,11 @@ import { DirectivesModule } from 'directives';
     MatTableModule,
     MatPaginatorModule,
     MatButtonModule,
-    DirectivesModule
+    DirectivesModule,
+    MatDialogModule,
+    // PaymentModule
   ],
-  //entryComponents:[NewProject],
+  // entryComponents:[PaymentComponent],
   exports:[TableComponent]
 })
 export class TableModule { }

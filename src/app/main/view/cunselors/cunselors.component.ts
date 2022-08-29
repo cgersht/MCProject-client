@@ -36,15 +36,5 @@ export class CunselorsComponent implements OnInit, OnChanges {
    this.columns$ = this.readColumns.getColumns$(environment.counselorsTableColumns)
    
   }
-  selectedName(selected){
-    // this.cunselors$.forEach(c=>{
-      //   console.log(c.counselorName+"   list of cunselors"); 
-      //  })
-    // console.log(this.cunselors$+"   this.cunselors$ ");
-    console.log(selected+ "    selected name");
-    // this.cunselors$.map(...this.cunselors$,rest)
-
-  }
-
-
+ 
 }

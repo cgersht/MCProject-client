@@ -12,14 +12,14 @@ import { SelectedNevigationService } from '../services/selected-nevigation.servi
 export class ViewComponent implements OnInit {
   items: any = [];
   @Input() oneProjectfromProjects; 
-  @Input() children = [];
+  @Input() children;
   @Output() change: EventEmitter<any> = new EventEmitter();
   @Output() sendProjectName: EventEmitter<any> = new EventEmitter();
   @Output() projectsToProject: EventEmitter<any> = new EventEmitter();
    
   selectedOption = '';
   project = {};
-
+  // children=this.selectedService.children
   constructor(
     public selectedService: SelectedNevigationService
     ) { }
@@ -30,7 +30,7 @@ export class ViewComponent implements OnInit {
   
   selectedName(item) {
     console.log(item + "    item");
-    this.selectedOption = item;
+    this.selectedOption = item;    
   }
 
   initSelectedProject(project) {

@@ -11,10 +11,10 @@
   <div class="views">
 <app-date-and-clock></app-date-and-clock>
     <app-payment *ngIf="selectedService.selected=='תשלומים'"></app-payment>
-    <app-projects *ngIf="selectedService.selected=='פרויקטים'" (selectedProject)="initSelectedProject($event)" [projectInput]="projectInput"></app-projects>
+    <app-projects *ngIf="selectedService.selected=='פרויקטים'" (selectedProject)="initSelectedProject($event)"></app-projects>
     <app-cunselors *ngIf="selectedService.selected=='יועצים'" [selectedCunselor]="selectedOption"></app-cunselors>
     <app-entrepreneur *ngIf="selectedService.selected=='יזמים'"></app-entrepreneur>
-    <app-project *ngIf="selectedService.selected=='oneProject'" [project]="project"  (project)="oneProjectToProjects($event)"></app-project>
+    <app-project *ngIf="selectedService.selected=='oneProject'" [project]="project"></app-project>
   </div>
 </section>
 

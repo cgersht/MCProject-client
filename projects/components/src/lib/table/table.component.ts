@@ -1,7 +1,9 @@
 import { Component, OnInit, Input, ViewChild, ViewEncapsulation, OnChanges, SimpleChanges, Output, EventEmitter } from '@angular/core';
 import { Column } from 'types'; 
-import { MatTableDataSource } from '@angular/material';
+import { MatDialog, MatTableDataSource } from '@angular/material';
 import {MatPaginator} from '@angular/material/paginator';
+import { PaymentComponent } from 'src/app/main/view/payment/payment.component';
+import { PaymentModule } from 'src/app/main/view/payment/payment.module';
  
 
 @Component({
@@ -22,7 +24,7 @@ export class TableComponent implements OnInit, OnChanges {
     
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
     setTimeout(() => {
@@ -46,10 +48,18 @@ export class TableComponent implements OnInit, OnChanges {
       this.dbClick.emit(row);   
   }
 
-  onNewClick(){
+  nnn(){
     // switch(this.tableType){
       // case tableTypeEnum.Project:
+    console.log("trdfghjkhj");
 
     }
-  // }
+    // openDialog() {
+    //   const dialogRef = this.dialog.open(PaymentComponent);
+  
+    //   dialogRef.afterClosed().subscribe(result => {
+    //     console.log(`Dialog result: ${result}`);
+    //   });
+    // }
+
 }
