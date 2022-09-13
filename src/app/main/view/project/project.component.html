@@ -1,14 +1,16 @@
 
 <h1  [innerText]="selectedService.project.ProjectName" class="h1"></h1>
 <div>
-<img [src]="company">&nbsp; &nbsp;
-<h1 >חברה המבצעת: </h1></div>
+    <img [src]="rova" >&nbsp; &nbsp;
+    <h1 >רובע:  </h1></div>
+    <div class="text" [innerText]="selectedService.project.ProjectRova"></div> 
+    <div>
+<img [src]="company" title="לפרטי היזם" (click)="entrepreneurDetail(selectedService.project.EntrepreneurName)">&nbsp; &nbsp;
+<h1 >חברה ויזם מבצע: </h1></div>
 <div class="text" [innerText]="selectedService.project.ProjectCompany"> </div>
 <div> 
-<img [src]="yazam" alt="">&nbsp; &nbsp;
-<h1 id="yazam">יזם המבצע:</h1></div>
-<div class="text" [innerText]="selectedService.project.EntrepreneurName"></div> 
-<div>
 <img [src]="Type" alt="">&nbsp; &nbsp;
 <h1> סוג פרויקט:  </h1></div>
 <div class="text" [innerText]="selectedService.project.ProjectTypeName"></div> 
+
+<div class="hide">{{entrepreneur$|async}}</div>

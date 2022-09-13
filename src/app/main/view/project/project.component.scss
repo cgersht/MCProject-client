@@ -22,14 +22,17 @@
         font-size: 25px;
         margin-top: -20px;
     }
+    .hide{
+        visibility: hidden;
+    }
 }
 img {
-    width: 3rem;
-    height: 3rem;
+    width: 4rem;
+    height: 4rem;
     right: 150rem;
     top: 5vh;
 }
 
-// section{
-//     text-align: center;
-// }
+app-view .newButton{
+    visibility: hidden;
+}

@@ -1,0 +1,14 @@
+/**
+ * @fileoverview added by tsickle
+ * Generated from: components.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * Generated bundle index. Do not edit.
+ */
+export { ComponentsService, ComponentsComponent, ComponentsModule, TableModule } from './public_api';
+export { ClockAndDateComponent as ɵa } from './lib/clock-and-date/clock-and-date.component';
+export { ClockComponent as ɵd } from './lib/clock/clock.component';
+export { ClockModule as ɵc } from './lib/clock/clock.module';
+export { TableComponent as ɵb } from './lib/table/table.component';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY29tcG9uZW50cy5qcyIsInNvdXJjZVJvb3QiOiJuZzovL2NvbXBvbmVudHMvIiwic291cmNlcyI6WyJjb21wb25lbnRzLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7O0FBSUEsc0ZBQWMsY0FBYyxDQUFDO0FBRTdCLE9BQU8sRUFBQyxxQkFBcUIsSUFBSSxFQUFFLEVBQUMsTUFBTSwrQ0FBK0MsQ0FBQztBQUMxRixPQUFPLEVBQUMsY0FBYyxJQUFJLEVBQUUsRUFBQyxNQUFNLDZCQUE2QixDQUFDO0FBQ2pFLE9BQU8sRUFBQyxXQUFXLElBQUksRUFBRSxFQUFDLE1BQU0sMEJBQTBCLENBQUM7QUFDM0QsT0FBTyxFQUFDLGNBQWMsSUFBSSxFQUFFLEVBQUMsTUFBTSw2QkFBNkIsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbIi8qKlxuICogR2VuZXJhdGVkIGJ1bmRsZSBpbmRleC4gRG8gbm90IGVkaXQuXG4gKi9cblxuZXhwb3J0ICogZnJvbSAnLi9wdWJsaWNfYXBpJztcblxuZXhwb3J0IHtDbG9ja0FuZERhdGVDb21wb25lbnQgYXMgybVhfSBmcm9tICcuL2xpYi9jbG9jay1hbmQtZGF0ZS9jbG9jay1hbmQtZGF0ZS5jb21wb25lbnQnO1xuZXhwb3J0IHtDbG9ja0NvbXBvbmVudCBhcyDJtWR9IGZyb20gJy4vbGliL2Nsb2NrL2Nsb2NrLmNvbXBvbmVudCc7XG5leHBvcnQge0Nsb2NrTW9kdWxlIGFzIMm1Y30gZnJvbSAnLi9saWIvY2xvY2svY2xvY2subW9kdWxlJztcbmV4cG9ydCB7VGFibGVDb21wb25lbnQgYXMgybVifSBmcm9tICcuL2xpYi90YWJsZS90YWJsZS5jb21wb25lbnQnOyJdfQ==

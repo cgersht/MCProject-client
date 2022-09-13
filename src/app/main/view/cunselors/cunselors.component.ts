@@ -5,6 +5,7 @@ import { filter, map, tap } from 'rxjs/operators';
 import { ReadColumnsService } from 'src/app/services/read-columns.service';
 import { environment } from 'src/environments/environment';
 import { Cunselor, Column } from 'types';
+import { SelectedNevigationService } from '../../services/selected-nevigation.service';
 
 @Component({
   selector: 'app-cunselors',
@@ -16,11 +17,13 @@ export class CunselorsComponent implements OnInit, OnChanges {
   //server שמחזיר לי את רשימת היועצים מה Observable מערך של יועצים מסוג 
   cunselors$: Observable<Cunselor[]> = NEVER;
   cunselors:Cunselor[]=[];
+  cunselorsOfficeType$:Observable<Cunselor[]>
   columns$: Observable<Column[]> = NEVER;
   
   constructor(
     private counselorService:GetCounselorService,
-    private readColumns: ReadColumnsService
+    private readColumns: ReadColumnsService,
+    private selectedService:SelectedNevigationService
   ) { }
   
   ngOnChanges({selectedCunselor}: SimpleChanges): void {
@@ -30,11 +33,17 @@ export class CunselorsComponent implements OnInit, OnChanges {
     }
   }
  
+
   
   ngOnInit() {
    this.cunselors$ = this.counselorService.getCounselorList$('') ; 
+   this.cunselorsOfficeType$ = this.counselorService.getCounselorOfficeTypeList$() ; 
    this.columns$ = this.readColumns.getColumns$(environment.counselorsTableColumns)
    
   }
- 
+  getCounselorsOfficeTypeDetalis(type){
+    console.log(type,"      type");    
+    // const currentValue  = type;
+    this.cunselors$ = this.counselorService.getCounselorList$(type); 
+  }
 }

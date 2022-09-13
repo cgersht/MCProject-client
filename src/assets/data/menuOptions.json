@@ -1,27 +1,20 @@
- 
-    
-          [
+              [
             {
                 "name": "פרויקטים",
                 "img": "building",
-                "displayKey": "project"
-            },
-            
+                "displayKey":"project"
+            },            
             {
                 "name": "יזמים",
                 "img": "yazam",
-                "displayKey": "oneYazam"              
+                "displayKey":"oneYazam"              
             },
             {
                 
                 "name": "יועצים",
                 "img": "yoetz",
-                "displayKey": "oneEntreprure..."  ,
-                "children":["נגישות","חשמל","בטיחות","תנועה","אינסטלציה","קונסטרוקציה","מיזוג אויר","פיתוח"]
-            },
-            {
-                "name": "תשלומים",
-                "img": "wallet"
+                "displayKey": "entrepreneur"  ,
+                "children":["נגישות","חשמל","בטיחות","תנועה","אינסטלציה","קונסטרוקציה","אוורור","פיתוח ונוף","בדיקות אל-הרס","בדיקות קרקע","מדידות","אגרונום","קרינה","הדמיות","מיגון","בניה ירוקה","אדריכלות"]
             }
         ]
      

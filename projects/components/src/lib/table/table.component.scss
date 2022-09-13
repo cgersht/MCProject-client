@@ -1,36 +1,33 @@
 :host{
   display:flex;
   flex-direction: column;
-  .table{
-    flex: 1 1 auto;
+  overflow: hidden !important;
+  .example-container.mat-elevation-z8 {    
+    overflow-y: auto;
+  }
+  mat-table{
+    overflow: hidden ;
+    overflow-y: auto;
   }
   .newButton{
     top: 250px;
-  }
-  .actions{
-      flex: 0 0 auto;
-    // height:200px;
-      // top: 250px;
-      box-sizing: border-box;
-      position: absolute;
-  }
+  } 
 }
-.mat-table {
-  width: 100%;
-  overflow: auto;
-  top: 200px;
-}
+ 
 mat-cell,
 mat-footer-cell,
 mat-header-cell {
   width: 150px;
-  flex: none;
+  // flex: none;
   justify-content: center;
 }
+// mat-elevation-z8{
+//   overflow: scroll !important;
+// }
 
 .mat-table mat-cell:first-child {
   padding-left: 0px;
-  border-left: 1px solid;
+  // border-left: 1px ;
 }
 
 .mat-table mat-cell:last-child {

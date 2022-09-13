@@ -5,6 +5,7 @@
  */
 import * as tslib_1 from "tslib";
 import { Injectable } from '@angular/core';
+import { HttpRequestModel } from 'types';
 import { HttpServiceBase } from './http-service.base';
 import * as i0 from "@angular/core";
 import * as i1 from "@angular/common/http";
@@ -14,28 +15,44 @@ var GetEntrepreneurService = /** @class */ (function (_super) {
     function GetEntrepreneurService() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    // private get _serverUrl(): string {
-    //   return `${this.config.ips.servicePath}counselor/`;
-    // }
-    // private get _serverUrl(): string {
-    //   return `${this.config.ips.servicePath}counselor/`;
-    // }
+    Object.defineProperty(GetEntrepreneurService.prototype, "_serverUrl", {
+        get: /**
+         * @private
+         * @return {?}
+         */
+        function () {
+            return this.config.ips.servicePath + "entrepreneur/";
+        },
+        enumerable: true,
+        configurable: true
+    });
     /**
      * @return {?}
      */
-    GetEntrepreneurService.prototype.getEntrepreneurList$ = 
-    // private get _serverUrl(): string {
-    //   return `${this.config.ips.servicePath}counselor/`;
-    // }
-    /**
+    GetEntrepreneurService.prototype.getEntrepreneurList$ = /**
      * @return {?}
      */
     function () {
-        // return this.get$(new HttpRequestModel({
-        //   url: this._serverUrl,
-        //   action: 'getCounselor',
-        // }));
-        return this.http.get('http://localhost:3030/entrepreneur/getEntrepreneur');
+        return this.get$(new HttpRequestModel({
+            url: this._serverUrl,
+            action: 'getEntrepreneur',
+        }));
+        // return this.http.get<Entrepreneur[]>('http://localhost:3030/entrepreneur/getEntrepreneur');
+    };
+    /**
+     * @param {?} entrepreneur
+     * @return {?}
+     */
+    GetEntrepreneurService.prototype.addEntrepreneur$ = /**
+     * @param {?} entrepreneur
+     * @return {?}
+     */
+    function (entrepreneur) {
+        return this.post$(new HttpRequestModel({
+            url: this._serverUrl,
+            action: 'addEntrepreneur',
+            body: entrepreneur
+        }));
     };
     GetEntrepreneurService.decorators = [
         { type: Injectable, args: [{ providedIn: 'root' },] }
@@ -44,4 +61,4 @@ var GetEntrepreneurService = /** @class */ (function (_super) {
     return GetEntrepreneurService;
 }(HttpServiceBase));
 export { GetEntrepreneurService };
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZ2V0LWVudHJlcHJlbmV1ci5zZXJ2aWNlLmpzIiwic291cmNlUm9vdCI6Im5nOi8vc2VydmljZXMvIiwic291cmNlcyI6WyJsaWIvYXBpL2dldC1lbnRyZXByZW5ldXIuc2VydmljZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7QUFBQSxPQUFPLEVBQUUsVUFBVSxFQUFFLE1BQU0sZUFBZSxDQUFDO0FBRzNDLE9BQU8sRUFBRSxlQUFlLEVBQUUsTUFBTSxxQkFBcUIsQ0FBQzs7OztBQUV0RDtJQUc0QyxrREFBZTtJQUgzRDs7S0FtQkM7SUFkQyxxQ0FBcUM7SUFDckMsdURBQXVEO0lBQ3ZELElBQUk7Ozs7Ozs7SUFJSixxREFBb0I7Ozs7Ozs7SUFBcEI7UUFDRSwwQ0FBMEM7UUFDMUMsMEJBQTBCO1FBQzFCLDRCQUE0QjtRQUM1QixPQUFPO1FBQ1AsT0FBTyxJQUFJLENBQUMsSUFBSSxDQUFDLEdBQUcsQ0FBaUIsb0RBQW9ELENBQUMsQ0FBQztJQUU3RixDQUFDOztnQkFsQkYsVUFBVSxTQUFDLEVBQUUsVUFBVSxFQUFFLE1BQU0sRUFBRTs7O2lDQUxsQztDQXdCQyxBQW5CRCxDQUc0QyxlQUFlLEdBZ0IxRDtTQWhCWSxzQkFBc0IiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBJbmplY3RhYmxlIH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XG5pbXBvcnQgeyBPYnNlcnZhYmxlIH0gZnJvbSAncnhqcyc7XG5pbXBvcnQgeyBFbnRyZXByZW5ldXIsIEh0dHBSZXF1ZXN0TW9kZWwgfSBmcm9tICd0eXBlcyc7XG5pbXBvcnQgeyBIdHRwU2VydmljZUJhc2UgfSBmcm9tICcuL2h0dHAtc2VydmljZS5iYXNlJztcblxuQEluamVjdGFibGUoeyBwcm92aWRlZEluOiAncm9vdCcgfSlcblxuXG5leHBvcnQgY2xhc3MgR2V0RW50cmVwcmVuZXVyU2VydmljZSBleHRlbmRzIEh0dHBTZXJ2aWNlQmFzZSB7XG5cbiAgLy8gcHJpdmF0ZSBnZXQgX3NlcnZlclVybCgpOiBzdHJpbmcge1xuICAvLyAgIHJldHVybiBgJHt0aGlzLmNvbmZpZy5pcHMuc2VydmljZVBhdGh9Y291bnNlbG9yL2A7XG4gIC8vIH1cblxuXG5cbiAgZ2V0RW50cmVwcmVuZXVyTGlzdCQoKTogT2JzZXJ2YWJsZTxFbnRyZXByZW5ldXJbXT4ge1xuICAgIC8vIHJldHVybiB0aGlzLmdldCQobmV3IEh0dHBSZXF1ZXN0TW9kZWwoe1xuICAgIC8vICAgdXJsOiB0aGlzLl9zZXJ2ZXJVcmwsXG4gICAgLy8gICBhY3Rpb246ICdnZXRDb3Vuc2Vsb3InLFxuICAgIC8vIH0pKTtcbiAgICByZXR1cm4gdGhpcy5odHRwLmdldDxFbnRyZXByZW5ldXJbXT4oJ2h0dHA6Ly9sb2NhbGhvc3Q6MzAzMC9lbnRyZXByZW5ldXIvZ2V0RW50cmVwcmVuZXVyJyk7XG5cbiAgfVxufVxuXG4vLyJdfQ==
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZ2V0LWVudHJlcHJlbmV1ci5zZXJ2aWNlLmpzIiwic291cmNlUm9vdCI6Im5nOi8vc2VydmljZXMvIiwic291cmNlcyI6WyJsaWIvYXBpL2dldC1lbnRyZXByZW5ldXIuc2VydmljZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7QUFBQSxPQUFPLEVBQUUsVUFBVSxFQUFFLE1BQU0sZUFBZSxDQUFDO0FBRTNDLE9BQU8sRUFBZ0IsZ0JBQWdCLEVBQUUsTUFBTSxPQUFPLENBQUM7QUFDdkQsT0FBTyxFQUFFLGVBQWUsRUFBRSxNQUFNLHFCQUFxQixDQUFDOzs7O0FBRXREO0lBRzRDLGtEQUFlO0lBSDNEOztLQTBCQztJQXJCQyxzQkFBWSw4Q0FBVTs7Ozs7UUFBdEI7WUFDRSxPQUFVLElBQUksQ0FBQyxNQUFNLENBQUMsR0FBRyxDQUFDLFdBQVcsa0JBQWUsQ0FBQztRQUN2RCxDQUFDOzs7T0FBQTs7OztJQUlELHFEQUFvQjs7O0lBQXBCO1FBQ0UsT0FBTyxJQUFJLENBQUMsSUFBSSxDQUFDLElBQUksZ0JBQWdCLENBQUM7WUFDcEMsR0FBRyxFQUFFLElBQUksQ0FBQyxVQUFVO1lBQ3BCLE1BQU0sRUFBRSxpQkFBaUI7U0FDMUIsQ0FBQyxDQUFDLENBQUM7UUFDSiw4RkFBOEY7SUFFaEcsQ0FBQzs7Ozs7SUFDRCxpREFBZ0I7Ozs7SUFBaEIsVUFBaUIsWUFBeUI7UUFDeEMsT0FBTyxJQUFJLENBQUMsS0FBSyxDQUFDLElBQUksZ0JBQWdCLENBQUM7WUFDckMsR0FBRyxFQUFFLElBQUksQ0FBQyxVQUFVO1lBQ3BCLE1BQU0sRUFBRSxpQkFBaUI7WUFDekIsSUFBSSxFQUFFLFlBQVk7U0FDckIsQ0FBQyxDQUFDLENBQUM7SUFDTixDQUFDOztnQkF6QkEsVUFBVSxTQUFDLEVBQUUsVUFBVSxFQUFFLE1BQU0sRUFBRTs7O2lDQUxsQztDQStCQyxBQTFCRCxDQUc0QyxlQUFlLEdBdUIxRDtTQXZCWSxzQkFBc0IiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBJbmplY3RhYmxlIH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XHJcbmltcG9ydCB7IE9ic2VydmFibGUgfSBmcm9tICdyeGpzJztcclxuaW1wb3J0IHsgRW50cmVwcmVuZXVyLCBIdHRwUmVxdWVzdE1vZGVsIH0gZnJvbSAndHlwZXMnO1xyXG5pbXBvcnQgeyBIdHRwU2VydmljZUJhc2UgfSBmcm9tICcuL2h0dHAtc2VydmljZS5iYXNlJztcclxuXHJcbkBJbmplY3RhYmxlKHsgcHJvdmlkZWRJbjogJ3Jvb3QnIH0pXHJcblxyXG5cclxuZXhwb3J0IGNsYXNzIEdldEVudHJlcHJlbmV1clNlcnZpY2UgZXh0ZW5kcyBIdHRwU2VydmljZUJhc2Uge1xyXG5cclxuICBwcml2YXRlIGdldCBfc2VydmVyVXJsKCk6IHN0cmluZyB7XHJcbiAgICByZXR1cm4gYCR7dGhpcy5jb25maWcuaXBzLnNlcnZpY2VQYXRofWVudHJlcHJlbmV1ci9gO1xyXG4gIH1cclxuXHJcblxyXG5cclxuICBnZXRFbnRyZXByZW5ldXJMaXN0JCgpOiBPYnNlcnZhYmxlPEVudHJlcHJlbmV1cltdPiB7XHJcbiAgICByZXR1cm4gdGhpcy5nZXQkKG5ldyBIdHRwUmVxdWVzdE1vZGVsKHtcclxuICAgICAgdXJsOiB0aGlzLl9zZXJ2ZXJVcmwsXHJcbiAgICAgIGFjdGlvbjogJ2dldEVudHJlcHJlbmV1cicsXHJcbiAgICB9KSk7XHJcbiAgICAvLyByZXR1cm4gdGhpcy5odHRwLmdldDxFbnRyZXByZW5ldXJbXT4oJ2h0dHA6Ly9sb2NhbGhvc3Q6MzAzMC9lbnRyZXByZW5ldXIvZ2V0RW50cmVwcmVuZXVyJyk7XHJcblxyXG4gIH1cclxuICBhZGRFbnRyZXByZW5ldXIkKGVudHJlcHJlbmV1cjpFbnRyZXByZW5ldXIpOk9ic2VydmFibGU8Ym9vbGVhbj57XHJcbiAgICByZXR1cm4gdGhpcy5wb3N0JChuZXcgSHR0cFJlcXVlc3RNb2RlbCh7XHJcbiAgICAgIHVybDogdGhpcy5fc2VydmVyVXJsLFxyXG4gICAgICBhY3Rpb246ICdhZGRFbnRyZXByZW5ldXInLFxyXG4gICAgICBib2R5OiBlbnRyZXByZW5ldXJcclxuICB9KSk7XHJcbn1cclxufVxyXG5cclxuLy8iXX0=

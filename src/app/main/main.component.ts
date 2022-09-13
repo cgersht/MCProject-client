@@ -8,7 +8,6 @@ import { SelectedNevigationService } from './services/selected-nevigation.servic
 })
 export class MainComponent implements OnInit {
   
-  @Output() sendMaterial: EventEmitter<any> = new EventEmitter();
   
   children = [];
   

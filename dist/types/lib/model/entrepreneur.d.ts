@@ -8,4 +8,9 @@ export interface Entrepreneur {
     EntrepreneurSecretary: string;
     EntrepreneurSecretaryPhone?: string;
     EntrepreneurSecretaryMail?: string;
+    EntrepreneurCompanyFax?: string;
+    EntrepreneurCompanyPhone?: string;
+    EntrepreneurCompanyMail?: string;
+    EntrepreneurCompanyAddress?: string;
+    EntrepreneurCompanyAddressToSend?: string;
 }

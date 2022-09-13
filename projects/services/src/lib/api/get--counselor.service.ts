@@ -12,8 +12,14 @@ export class GetCounselorService extends HttpServiceBase {
     return `${this.config.ips.servicePath}counselor/`;
   }
 
+  getCounselorOfficeTypeList$(): Observable<Cunselor[]> {
+    return this.get$(new HttpRequestModel({
+      url: this._serverUrl,
+      action: 'getCounselorOfficeType',
+    }));
+   // return this.http.get<Cunselor[]>('http://localhost:3030/counselor/getCounselor');
 
-
+  }
   getCounselorList$(counselorType:string): Observable<Cunselor[]> {
     return this.get$(new HttpRequestModel({
       url: this._serverUrl,
@@ -23,4 +29,12 @@ export class GetCounselorService extends HttpServiceBase {
    // return this.http.get<Cunselor[]>('http://localhost:3030/counselor/getCounselor');
 
   }
+  
+ addCounselor$(counselor:Cunselor):Observable<boolean>{
+  return this.post$(new HttpRequestModel({
+    url: this._serverUrl,
+    action: 'addCounselor',
+    body: counselor
+}));
+}
 }

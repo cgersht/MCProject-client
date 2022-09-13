@@ -1,7 +1,13 @@
 @import './../../../../style/elements.scss';
-
+:host{
+    .actionIcon {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        // justify-content: space-between;
+}}
 div {
-    margin-top: 1vh;
+    margin-top: 4.5vh;
     width: 6vw;
     height: 10vh;
     text-align: center;
@@ -34,19 +40,22 @@ mat-form-field {
 
 .actionIcon {
     position: relative;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
 
     .menuitem-text {
         text-align: center;
         opacity: 0;
-        margin-top: -40px;
-        font-size: 1.5rem;
+        margin-top: -60px;
+        font-size: 1.8rem;
 
     }
 
     .menuitem-img {
-        width: 4rem;
-        height: 4rem;
+        width: 5.5rem;
+        height: 5.5rem;
         // margin-right: 3rem;
     }
 

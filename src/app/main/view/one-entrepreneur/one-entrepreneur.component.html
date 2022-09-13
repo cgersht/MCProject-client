@@ -1,0 +1,61 @@
+<h1 [innerText]="entrepreneurDetails.entrepreneur.EntrepreneurCompany" class="h1"></h1>
+<div id="details">
+    <div class="oneDetail">
+        <span [innerText]="'כתובת:'" class="address"></span>&nbsp; &nbsp;
+        <div class="text details" [innerText]="entrepreneurDetails.entrepreneur.EntrepreneurCompanyAddress"></div>
+    </div>
+    <div class="oneDetail">
+        <span [innerText]="'כתובת למשלוח:'" class="address"></span>&nbsp; &nbsp;
+        <div class="text details" [innerText]="entrepreneurDetails.entrepreneur.EntrepreneurCompanyAddressToSend"></div>
+    </div>
+    <div class="oneDetail">
+        <span [innerText]="'טלפון:'" class="Mail"></span>&nbsp; &nbsp;
+        <div class="text details" [innerText]="entrepreneurDetails.entrepreneur.EntrepreneurCompanyPhone"></div>
+    </div>
+    <div class="oneDetail">
+        <span [innerText]="'פקס:'" class="Mail"></span>&nbsp; &nbsp;
+        <div class="text details" [innerText]="entrepreneurDetails.entrepreneur.EntrepreneurCompanyFax"></div>
+    </div>
+    <!-- <div class="oneDetail">
+        <span [innerText]="'מייל:'" class="Mail"></span>&nbsp; &nbsp;&nbsp; &nbsp;
+        <div class="text details" [innerText]="entrepreneurDetails.entrepreneur.EntrepreneurCompanyMail"></div>
+    </div> -->
+</div>
+<section class="section">
+    <div class="manager">
+        <div>
+            <img [src]="company">&nbsp; &nbsp;
+            <h1 id="yazam"> מנהל החברה:</h1>
+        </div>
+        <div class="text" [innerText]="entrepreneurDetails.entrepreneur.EntrepreneurName"></div>
+        <div>
+            <img [src]="phone" alt="">&nbsp; &nbsp;
+            <h1>טלפון מנהל: </h1>
+        </div>
+        <div class="text" [innerText]="entrepreneurDetails.entrepreneur.EntrepreneurPhone">
+        </div>
+        <div>
+            <img [src]="email" alt="email">&nbsp; &nbsp;
+            <h1>מייל מנהל: </h1>
+        </div>
+        <div class="text" [innerText]="entrepreneurDetails.entrepreneur.EntrepreneurMail"></div>
+    </div>
+    <div class="SecretaryDetalis">
+        <div>
+            <img [src]="secretary" alt="">&nbsp; &nbsp;
+            <h1>מזכירה ראשית: </h1>
+        </div>
+        <div class="text" [innerText]="entrepreneurDetails.entrepreneur.EntrepreneurSecretary"></div>
+        <div>
+            <img [src]="phone">&nbsp; &nbsp;
+            <h1 id="yazam">טלפון מזכירה ראשית: </h1>
+        </div>
+        <div class="text" [innerText]="entrepreneurDetails.entrepreneur.EntrepreneurSecretaryPhone"></div>
+
+        <div>
+            <img [src]="email">&nbsp; &nbsp;
+            <h1 id="yazam">מייל מזכירה ראשית: </h1>
+        </div>
+        <div class="text" [innerText]="entrepreneurDetails.entrepreneur.EntrepreneurSecretaryMail"></div>
+    </div>
+</section>

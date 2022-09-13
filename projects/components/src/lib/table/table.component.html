@@ -1,5 +1,5 @@
  
-<div class="mat-elevation-z8">
+<div class="mat-elevation-z8 mat-table">
   <mat-table [dataSource]="dataSource" >
   <ng-container *ngFor="let column of columns" [matColumnDef]=  "column.name">
  
@@ -14,10 +14,10 @@
     <mat-row *matRowDef="let row; columns: displayedColumns;" (dblclick)="getRecord(row)"></mat-row>
   
   </mat-table>  
-  <!-- <mat-paginator  [pageSizeOptions]="[5, 10, 20]"  showFirstLastButtons ></mat-paginator>   -->
 
+<!-- <div class="paginator">
+  <mat-paginator  [pageSizeOptions]="[5, 10, 20]"  showFirstLastButtons ></mat-paginator>  
+  </div> -->
 </div>
-<div class="actions">
-  <button class="newButton" mat-stroked-button color="primary" [innerText]="'חדש'" (click)="nnn()"> </button>
-</div>
+
  

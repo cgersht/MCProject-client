@@ -1,9 +1,7 @@
 import { Component, OnInit, Input, ViewChild, ViewEncapsulation, OnChanges, SimpleChanges, Output, EventEmitter } from '@angular/core';
 import { Column } from 'types'; 
-import { MatDialog, MatTableDataSource } from '@angular/material';
-import {MatPaginator} from '@angular/material/paginator';
-import { PaymentComponent } from 'src/app/main/view/payment/payment.component';
-import { PaymentModule } from 'src/app/main/view/payment/payment.module';
+import { MatDialog, MatPaginator, MatTableDataSource } from '@angular/material';
+
  
 
 @Component({
@@ -13,7 +11,6 @@ import { PaymentModule } from 'src/app/main/view/payment/payment.module';
   encapsulation:ViewEncapsulation.None
 })
 export class TableComponent implements OnInit, OnChanges {
- 
   @Input() columns:Column[];
   @Input() rows:any[];
   // @Input() tableType:tableTypeEnum;
@@ -24,7 +21,9 @@ export class TableComponent implements OnInit, OnChanges {
     
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
-  constructor(public dialog: MatDialog) { }
+  constructor(
+    public dialog: MatDialog
+    ) { }
 
   ngOnInit() {
     setTimeout(() => {
@@ -33,7 +32,7 @@ export class TableComponent implements OnInit, OnChanges {
       
     
      this.dataSource = new MatTableDataSource<any>(this.rows);
-    //this.dataSource.paginator = this.paginator;
+    this.dataSource.paginator = this.paginator;
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -48,18 +47,12 @@ export class TableComponent implements OnInit, OnChanges {
       this.dbClick.emit(row);   
   }
 
-  nnn(){
-    // switch(this.tableType){
-      // case tableTypeEnum.Project:
-    console.log("trdfghjkhj");
+  //  nnn(){
+  //   // switch(this.tableType){
+  //     // case tableTypeEnum.Project:
+  //    console.log("trdfghjkhj");
 
-    }
-    // openDialog() {
-    //   const dialogRef = this.dialog.open(PaymentComponent);
-  
-    //   dialogRef.afterClosed().subscribe(result => {
-    //     console.log(`Dialog result: ${result}`);
-    //   });
-    // }
+  //    }
+   
 
 }

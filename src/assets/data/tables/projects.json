@@ -1,8 +1,4 @@
-[
-    {
-        "header":"חברה המבצעת", 
-        "name":"ProjectCompany"
-    },
+[   
     {
         "header":"שם הפרויקט", 
         "name":"ProjectName"
@@ -18,7 +14,9 @@
     {
         "header":"שם היזם", 
         "name":"EntrepreneurName"
+    },
+    {
+        "header":"רובע", 
+        "name":"ProjectRova"
     } 
-    
-
 ]

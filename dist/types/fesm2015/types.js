@@ -288,6 +288,16 @@ if (false) {
     Entrepreneur.prototype.EntrepreneurSecretaryPhone;
     /** @type {?|undefined} */
     Entrepreneur.prototype.EntrepreneurSecretaryMail;
+    /** @type {?|undefined} */
+    Entrepreneur.prototype.EntrepreneurCompanyFax;
+    /** @type {?|undefined} */
+    Entrepreneur.prototype.EntrepreneurCompanyPhone;
+    /** @type {?|undefined} */
+    Entrepreneur.prototype.EntrepreneurCompanyMail;
+    /** @type {?|undefined} */
+    Entrepreneur.prototype.EntrepreneurCompanyAddress;
+    /** @type {?|undefined} */
+    Entrepreneur.prototype.EntrepreneurCompanyAddressToSend;
 }
 
 /**
@@ -312,6 +322,26 @@ if (false) {
     Project.prototype.ProjectType;
     /** @type {?} */
     Project.prototype.EntrepreneurId;
+    /** @type {?} */
+    Project.prototype.ProjectRova;
+}
+
+/**
+ * @fileoverview added by tsickle
+ * Generated from: lib/model/menu.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @record
+ */
+function Menu() { }
+if (false) {
+    /** @type {?} */
+    Menu.prototype.Project;
+    /** @type {?} */
+    Menu.prototype.Cunselor;
+    /** @type {?} */
+    Menu.prototype.Entrepreneur;
 }
 
 /**

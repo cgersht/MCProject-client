@@ -1,6 +1,7 @@
 import { Injectable, ɵɵdefineInjectable, Component, NgModule, Pipe } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GetOptionsService } from 'services';
+import { FormsModule } from '@angular/forms';
 
 /**
  * @fileoverview added by tsickle
@@ -98,6 +99,65 @@ if (false) {
 
 /**
  * @fileoverview added by tsickle
+ * Generated from: lib/pipes/has-errors.pipe.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+class HasErrorsPipe {
+    /**
+     * @param {?} formGroup
+     * @param {?} controlName
+     * @return {?}
+     */
+    transform(formGroup, controlName) {
+        return !!Object.keys(formGroup.controls[controlName].errors).length;
+    }
+}
+HasErrorsPipe.decorators = [
+    { type: Pipe, args: [{ name: 'hasErrors' },] }
+];
+
+/**
+ * @fileoverview added by tsickle
+ * Generated from: lib/pipes/get-error.pipe.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+class GetErrorPipe {
+    /**
+     * @param {?} errors
+     * @return {?}
+     */
+    transform(errors) {
+        if (!errors) {
+            return [];
+        }
+        /** @type {?} */
+        let errorsToDisplay = [];
+        Object.keys(errors).forEach((/**
+         * @param {?} error
+         * @return {?}
+         */
+        error => {
+            switch (error) {
+                case 'required':
+                    errorsToDisplay = [...errorsToDisplay, 'שדה חובה'];
+                    break;
+                case 'invalidEmailAddress':
+                    errorsToDisplay = [...errorsToDisplay, 'כתובת אמייל לא נכונה'];
+                    break;
+                case 'maxlength':
+                    errorsToDisplay = [...errorsToDisplay, 'מספר תווים לא תקין'];
+                    break;
+            }
+        }));
+        return errorsToDisplay;
+    }
+}
+GetErrorPipe.decorators = [
+    { type: Pipe, args: [{ name: 'getError' },] }
+];
+
+/**
+ * @fileoverview added by tsickle
  * Generated from: lib/pipes/all-pipes.module.ts
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
@@ -105,11 +165,14 @@ class AllPipesModule {
 }
 AllPipesModule.decorators = [
     { type: NgModule, args: [{
-                declarations: [GetImgPathPipe],
+                declarations: [GetImgPathPipe, HasErrorsPipe, GetErrorPipe],
                 imports: [
-                    CommonModule
+                    CommonModule,
+                    FormsModule
                 ],
                 exports: [GetImgPathPipe,
+                    HasErrorsPipe,
+                    GetErrorPipe,
                 ]
             },] }
 ];
@@ -126,5 +189,5 @@ AllPipesModule.decorators = [
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
-export { AllPipesModule, GetImgPathPipe, PipesComponent, PipesModule, PipesService };
+export { AllPipesModule, PipesComponent, PipesModule, PipesService, GetImgPathPipe as ɵa, HasErrorsPipe as ɵb, GetErrorPipe as ɵc };
 //# sourceMappingURL=pipes.js.map

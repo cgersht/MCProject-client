@@ -1,9 +1,30 @@
-lib-table {
+@import '../../../../style/elements.scss';
+:host{
     display: flex;
-    flex: 1 1 auto !important;
-    margin-top: 260px;
-
+    // flex:1 1 auto;
+    height: max-content !important;
+    width: max-content !important;
+    .dropdown{     
+        // top:-200px;      
+        height:80px;
+        flex:0 0 auto;
+        justify-content: flex-start;
+     }
+     span {
+        position: relative;
+        flex: 1 1 auto;
+        font-size: 2rem;
+        flex-direction: row !important;
+        border: 2.5px $dark-gray dotted;
+        color: $dark-gray;
+    }
+    
 }
-
-// .mat-elevation-z8 {
-//   }
+.div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+p{
+ visibility: hidden;
+}

@@ -1,6 +1,7 @@
 @import './../../../style/elements.scss';
 :host{
- 
+     
+    display: flex;
         section{
             width:79vw;
             height: 95vh;
@@ -10,26 +11,35 @@
             display:flex;
             flex-direction:column ;
         }
-        lib-table{
-            width: 150% ;
-        }
-      
-        .dropdown{           
+        // app-cunselors{ 
+        // //  bottom: -200px;
+        // }
+       
+        .dropdown{  
+           position: absolute; 
+           bottom: 80vh;        
            height:80px;
            flex:0 0 auto;
            justify-content: flex-start;
         }
-        .views{
-            flex:1 1 auto;
-            height: max-content !important;
-            width: max-content !important;
+        // .views{
+        //     flex:1 1 auto;
+        //     height: max-content !important;
+        //     width: max-content !important;
            
-        }
-        
-   
+        // }   
         .cl{
             width: 150px;
         }
+        .newButton{
+            top: 250px;
+            right:450px;
+          }
+          .actions{
+              flex: 0 0 auto;
+              box-sizing: border-box;
+              position: absolute;
+          }
 }
 ::ng-deep .mat-select-panel{
     display:flex;
@@ -44,3 +54,15 @@ app-date-and-clock{
  font-family: 'Brush Script MT', cursive;
  color: rgb(9, 51, 135);
 }
+
+// app-entrepreneur{
+//     display: flex;
+//     flex-direction: column;
+//     flex-wrap: wrap !important;
+//     // border: 3px dotted $dark-gray;
+//     // color: $dark-gray;
+//     font-size: 2.5rem;
+//     // justify-content: space-around;
+//     // align-items: center;
+//     margin-right: 2rem;
+// }

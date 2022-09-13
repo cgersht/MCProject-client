@@ -4,8 +4,9 @@ import { TableComponent } from './table.component';
 import {MatTableModule} from '@angular/material/table';
 import { MatButtonModule, MatDialogModule, MatPaginatorModule } from '@angular/material';
 import { DirectivesModule } from 'directives';
-// import { PaymentModule } from 'src/app/main/view/payment/payment.module';
-// import { PaymentComponent } from 'src/app/main/view/payment/payment.component';
+import { FormsModule } from '@angular/forms';
+// import { AddProjectModule } from 'src/app/main/view/add-project/add-project.module';
+import { ClockModule } from '../clock/clock.module';
 
 
 @NgModule({
@@ -17,9 +18,9 @@ import { DirectivesModule } from 'directives';
     MatButtonModule,
     DirectivesModule,
     MatDialogModule,
-    // PaymentModule
+    FormsModule,
+    ClockModule,
   ],
-  // entryComponents:[PaymentComponent],
-  exports:[TableComponent]
+  exports:[TableComponent],
 })
 export class TableModule { }

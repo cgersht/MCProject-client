@@ -13,8 +13,6 @@ export class GetProjectService extends HttpServiceBase {
     return `${this.config.ips.servicePath}project/`;
   }
 
-
-
   getProjectList$(): Observable<Project[]> {
     return this.get$(new HttpRequestModel({
       url: this._serverUrl,
@@ -23,7 +21,7 @@ export class GetProjectService extends HttpServiceBase {
     // return this.http.get<Project[]>('localhost:3030/project/getProject');
   }
 
- addProject$(project):Observable<boolean>{
+ addProject$(project:Project):Observable<boolean>{
     return this.post$(new HttpRequestModel({
       url: this._serverUrl,
       action: 'addProject',

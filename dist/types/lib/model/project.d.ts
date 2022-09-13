@@ -5,4 +5,5 @@ export interface Project {
     ProjectAdress: string;
     ProjectType: number;
     EntrepreneurId: string;
+    ProjectRova: string;
 }

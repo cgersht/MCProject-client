@@ -1,8 +1,11 @@
 import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
+import { MatDialog } from '@angular/material';
+import { Menu } from 'projects/types/src/public-api';
 import { SelectedNevigationService } from '../services/selected-nevigation.service';
-// import { CunselorsComponent } from './cunselors/cunselors.component';
-
-
+import { SubscriptionService } from '../services/subscription.service';
+import { AddCounselorComponent } from './add-counselor/add-counselor.component';
+import { AddEntrepreneurComponent } from './add-entrepreneur/add-entrepreneur.component';
+import { AddProjectComponent } from './add-project/add-project.component';
 
 @Component({
   selector: 'app-view',
@@ -11,35 +14,38 @@ import { SelectedNevigationService } from '../services/selected-nevigation.servi
 })
 export class ViewComponent implements OnInit {
   items: any = [];
-  @Input() oneProjectfromProjects; 
-  @Input() children;
-  @Output() change: EventEmitter<any> = new EventEmitter();
-  @Output() sendProjectName: EventEmitter<any> = new EventEmitter();
-  @Output() projectsToProject: EventEmitter<any> = new EventEmitter();
-   
-  selectedOption = '';
+  menu:Menu
+  componnent=''
+  // selectedOption = '';
   project = {};
-  // children=this.selectedService.children
   constructor(
-    public selectedService: SelectedNevigationService
-    ) { }
+    public selectedService: SelectedNevigationService,
+    private dialog: MatDialog,
+    private subscriptionService: SubscriptionService,
+  ) { }
 
-  ngOnInit() {
-     
-  }
-  
+  ngOnInit() {}
   selectedName(item) {
     console.log(item + "    item");
-    this.selectedOption = item;    
+    this.selectedService.selectedCounselor = item;
   }
-
-  initSelectedProject(project) {
-    this.selectedService.updateSelected('oneProject');
-   
-    this.selectedService.project = project;
-    console.log(project);
-    console.log("im in initSelectedProject");
-    this.sendProjectName.emit(this.project)
+  openDialog() {
+    switch (this.selectedService.selected) {
+       case 'פרויקטים':
+           this.subscriptionService.dialogRef = this.dialog.open(AddProjectComponent)
+               break;
+      case 'יועצים':
+           this.subscriptionService.dialogRef = this.dialog.open(AddCounselorComponent)
+               break;
+      case 'יזמים':
+          this.subscriptionService.dialogRef = this.dialog.open(AddEntrepreneurComponent, {
+            height: '300px',
+            width: '300px',
+            disableClose: true 
+          })
+               break; 
+      default:
+               break;
+} 
   }
-
 }

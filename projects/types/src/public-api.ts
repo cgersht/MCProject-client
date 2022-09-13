@@ -13,4 +13,5 @@ export * from './lib/model/column';
 export * from './lib/model/settings';
 export * from './lib/model/entrepreneur';
 export * from './lib/model/project';
+export * from './lib/model/menu';
 

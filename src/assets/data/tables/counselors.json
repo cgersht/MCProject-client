@@ -14,9 +14,5 @@
     {
         "header":"מנהל המשרד", 
         "name":"CounselorOfficeManager"
-    } ,
-    {
-        "header":"סוג המשרד", 
-        "name":"CounselorOfficeType"
-    }
+    }  
 ]

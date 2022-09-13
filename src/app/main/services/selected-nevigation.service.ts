@@ -8,6 +8,7 @@ export class SelectedNevigationService {
   selected=''; 
   project:Project;
   entrepreneur:Entrepreneur;
+  selectedCounselor;
   counselor:Cunselor;
   children:[]
   constructor() { }

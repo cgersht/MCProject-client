@@ -1,10 +1,12 @@
 <section>
     <app-logo> </app-logo>
     <div *ngFor="let item of menuOption">
-        <app-button-menu [option]="item" (click)="changeSelected(item)" [selectingProject]="selectChangingProject">
-        </app-button-menu>
-        <div class="div">
-            <span *ngIf="selectedService[item.displayKey]" class="pn" (click)="onClick()" [innerText]="selectedService[item.displayKey].ProjectName"> </span>
+        <app-button-menu [option]="item" (click)="changeSelected(item)"></app-button-menu> 
+                <div class="project">
+            <span *ngIf="selectedService[item.displayKey] "  [innerText]="selectedService[item.displayKey].ProjectName"> </span>
         </div>
+        <!-- <div class="entrepreneur">
+            <span *ngIf="selectedService[item.displayKey] && selectedService.selected=='oneEntrepreneur'"  (click)="onClick()" [innerText]="selectedService[item.displayKey]?.EntrepreneurSecretary"> </span>
+        </div> -->
     </div>
 </section>
