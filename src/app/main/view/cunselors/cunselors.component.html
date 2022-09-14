@@ -2,10 +2,11 @@
  <!-- <lib-table [columns]="columns$ | async" 
   [rows]="cunselors$ | async" ></lib-table>  -->
  <div class="div" >
-    <p>{{cunselors$ | async}}</p>
 <div *ngFor="let c of cunselorsOfficeType$ | async">
-    <div class="counselor" (click)="getCounselorsOfficeTypeDetalis(c.TypeName)">
+    <div class="counselor" (click)="getCounselorsOfficeTypeDetalis(c)">
         <span [innerText]="c.TypeName"></span> &nbsp;&nbsp;&nbsp;        
     </div>
 </div>
 </div>
+<p>{{cunselors$ | async}}</p>
+

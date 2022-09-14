@@ -17,6 +17,8 @@ import { FormsModule } from '@angular/forms';
 import { AddCounselorModule } from './add-counselor/add-counselor.module';
 import { AddEntrepreneurModule } from './add-entrepreneur/add-entrepreneur.module';
 import { OneEntrepreneurModule } from './one-entrepreneur/one-entrepreneur.module';
+import { OneCounselorModule } from './one-counselor/one-counselor.module';
+import { CounselorsByTypeModule } from './counselors-by-type/counselors-by-type.module';
 
 
 @NgModule({
@@ -43,6 +45,8 @@ import { OneEntrepreneurModule } from './one-entrepreneur/one-entrepreneur.modul
     AddCounselorModule,
     AddEntrepreneurModule,
     OneEntrepreneurModule,
+    OneCounselorModule,
+    CounselorsByTypeModule
   ],
   exports: [ViewComponent],
 

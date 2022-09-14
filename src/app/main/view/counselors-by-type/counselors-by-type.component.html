@@ -1,0 +1,10 @@
+<div class="div">
+    <div *ngFor="let c of counselors$|async">
+        <div class="counselor">
+            <span [innerText]="c.CounselorOfficeName" 
+            (click)="getCounselorOfficeDetails(c.CounselorOfficeName)"
+            ></span> &nbsp;&nbsp;&nbsp;
+        </div>
+    </div>
+</div>
+<span class="hide">{{entrepreneur$|async}}</span>

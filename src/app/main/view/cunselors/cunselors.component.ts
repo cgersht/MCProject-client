@@ -33,17 +33,16 @@ export class CunselorsComponent implements OnInit, OnChanges {
     }
   }
  
-
-  
   ngOnInit() {
    this.cunselors$ = this.counselorService.getCounselorList$('') ; 
    this.cunselorsOfficeType$ = this.counselorService.getCounselorOfficeTypeList$() ; 
    this.columns$ = this.readColumns.getColumns$(environment.counselorsTableColumns)
    
   }
-  getCounselorsOfficeTypeDetalis(type){
-    console.log(type,"      type");    
-    // const currentValue  = type;
-    this.cunselors$ = this.counselorService.getCounselorList$(type); 
+  getCounselorsOfficeTypeDetalis(counselorType){
+    console.log(counselorType.TypeName,"      type");    
+    this.selectedService.counselorType=counselorType.TypeName
+    this.selectedService.updateSelected('CounselorsByType')
+    this.cunselors$ = this.counselorService.getCounselorList$(counselorType.TypeName); 
   }
 }

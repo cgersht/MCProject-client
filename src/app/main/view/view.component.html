@@ -10,17 +10,19 @@
   </div> -->
   <div class="views">
 <app-date-and-clock></app-date-and-clock>
-    <!-- <app-payment *ngIf="selectedService.selected=='תשלומים'"></app-payment> -->
     <app-projects *ngIf="selectedService.selected=='פרויקטים'"  ></app-projects>
     <app-cunselors *ngIf="selectedService.selected=='יועצים'" [selectedCunselor]="selectedService.selectedCounselor"></app-cunselors>
     <app-entrepreneur *ngIf="selectedService.selected=='יזמים'"></app-entrepreneur>
     <app-project *ngIf="selectedService.selected=='oneProject'"></app-project>
     <app-one-entrepreneur *ngIf="selectedService.selected=='oneEntrepreneur'"></app-one-entrepreneur>
-
+    <app-counselors-by-type *ngIf="selectedService.selected=='CounselorsByType'"></app-counselors-by-type>
+    <app-one-counselor *ngIf="selectedService.selected=='OneCounselor'"></app-one-counselor>
   </div>
   <div class="actions">
     <button class="newButton" *ngIf="selectedService.selected&&selectedService.selected!='oneProject'
-    &&selectedService.selected!='oneEntrepreneur'" mat-stroked-button color="primary" [innerText]="'חדש'" (click)="openDialog()"></button>
+    &&selectedService.selected!='oneEntrepreneur'&&selectedService.selected!='OneCounselor'"
+     mat-stroked-button color="primary" [innerText]="'חדש'" (click)="openDialog()">
+    </button>
   </div>
 </section>
 

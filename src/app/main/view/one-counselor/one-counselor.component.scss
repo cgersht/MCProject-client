@@ -1,0 +1,20 @@
+@import '../../../../style//elements.scss';
+:host{
+    .details{
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    max-height: 100%;
+    // flex-wrap: wrap !important;
+    }
+span {
+    padding: 5px;
+    // border: 3px dotted $dark-gray;
+    font-size: 2.5rem;
+    color: $dark-gray;
+}
+
+.hide {
+    visibility: hidden;
+}
+}
