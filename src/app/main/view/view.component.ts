@@ -39,9 +39,9 @@ export class ViewComponent implements OnInit {
                break;
       case 'יזמים':
           this.subscriptionService.dialogRef = this.dialog.open(AddEntrepreneurComponent, {
-            // height: '300px',
-            // width: '300px',
-            // disableClose: true 
+            height: '700px',
+            width: '550px',
+            disableClose: true ,
           })
                break; 
       default:
