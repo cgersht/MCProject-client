@@ -32,14 +32,22 @@ export class ViewComponent implements OnInit {
   openDialog() {
     switch (this.selectedService.selected) {
        case 'פרויקטים':
-           this.subscriptionService.dialogRef = this.dialog.open(AddProjectComponent)
+           this.subscriptionService.dialogRef = this.dialog.open(AddProjectComponent, {
+            height: '630px',
+            width: '550px',
+            disableClose: true ,
+          })
                break;
       case 'יועצים':
-           this.subscriptionService.dialogRef = this.dialog.open(AddCounselorComponent)
+           this.subscriptionService.dialogRef = this.dialog.open(AddCounselorComponent, {
+            height: '630px',
+            width: '550px',
+            disableClose: true ,
+          })
                break;
       case 'יזמים':
           this.subscriptionService.dialogRef = this.dialog.open(AddEntrepreneurComponent, {
-            height: '600px',
+            height: '630px',
             width: '550px',
             disableClose: true ,
           })

@@ -511,6 +511,10 @@ var GetProjectService = /** @class */ (function (_super) {
     /** @nocollapse */ GetProjectService.ngInjectableDef = ɵɵdefineInjectable({ factory: function GetProjectService_Factory() { return new GetProjectService(ɵɵinject(HttpClient), ɵɵinject(ConfigurationService)); }, token: GetProjectService, providedIn: "root" });
     return GetProjectService;
 }(HttpServiceBase));
+if (false) {
+    /** @type {?} */
+    GetProjectService.prototype.selectedProject;
+}
 
 /**
  * @fileoverview added by tsickle

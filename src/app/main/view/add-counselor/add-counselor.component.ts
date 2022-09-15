@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { GetCounselorService } from 'services';
+import { environment } from 'src/environments/environment';
 import { Entrepreneur } from 'types';
 import { SubscriptionService } from '../../services/subscription.service';
 
@@ -12,7 +13,8 @@ import { SubscriptionService } from '../../services/subscription.service';
   styleUrls: ['./add-counselor.component.scss']
 })
 export class AddCounselorComponent implements OnInit {
-
+  xImg={imgPath:environment.imgesPath,img: '/close.png'};
+  x=this.xImg.imgPath+this.xImg.img
   formGroup: FormGroup;
   counselorType=[
               {value: 1, viewValue: 'נגישות'},
@@ -50,7 +52,10 @@ export class AddCounselorComponent implements OnInit {
 
     });
   }
-  
+  cancel(){
+    console.log("cancel");
+    this.subscriptionService.dialogRef.close()
+  }
   emailValidator(control) {
     if (
       control.value.match(

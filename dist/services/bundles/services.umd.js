@@ -707,6 +707,10 @@
         /** @nocollapse */ GetProjectService.ngInjectableDef = core.ɵɵdefineInjectable({ factory: function GetProjectService_Factory() { return new GetProjectService(core.ɵɵinject(http.HttpClient), core.ɵɵinject(ConfigurationService)); }, token: GetProjectService, providedIn: "root" });
         return GetProjectService;
     }(HttpServiceBase));
+    if (false) {
+        /** @type {?} */
+        GetProjectService.prototype.selectedProject;
+    }
 
     /**
      * @fileoverview added by tsickle

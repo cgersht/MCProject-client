@@ -417,6 +417,10 @@ GetProjectService.decorators = [
             },] }
 ];
 /** @nocollapse */ GetProjectService.ngInjectableDef = ɵɵdefineInjectable({ factory: function GetProjectService_Factory() { return new GetProjectService(ɵɵinject(HttpClient), ɵɵinject(ConfigurationService)); }, token: GetProjectService, providedIn: "root" });
+if (false) {
+    /** @type {?} */
+    GetProjectService.prototype.selectedProject;
+}
 
 /**
  * @fileoverview added by tsickle

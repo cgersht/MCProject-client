@@ -8,7 +8,7 @@ import { HttpServiceBase } from './http-service.base';
   providedIn: 'root'
 })
 export class GetProjectService extends HttpServiceBase {
-
+selectedProject:any;
   private get _serverUrl(): string {
     return `${this.config.ips.servicePath}project/`;
   }

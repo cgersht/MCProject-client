@@ -28,5 +28,7 @@ export class MenuComponent implements OnInit {
   clicked(){
     console.log("im in clicked");   
   }
-  
+  projectDetails(){
+    this.selectedService.updateSelected('oneProject')
+  }
 }
