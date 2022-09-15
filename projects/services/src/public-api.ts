@@ -2,8 +2,6 @@
  * Public API Surface of services
  */
 
-import { from } from 'rxjs';
-
 export * from './lib/services.service';
 export * from './lib/services.component';
 export * from './lib/services.module';

@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
-import { GetEntrepreneurService } from 'services';
+import { GetEntrepreneurService, ValidatorsService } from 'services';
+import { environment } from 'src/environments/environment';
 import { Entrepreneur } from 'types';
 import { SubscriptionService } from '../../services/subscription.service';
 
@@ -12,6 +13,8 @@ import { SubscriptionService } from '../../services/subscription.service';
   styleUrls: ['./add-entrepreneur.component.scss']
 })
 export class AddEntrepreneurComponent implements OnInit {
+  xImg={imgPath:environment.imgesPath,img: '/close.png'};
+  x=this.xImg.imgPath+this.xImg.img
   formGroup: FormGroup;
   entrepreneur$:Observable<Entrepreneur[]>;
   entrepreneurs:Entrepreneur[]=[];
@@ -19,6 +22,7 @@ export class AddEntrepreneurComponent implements OnInit {
     private formBuilder: FormBuilder,
     private subscriptionService: SubscriptionService,
     private entrepreneurService:GetEntrepreneurService,
+    private validatorsService:ValidatorsService,
   ) { }
 
   ngOnInit() {
@@ -38,39 +42,14 @@ export class AddEntrepreneurComponent implements OnInit {
       EntrepreneurSecretaryMail:['',Validators.required ],
       EntrepreneurCompanyAddress:['',Validators.required ],
       EntrepreneurCompanyAddressToSend:['',Validators.required ],
-      EntrepreneurCompanyPhone:['',[Validators.required,this.phoneValidator]],
-      EntrepreneurCompanyMail:['',[Validators.required,this.emailValidator],[0-9] ],
+      EntrepreneurCompanyPhone:['',[Validators.required,this.validatorsService.phoneValidator]],
+      EntrepreneurCompanyMail:['',[Validators.required,],this.validatorsService.emailValidator[0-9] ],
       EntrepreneurCompanyFax:['',Validators.required ],
  });  
   }
-  // getEntrepreneurs(){
-  //    this.entrepreneur$ = this.entrepreneurService.getEntrepreneurList$()
-  //   .pipe(
-  //     map(entrepreneurs=>this.entrepreneurs=entrepreneurs),
-  //     tap(entrepreneurs => console.log('entrepreneurs:' , entrepreneurs)),
-  //  )
-  // }
-  phoneValidator(control){
-    console.log(control);    
-    if(control.value.length){
-      if(control.value.length>7&&control.value.length<13){
-        if(control.value.match(/^[0-9]+(\.?[0-9]+)?$/))
-        return null;
-      } 
-      else {
-        return { invalidPhone: true };
-    }
-  }
-}
-  emailValidator(control) {
-    if (
-      control.value.match(
-        /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)
-    ) {
-      return null;
-    } else {
-      return { invalidEmailAddress: true };
-    }
+  cancel(){
+    console.log("cancel");
+    this.subscriptionService.dialogRef.close()
   }
   save() {
     console.log('value: ', this.formGroup.value);

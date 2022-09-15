@@ -2,16 +2,14 @@
     display: flex;
     flex-direction: column;
     border: 5px darkcyan dashed ;
-    // padding: 10px;
 
     .hide{
         visibility: hidden;
          }
 
-    // .cdk-visually-hidden cdk-focus-trap-anchor {
-    //     // visibility: visible;
-    //     // background-color: #c00000;
-    // }
+ .buttons{
+    top: 5px;
+ }
 
     form {
         // width: 45vw !important;
@@ -74,5 +72,11 @@
     // .save{
     //     // cursor: not-allowed;
     // }
-   
-}
+ 
+} 
+ img{
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-bottom:55vh ;
+    right:10vw ;
+   }
