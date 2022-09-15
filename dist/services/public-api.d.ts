@@ -8,3 +8,4 @@ export * from './lib/api/get--counselor.service';
 export * from './lib/api/get-project.service';
 export * from './lib/api/get-entrepreneur.service';
 export * from './lib/api/entrepreneur-details.service';
+export * from './lib/api/validators.service';

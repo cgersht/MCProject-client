@@ -601,6 +601,61 @@ if (false) {
 
 /**
  * @fileoverview added by tsickle
+ * Generated from: lib/api/validators.service.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+var ValidatorsService = /** @class */ (function () {
+    function ValidatorsService() {
+    }
+    /**
+     * @param {?} control
+     * @return {?}
+     */
+    ValidatorsService.prototype.phoneValidator = /**
+     * @param {?} control
+     * @return {?}
+     */
+    function (control) {
+        console.log(control);
+        if (control.value.length) {
+            if (control.value.length > 7 && control.value.length < 13) {
+                if (control.value.match(/^[0-9]+(\.?[0-9]+)?$/))
+                    return null;
+            }
+            else {
+                return { invalidPhone: true };
+            }
+        }
+    };
+    /**
+     * @param {?} control
+     * @return {?}
+     */
+    ValidatorsService.prototype.emailValidator = /**
+     * @param {?} control
+     * @return {?}
+     */
+    function (control) {
+        if (control.value.match(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)) {
+            return null;
+        }
+        else {
+            return { invalidEmailAddress: true };
+        }
+    };
+    ValidatorsService.decorators = [
+        { type: Injectable, args: [{
+                    providedIn: 'root'
+                },] }
+    ];
+    /** @nocollapse */
+    ValidatorsService.ctorParameters = function () { return []; };
+    /** @nocollapse */ ValidatorsService.ngInjectableDef = ɵɵdefineInjectable({ factory: function ValidatorsService_Factory() { return new ValidatorsService(); }, token: ValidatorsService, providedIn: "root" });
+    return ValidatorsService;
+}());
+
+/**
+ * @fileoverview added by tsickle
  * Generated from: public-api.ts
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
@@ -611,5 +666,5 @@ if (false) {
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
-export { ConfigurationService, EntrepreneurDetailsService, GetCounselorService, GetEntrepreneurService, GetOptionsService, GetProjectService, ProjectDetailsService, ServicesComponent, ServicesModule, ServicesService, HttpServiceBase as ɵa };
+export { ConfigurationService, EntrepreneurDetailsService, GetCounselorService, GetEntrepreneurService, GetOptionsService, GetProjectService, ProjectDetailsService, ServicesComponent, ServicesModule, ServicesService, ValidatorsService, HttpServiceBase as ɵa };
 //# sourceMappingURL=services.js.map

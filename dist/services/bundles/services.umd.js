@@ -795,6 +795,61 @@
         EntrepreneurDetailsService.prototype.entrepreneur;
     }
 
+    /**
+     * @fileoverview added by tsickle
+     * Generated from: lib/api/validators.service.ts
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+    var ValidatorsService = /** @class */ (function () {
+        function ValidatorsService() {
+        }
+        /**
+         * @param {?} control
+         * @return {?}
+         */
+        ValidatorsService.prototype.phoneValidator = /**
+         * @param {?} control
+         * @return {?}
+         */
+        function (control) {
+            console.log(control);
+            if (control.value.length) {
+                if (control.value.length > 7 && control.value.length < 13) {
+                    if (control.value.match(/^[0-9]+(\.?[0-9]+)?$/))
+                        return null;
+                }
+                else {
+                    return { invalidPhone: true };
+                }
+            }
+        };
+        /**
+         * @param {?} control
+         * @return {?}
+         */
+        ValidatorsService.prototype.emailValidator = /**
+         * @param {?} control
+         * @return {?}
+         */
+        function (control) {
+            if (control.value.match(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)) {
+                return null;
+            }
+            else {
+                return { invalidEmailAddress: true };
+            }
+        };
+        ValidatorsService.decorators = [
+            { type: core.Injectable, args: [{
+                        providedIn: 'root'
+                    },] }
+        ];
+        /** @nocollapse */
+        ValidatorsService.ctorParameters = function () { return []; };
+        /** @nocollapse */ ValidatorsService.ngInjectableDef = core.ɵɵdefineInjectable({ factory: function ValidatorsService_Factory() { return new ValidatorsService(); }, token: ValidatorsService, providedIn: "root" });
+        return ValidatorsService;
+    }());
+
     exports.ConfigurationService = ConfigurationService;
     exports.EntrepreneurDetailsService = EntrepreneurDetailsService;
     exports.GetCounselorService = GetCounselorService;
@@ -805,6 +860,7 @@
     exports.ServicesComponent = ServicesComponent;
     exports.ServicesModule = ServicesModule;
     exports.ServicesService = ServicesService;
+    exports.ValidatorsService = ValidatorsService;
     exports.ɵa = HttpServiceBase;
 
     Object.defineProperty(exports, '__esModule', { value: true });
