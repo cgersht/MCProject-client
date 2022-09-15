@@ -14,9 +14,10 @@ import { SubscriptionService } from '../../services/subscription.service';
 })
 export class AddProjectComponent implements OnInit {
   formGroup: FormGroup;
+  rova=['א','ב','ג','ד','ה','ו','ז','ח','ט','י','יא','יב','יג','יד','טו','טז','יז','סיטי']
   projectType=[
-              {value: 1, viewValue: 'תב"ע בלבד'},
-              {value: 2, viewValue: 'תב"ע + אישורים'},
+              {value: 1, viewValue: 'היתר בלבד'},
+              {value: 2, viewValue: 'בקשה לתב"ע + היתר' },
               ];
   entrepreneur$:Observable<Entrepreneur[]>;
   entrepreneurs:Entrepreneur[]=[];
@@ -51,16 +52,7 @@ export class AddProjectComponent implements OnInit {
       tap(entrepreneurs => console.log('entrepreneurs:' , entrepreneurs)),
    )
   }
-  emailValidator(control) {
-    if (
-      control.value.match(
-        /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)
-    ) {
-      return null;
-    } else {
-      return { invalidEmailAddress: true };
-    }
-  }
+  
   save() {
     console.log('value: ', this.formGroup.value);
     console.log('is dirty? ', this.formGroup.dirty);

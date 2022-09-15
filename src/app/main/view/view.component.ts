@@ -33,7 +33,7 @@ export class ViewComponent implements OnInit {
     switch (this.selectedService.selected) {
        case 'פרויקטים':
            this.subscriptionService.dialogRef = this.dialog.open(AddProjectComponent, {
-            height: '630px',
+            height: '550px',
             width: '550px',
             disableClose: true ,
           })
