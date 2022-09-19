@@ -1,0 +1,9 @@
+<form [formGroup]="formGroup" >
+    <mat-form-field class="formLabel required matInput">
+        <input matInput type="text" placeholder=" סוג היועץ" formControlName="counselorType">
+      </mat-form-field>
+</form>
+<div class="buttons">
+    <button mat-button class="mat-button" type="submit" (click)="save()">אישור</button>
+    <button mat-button class="mat-button" type="submit" (click)="reset()">ביטול</button>
+  </div>

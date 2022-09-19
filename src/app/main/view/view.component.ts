@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material';
 import { Menu } from 'projects/types/src/public-api';
 import { SelectedNevigationService } from '../services/selected-nevigation.service';
 import { SubscriptionService } from '../services/subscription.service';
+import { AddCounselorTypeComponent } from './add-counselor-type/add-counselor-type.component';
 import { AddCounselorComponent } from './add-counselor/add-counselor.component';
 import { AddEntrepreneurComponent } from './add-entrepreneur/add-entrepreneur.component';
 import { AddProjectComponent } from './add-project/add-project.component';
@@ -15,8 +16,7 @@ import { AddProjectComponent } from './add-project/add-project.component';
 export class ViewComponent implements OnInit {
   items: any = [];
   menu: Menu
-  componnent = ''
-  // selectedOption = '';
+  component = ''
   project = {};
   constructor(
     public selectedService: SelectedNevigationService,
@@ -39,7 +39,7 @@ export class ViewComponent implements OnInit {
         })
         break;
       case 'יועצים':
-        this.subscriptionService.dialogRef = this.dialog.open(AddCounselorComponent, {
+        this.subscriptionService.dialogRef = this.dialog.open(AddCounselorTypeComponent, {
           height: '630px',
           width: '550px',
           disableClose: true,

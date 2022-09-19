@@ -19,6 +19,7 @@ import { OneEntrepreneurModule } from './one-entrepreneur/one-entrepreneur.modul
 import { OneCounselorModule } from './one-counselor/one-counselor.module';
 import { CounselorsByTypeModule } from './counselors-by-type/counselors-by-type.module';
 import { AddCounselorModule } from './add-counselor/add-counselor.module';
+import { AddCounselorTypeModule } from './add-counselor-type/add-counselor-type.module';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { AddCounselorModule } from './add-counselor/add-counselor.module';
     AddEntrepreneurModule,
     OneEntrepreneurModule,
     OneCounselorModule,
-    CounselorsByTypeModule
+    CounselorsByTypeModule,
+    AddCounselorTypeModule
   ],
   exports: [ViewComponent],
 
