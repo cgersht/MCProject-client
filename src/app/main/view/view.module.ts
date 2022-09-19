@@ -14,11 +14,11 @@ import { DateAndClockModule } from './date-and-clock/date-and-clock.module';
 import { DirectivesModule } from 'directives';
 import { AddProjectModule } from './add-project/add-project.module';
 import { FormsModule } from '@angular/forms';
-import { AddCounselorModule } from './add-counselor/add-counselor.module';
 import { AddEntrepreneurModule } from './add-entrepreneur/add-entrepreneur.module';
 import { OneEntrepreneurModule } from './one-entrepreneur/one-entrepreneur.module';
 import { OneCounselorModule } from './one-counselor/one-counselor.module';
 import { CounselorsByTypeModule } from './counselors-by-type/counselors-by-type.module';
+import { AddCounselorModule } from './add-counselor/add-counselor.module';
 
 
 @NgModule({

@@ -59,7 +59,7 @@ export class ViewComponent implements OnInit {
           disableClose: true,
         })
         break;
-        
+
       default:
         break;
     }
