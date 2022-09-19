@@ -10,7 +10,7 @@ export class SelectedNevigationService {
   entrepreneur:Entrepreneur;
   selectedCounselor;
   counselor:Cunselor;
-  counselorType:string;
+  counselorType:{TypeName:string,TypeId:number};
   children:[]
   constructor() { }
 

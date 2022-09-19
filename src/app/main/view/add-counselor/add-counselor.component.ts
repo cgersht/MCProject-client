@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
 import { GetCounselorService } from 'services';
 import { environment } from 'src/environments/environment';
-import { Entrepreneur } from 'types';
+import { SelectedNevigationService } from '../../services/selected-nevigation.service';
 import { SubscriptionService } from '../../services/subscription.service';
 
 @Component({
@@ -31,6 +30,7 @@ export class AddCounselorComponent implements OnInit {
     private formBuilder: FormBuilder,
     private subscriptionService: SubscriptionService,
     private counselorService:GetCounselorService,
+    public selectedService:SelectedNevigationService
   ) { }
 
   ngOnInit() {
@@ -42,7 +42,7 @@ export class AddCounselorComponent implements OnInit {
       CounselorOfficeName: ['', Validators.required],
       CounselorOfficeAdress: ['', [Validators.required]],
       CounselorOfficePhone: ['', Validators.required],
-      CounselorOfficeType:['',Validators.required],
+      CounselorOfficeType:[this.selectedService.counselorType.TypeId,Validators.required],
       CounselorOfficeManager:['',Validators.required],
       CounselorOfficeManagerPhone:['',Validators.required],
       CounselorOfficeManagerMail:['',Validators.required],
@@ -71,7 +71,10 @@ export class AddCounselorComponent implements OnInit {
     console.log('is dirty? ', this.formGroup.dirty);
     console.log('is valid? ', this.formGroup.valid);
     this.subscriptionService.value=this.formGroup.value;
-    this.counselorService.addCounselor$(this.formGroup.value).subscribe();
+    this.counselorService.addCounselor$(this.formGroup.value)
+    .subscribe(
+      // this.counselorService.getCounselorList$('').subscribe()
+    );
    this.reset()
   }
   reset() {

@@ -24,7 +24,7 @@ export class OneCounselorComponent implements OnInit {
 
   ngOnInit() {  
     this.getEntrepreneurs();  
-  this.counselors$ = this.counselorService.getCounselorList$(this.selectedService.counselorType)
+  this.counselors$ = this.counselorService.getCounselorList$(this.selectedService.counselorType.TypeName)
   .pipe(
     map(result=>this.counselors=result),
     tap(result => console.log('counselors:' , result))    

@@ -7,7 +7,7 @@
     <input matInput type="search" placeholder="כתובת חברת הייעוץ" formControlName="CounselorOfficeAdress">
   </mat-form-field>
   <mat-form-field class="formLabel required matInput">
-    <mat-select  formControlName="CounselorOfficeType" [innerText]="selectedService.counselorType.name">
+    <mat-select  formControlName="CounselorOfficeType" [innerText]="selectedService.counselorType.TypeName">
       <mat-option *ngFor="let t of counselorType" [value]="t.value" [innerText]="t.viewValue">
       </mat-option>
     </mat-select>

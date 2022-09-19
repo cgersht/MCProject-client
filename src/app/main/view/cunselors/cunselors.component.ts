@@ -40,8 +40,10 @@ export class CunselorsComponent implements OnInit, OnChanges {
    
   }
   getCounselorsOfficeTypeDetalis(counselorType){
-    console.log(counselorType.TypeName,"      type");    
-    this.selectedService.counselorType=counselorType.TypeName
+    console.log(counselorType,"      type");    
+    this.selectedService.counselorType=counselorType
+    console.log(this.selectedService.counselorType,"type name");
+    
     this.selectedService.updateSelected('CounselorsByType')
     this.cunselors$ = this.counselorService.getCounselorList$(counselorType.TypeName); 
   }
