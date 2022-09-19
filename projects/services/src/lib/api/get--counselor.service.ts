@@ -5,7 +5,6 @@ import { HttpServiceBase } from './http-service.base';
 
 @Injectable({ providedIn: 'root' })
 
-
 export class GetCounselorService extends HttpServiceBase {
 
   private get _serverUrl(): string {

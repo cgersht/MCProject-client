@@ -1,7 +1,12 @@
 <section class="details">
-<span [innerText]="selectedService.counselor.CounselorOfficeManager"></span> &nbsp;&nbsp;&nbsp; 
-<span [innerText]="selectedService.counselor.CounselorOfficeManagerPhone"></span> &nbsp;&nbsp;&nbsp; 
-<span [innerText]="selectedService.counselor.CounselorOfficeManagerMail"></span> &nbsp;&nbsp;&nbsp; 
-<span [innerText]="selectedService.counselor.CounselorOfficeMainSecretaryMail"></span> &nbsp;&nbsp;&nbsp; 
-
+<span [innerText]="'שם המנהל :'" class="span"></span>
+<span class="detail" [innerText]="selectedService.counselor.CounselorOfficeManager"></span> &nbsp;&nbsp;&nbsp; 
+<span [innerText]="'טלפון המנהל :'" class="span"></span>
+<span class="detail" [innerText]="selectedService.counselor.CounselorOfficeManagerPhone"></span> &nbsp;&nbsp;&nbsp; 
+<span [innerText]="'מייל המנהל :'" class="span"></span>
+<span class="detail" [innerText]="selectedService.counselor.CounselorOfficeManagerMail"></span> &nbsp;&nbsp;&nbsp; 
+<span [innerText]="'מייל מזכירה ראשית :'" class="span"></span>
+<span class="detail" [innerText]="selectedService.counselor.CounselorOfficeMainSecretaryMail"></span> &nbsp;&nbsp;&nbsp; 
+<span [innerText]="'כתובת המשרד :'" class="span"></span>
+<span class="detail" [innerText]="selectedService.counselor.CounselorOfficeAdress"></span> &nbsp;&nbsp;&nbsp;
 </section>

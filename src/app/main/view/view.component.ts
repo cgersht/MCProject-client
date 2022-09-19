@@ -14,8 +14,8 @@ import { AddProjectComponent } from './add-project/add-project.component';
 })
 export class ViewComponent implements OnInit {
   items: any = [];
-  menu:Menu
-  componnent=''
+  menu: Menu
+  componnent = ''
   // selectedOption = '';
   project = {};
   constructor(
@@ -24,36 +24,44 @@ export class ViewComponent implements OnInit {
     private subscriptionService: SubscriptionService,
   ) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
   selectedName(item) {
     console.log(item + "    item");
     this.selectedService.selectedCounselor = item;
   }
   openDialog() {
     switch (this.selectedService.selected) {
-       case 'פרויקטים':
-           this.subscriptionService.dialogRef = this.dialog.open(AddProjectComponent, {
-            height: '550px',
-            width: '550px',
-            disableClose: true ,
-          })
-               break;
+      case 'פרויקטים':
+        this.subscriptionService.dialogRef = this.dialog.open(AddProjectComponent, {
+          height: '550px',
+          width: '550px',
+          disableClose: true,
+        })
+        break;
       case 'יועצים':
-           this.subscriptionService.dialogRef = this.dialog.open(AddCounselorComponent, {
-            height: '630px',
-            width: '550px',
-            disableClose: true ,
-          })
-               break;
+        this.subscriptionService.dialogRef = this.dialog.open(AddCounselorComponent, {
+          height: '630px',
+          width: '550px',
+          disableClose: true,
+        })
+        break;
       case 'יזמים':
-          this.subscriptionService.dialogRef = this.dialog.open(AddEntrepreneurComponent, {
-            height: '630px',
-            width: '550px',
-            disableClose: true ,
-          })
-               break; 
+        this.subscriptionService.dialogRef = this.dialog.open(AddEntrepreneurComponent, {
+          height: '630px',
+          width: '550px',
+          disableClose: true,
+        })
+        break;
+      case 'CounselorsByType':
+        this.subscriptionService.dialogRef = this.dialog.open(AddCounselorComponent, {
+          height: '630px',
+          width: '550px',
+          disableClose: true,
+        })
+        break;
+        
       default:
-               break;
-} 
+        break;
+    }
   }
 }

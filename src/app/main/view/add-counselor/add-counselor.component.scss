@@ -1,43 +1,106 @@
-:host {
-    // width: 100%;
-    // height: 100%;
-    border: 5px darkcyan dashed ;
+// :host {
+//     // width: 100%;
+//     // height: 100%;
+//     border: 5px darkcyan dashed ;
 
-    .hide{
+//     .hide{
+//         visibility: hidden;
+//     }
+
+
+//     form {
+//         display: flex;
+//         flex-direction: column;
+
+//         .mat-button {
+//             margin-top: -60vh;
+//             width: 6vw;
+//         }
+
+//         .formLabel {
+//             margin-bottom: -2px;
+
+//             &.required {
+//                 position: relative;
+
+//                 &:after {
+//                     position: absolute;
+//                     top: 0;
+//                     left: -8px;
+//                     color: #c00000;
+//                 }
+//             }
+//         }
+
+//         //   .ng-invalid {
+//         //     // border-color: #c00000;
+//         //   }
+//         .ng-valid {
+//             border-color: rgb(145, 236, 7);
+//         }
+
+//         .errors {
+//             display: flex;
+//             flex-direction: column;
+//             color: red;
+//         }
+
+//         //   .buttons{
+//         //     position: absolute;
+//         //     // background-color: #c00000;
+//         //     margin-top: -250px;
+//         //   }
+//         //   mat-button{
+//         //     top: 50vh;
+//         //     background-color: aquamarine;
+//         //   }
+//     } 
+// }
+// img{
+//     width: 1.5rem;
+//     height: 1.5rem;
+//     margin-top:2vh ;
+//     margin-right:28vw ;
+//    }
+
+:host {
+    display: flex;
+    flex-direction: column !important;
+    border: 5px darkcyan dashed;
+
+    .hide {
         visibility: hidden;
     }
 
-    // .cdk-visually-hidden cdk-focus-trap-anchor {
-    //     // visibility: visible;
-    //     // background-color: #c00000;
-    // }
-
     form {
-        // width: 40vw !important;
-        // height: 85vh !important;
-        // right: -170vw;
-        // left: 500px;
-        display: flex;
-        flex-direction: column;
+        margin: 15px !important;
+        flex-direction: column !important;
 
-        .mat-button {
-            margin-top: -60vh;
-            width: 6vw;
+        .data {
+            display: flex;
+            flex-direction: column;
+            margin: 15px !important;
+        }
+
+        // .mat-button {
+        //     margin-top: -60vh;
+        //     width: 6vw;
+        // }
+        mat-select {
+            text-align: center;
         }
 
         .formLabel {
             margin-bottom: -2px;
-            // text-align: right !important;
 
             &.required {
                 position: relative;
 
                 &:after {
-                    // content: "*";
                     position: absolute;
                     top: 0;
-                    left: -8px;
-                    color: #c00000;
+                    // left: -8px;
+                    color: #f90707;
                 }
             }
         }
@@ -55,20 +118,23 @@
             color: red;
         }
 
-        //   .buttons{
-        //     position: absolute;
-        //     // background-color: #c00000;
-        //     margin-top: -250px;
-        //   }
-        //   mat-button{
-        //     top: 50vh;
-        //     background-color: aquamarine;
-        //   }
-    } 
+        .buttons {
+            position: absolute;
+            // background-color: #c00000;
+            margin-top: 150px;
+            left: 30vw;
+        }
+    }
 }
-img{
+
+img {
     width: 1.5rem;
     height: 1.5rem;
-    margin-bottom:55vh ;
-    right:10vw ;
-   }
+    margin-top: 2vh;
+    margin-right: 28vw;
+}
+
+// .cdk-overlay-containe{
+//     text-align: center;
+//     align-items: center;
+// }
