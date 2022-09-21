@@ -4,9 +4,9 @@
 <span [innerText]="'טלפון המנהל :'" class="span"></span>
 <span class="detail" [innerText]="selectedService.counselor.CounselorOfficeManagerPhone"></span> &nbsp;&nbsp;&nbsp; 
 <span [innerText]="'מייל המנהל :'" class="span"></span>
-<span class="detail" [innerText]="selectedService.counselor.CounselorOfficeManagerMail"></span> &nbsp;&nbsp;&nbsp; 
+<a href="mailto:{{selectedService.counselor.CounselorOfficeManagerMail}}" class="detail" [innerText]="selectedService.counselor.CounselorOfficeManagerMail"></a> &nbsp;&nbsp;&nbsp; 
 <span [innerText]="'מייל מזכירה ראשית :'" class="span"></span>
-<span class="detail" [innerText]="selectedService.counselor.CounselorOfficeMainSecretaryMail"></span> &nbsp;&nbsp;&nbsp; 
+<a href="mailto:{{selectedService.counselor.CounselorOfficeMainSecretaryMail}}" class="detail" [innerText]="selectedService.counselor.CounselorOfficeMainSecretaryMail"></a> &nbsp;&nbsp;&nbsp; 
 <span [innerText]="'כתובת המשרד :'" class="span"></span>
 <span class="detail" [innerText]="selectedService.counselor.CounselorOfficeAdress"></span> &nbsp;&nbsp;&nbsp;
 </section>

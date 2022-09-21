@@ -38,7 +38,7 @@
             <img [src]="email" alt="email">&nbsp; &nbsp;
             <h1>מייל מנהל: </h1>
         </div>
-        <div class="text" [innerText]="entrepreneurDetails.entrepreneur.EntrepreneurMail"></div>
+        <a href="mailto:{{entrepreneurDetails.entrepreneur.EntrepreneurMail}}" class="text" [innerText]="entrepreneurDetails.entrepreneur.EntrepreneurMail"></a>
     </div>
     <div class="SecretaryDetalis">
         <div>
@@ -56,6 +56,7 @@
             <img [src]="email">&nbsp; &nbsp;
             <h1 id="yazam">מייל מזכירה ראשית: </h1>
         </div>
-        <div class="text" [innerText]="entrepreneurDetails.entrepreneur.EntrepreneurSecretaryMail"></div>
+        <a href="mailto:{{entrepreneurDetails.entrepreneur.EntrepreneurSecretaryMail}}" class="text" [innerText]="entrepreneurDetails.entrepreneur.EntrepreneurSecretaryMail"></a>
     </div>
 </section>
+<!-- <a href="mailto:{{emailAddress}}">לשליחת אימייל</a> -->

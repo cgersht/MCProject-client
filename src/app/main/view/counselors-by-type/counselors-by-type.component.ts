@@ -11,6 +11,7 @@ import { SelectedNevigationService } from '../../services/selected-nevigation.se
   styleUrls: ['./counselors-by-type.component.scss']
 })
 export class CounselorsByTypeComponent implements OnInit {
+  emailAddress="itty@gmail.com"
   counselors$: Observable<Cunselor[]> = NEVER;
   counselors:Cunselor[]=[]; 
   entrepreneur$: Observable<Entrepreneur[]>;
@@ -22,7 +23,7 @@ export class CounselorsByTypeComponent implements OnInit {
 
     ) { }
 
-  ngOnInit() {  
+  ngOnInit() {     
   this.counselors$ = this.counselorService.getCounselorList$(this.selectedService.counselorType.TypeName)
   .pipe(
     map(result=>this.counselors=result),
