@@ -33,7 +33,7 @@ export class AddCounselorTypeComponent implements OnInit {
     console.log('is dirty? ', this.formGroup.dirty);
     console.log('is valid? ', this.formGroup.valid);
     this.subscriptionService.value=this.formGroup.value;
-    this.counselorService.addCounselor$(this.formGroup.value)
+    this.counselorService.addCounselorType$(this.formGroup.value)
     .subscribe(
       // this.counselorService.getCounselorList$('').subscribe()
     );

@@ -360,6 +360,17 @@ class GetCounselorService extends HttpServiceBase {
         // return this.http.get<Cunselor[]>('http://localhost:3030/counselor/getCounselor');
     }
     /**
+     * @param {?} counselorType
+     * @return {?}
+     */
+    addCounselorType$(counselorType) {
+        return this.post$(new HttpRequestModel({
+            url: this._serverUrl,
+            action: 'addCounselorType',
+            body: counselorType
+        }));
+    }
+    /**
      * @param {?} counselor
      * @return {?}
      */

@@ -5,5 +5,6 @@ export declare class GetCounselorService extends HttpServiceBase {
     private readonly _serverUrl;
     getCounselorOfficeTypeList$(): Observable<Cunselor[]>;
     getCounselorList$(counselorType: string): Observable<Cunselor[]>;
+    addCounselorType$(counselorType: string): Observable<boolean>;
     addCounselor$(counselor: Cunselor): Observable<boolean>;
 }

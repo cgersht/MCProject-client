@@ -433,6 +433,21 @@ var GetCounselorService = /** @class */ (function (_super) {
         // return this.http.get<Cunselor[]>('http://localhost:3030/counselor/getCounselor');
     };
     /**
+     * @param {?} counselorType
+     * @return {?}
+     */
+    GetCounselorService.prototype.addCounselorType$ = /**
+     * @param {?} counselorType
+     * @return {?}
+     */
+    function (counselorType) {
+        return this.post$(new HttpRequestModel({
+            url: this._serverUrl,
+            action: 'addCounselorType',
+            body: counselorType
+        }));
+    };
+    /**
      * @param {?} counselor
      * @return {?}
      */

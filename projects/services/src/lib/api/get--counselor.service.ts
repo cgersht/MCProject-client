@@ -28,7 +28,13 @@ export class GetCounselorService extends HttpServiceBase {
    // return this.http.get<Cunselor[]>('http://localhost:3030/counselor/getCounselor');
 
   }
-  
+  addCounselorType$(counselorType:string):Observable<boolean>{
+    return this.post$(new HttpRequestModel({
+      url: this._serverUrl,
+      action: 'addCounselorType',
+      body: counselorType
+  }));
+  }
  addCounselor$(counselor:Cunselor):Observable<boolean>{
   return this.post$(new HttpRequestModel({
     url: this._serverUrl,
