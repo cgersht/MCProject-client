@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, PatternValidator, Validators } from '@angular/forms';
+import { Observable, NEVER } from 'rxjs';
 import { GetCounselorService } from 'services';
+import { Cunselor } from 'types';
 import { SubscriptionService } from '../../services/subscription.service';
 
 @Component({
@@ -10,6 +12,7 @@ import { SubscriptionService } from '../../services/subscription.service';
 })
 export class AddCounselorTypeComponent implements OnInit {
   formGroup: FormGroup;
+  cunselors$: Observable<Cunselor[]> = NEVER;
   constructor(
      private formBuilder: FormBuilder,
      private counselorService:GetCounselorService,
@@ -23,11 +26,9 @@ export class AddCounselorTypeComponent implements OnInit {
   // counselorType
   initForm() {
     this.formGroup = this.formBuilder.group({
-      counselorType: ['', Validators.required]
+      counselorType: ['', [Validators.required ,Validators.pattern('[א-ת]*$')]]
     })
   }
-
-
   save() {
     console.log('value: ', this.formGroup.value);
     console.log('is dirty? ', this.formGroup.dirty);
@@ -35,8 +36,8 @@ export class AddCounselorTypeComponent implements OnInit {
     this.subscriptionService.value=this.formGroup.value;
     this.counselorService.addCounselorType$(this.formGroup.value)
     .subscribe(
-      // this.counselorService.getCounselorList$('').subscribe()
-    );
+      // this.cunselors$ = this.counselorService.getCounselorList$('') ; 
+      );
    this.reset()
   }
   reset() {
