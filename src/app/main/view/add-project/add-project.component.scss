@@ -1,12 +1,9 @@
 :host {
-    border: 5px darkcyan dashed ;
     // .mat-button {
     //     // margin-top: -60vh;
     //     width: 6vw;
     // }
     form {
-        
-
         // width: 40vw !important;
         // height: 85vh !important;
         // right: -170vw;
@@ -22,7 +19,7 @@
         }
         .formLabel {
             margin-bottom: -2px;
-    //    margin-right: 20px;
+            margin-right: 20px;
 
             &.required {
                 position: relative;
@@ -72,10 +69,21 @@
         visibility: hidden;
     }
     ::ng-deep .mat-select-trigger {
-        overflow: auto;
+        // overflow: auto;
           }
       
     ::ng-deep .mat-select-panel {
     max-height: 65vh !important;
-    overflow: auto;
+    // overflow: auto;
   }
+  ::ng-deep .details{
+    overflow:hidden !important;
+    border: 5px darkcyan dashed ;
+    margin: 2px;
+    padding: 90px;
+    padding-top: -20px !important;
+    margin-left: 205vw;
+    display: flex;
+    flex-direction: column;
+  }
+  

@@ -36,12 +36,12 @@ export class AddProjectComponent implements OnInit {
 
   initForm() {
     this.formGroup = this.formBuilder.group({
-      ProjectName: ['', Validators.required],
-      ProjectCompany: ['', [Validators.required]],
-      ProjectAdress: ['', Validators.required],
-      ProjectType:['',Validators.required],
-      EntrepreneurId:['',Validators.required],
-      ProjectRova:['',Validators.required],
+      ProjectName: ['', [Validators.required,Validators.minLength(2),]],
+      ProjectCompany: ['', [Validators.required,]],
+      ProjectAdress: ['', [Validators.required,]],
+      ProjectType:['',[Validators.required,]],
+      EntrepreneurId:['',[Validators.required,]],
+      ProjectRova:['',[Validators.required,]],
     });
   }
   getEntrepreneurs(){

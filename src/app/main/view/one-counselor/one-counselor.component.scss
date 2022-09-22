@@ -12,6 +12,7 @@
         padding: 5px;
         font-size: 2rem;
         color: $dark-gray;
+        text-decoration: none;
     }
 
     .span {
@@ -22,8 +23,8 @@
     .hide {
         visibility: hidden;
     }
-    
-}
-a{
-    
+
+    a {
+        text-decoration: none !important;
+    }
 }

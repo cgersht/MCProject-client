@@ -1,4 +1,5 @@
 <form [formGroup]="formGroup" >
+  <div class="details">
     <mat-form-field class="formLabel required matInput">
         <input matInput type="text" placeholder=" שם הפרויקט" formControlName="ProjectName">
       </mat-form-field>
@@ -28,6 +29,7 @@
         </mat-option>
       </mat-select>    
       </mat-form-field>
+    </div>
   </form>
   <div class="buttons">       
     <button mat-button class="mat-button" type="submit" (click)="save()">אישור</button>
