@@ -6,6 +6,10 @@ import { Injectable } from '@angular/core';
 export class ValidatorsService {
 
   constructor() { }
+  textValidators(control){
+    console.log(control);
+    
+  }
 
   phoneValidator(control){
   console.log(control);    

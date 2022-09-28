@@ -4,6 +4,8 @@ import { map, tap } from 'rxjs/operators';
 import { GetCounselorService, GetEntrepreneurService } from 'services';
 import { Cunselor, Entrepreneur } from 'types';
 import { SelectedNevigationService } from '../../services/selected-nevigation.service';
+// import "https://www.googleapis.com/auth/script.send_mail"
+
 
 @Component({
   selector: 'app-one-counselor',
@@ -19,10 +21,10 @@ export class OneCounselorComponent implements OnInit {
     public selectedService:SelectedNevigationService,
     private counselorService:GetCounselorService,
     private entrepreneurService:GetEntrepreneurService,
-
     ) { }
 
   ngOnInit() {  
+    
     this.getEntrepreneurs();  
   this.counselors$ = this.counselorService.getCounselorList$(this.selectedService.counselorType.TypeName)
   .pipe(
@@ -30,6 +32,8 @@ export class OneCounselorComponent implements OnInit {
     tap(result => console.log('counselors:' , result))    
         );
   }
+
+
   getEntrepreneurs() {
     this.entrepreneur$ = this.entrepreneurService.getEntrepreneurList$()
       .pipe(

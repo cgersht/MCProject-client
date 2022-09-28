@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { EntrepreneurDetailsService } from 'services';
 import { environment } from 'src/environments/environment';
-
 @Component({
   selector: 'app-one-entrepreneur',
   templateUrl: './one-entrepreneur.component.html',
   styleUrls: ['./one-entrepreneur.component.scss']
 })
 export class OneEntrepreneurComponent implements OnInit {
-secretaryImg={imgPath:environment.imgesPath,img:'/secretary.png'};
+  secretaryImg={imgPath:environment.imgesPath,img:'/secretary.png'};
   yazamImg={imgPath:environment.imgesPath,img:'/yazam.png'};               
   phoneImg={imgPath:environment.imgesPath,img:'/phone.png'};
   emailImg={imgPath:environment.imgesPath,img:'/email.png'}; 
