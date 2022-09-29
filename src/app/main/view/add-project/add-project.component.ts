@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AllPipesModule } from 'pipes';
 import { NEVER, Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
-import { GetEntrepreneurService, GetProjectService } from 'services';
+import { GetEntrepreneurService, GetProjectService, ValidatorsService } from 'services';
 import { Entrepreneur } from 'types';
 import { SubscriptionService } from '../../services/subscription.service';
 
@@ -26,7 +26,8 @@ export class AddProjectComponent implements OnInit {
     private subscriptionService: SubscriptionService,
     private entrepreneurService:GetEntrepreneurService,
     private projectService:GetProjectService,
-    public hasErrors:AllPipesModule
+    public hasErrors:AllPipesModule,
+    private validatorService:ValidatorsService,
   ) { }
 
   ngOnInit() {
@@ -36,9 +37,9 @@ export class AddProjectComponent implements OnInit {
 
   initForm() {
     this.formGroup = this.formBuilder.group({
-      ProjectName: ['', [Validators.required,Validators.minLength(2),]],
+      ProjectName: ['', [Validators.required,Validators.minLength(2),this.validatorService.textValidators]],
       ProjectCompany: ['', [Validators.required,]],
-      ProjectAdress: ['', [Validators.required]],
+      ProjectAdress: ['', [Validators.required,]],
       ProjectType:['',[Validators.required,]],
       EntrepreneurId:['',[Validators.required,]],
       ProjectRova:['',[Validators.required,]],
@@ -74,7 +75,7 @@ export class AddProjectComponent implements OnInit {
       this.subscriptionService.dialogRef.close();
       console.log(this.subscriptionService.close, "after close");
       console.log("i am closed");
-      
+
     }
   }
 }

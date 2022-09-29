@@ -8,22 +8,25 @@ import { SelectedNevigationService } from './services/selected-nevigation.servic
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
-  chetzImg={imgPath:environment.imgesPath,img:'/chetz.png'};
-  chetz=this.chetzImg.imgPath+this.chetzImg.img;
+  chetzImg = { imgPath: environment.imgesPath, img: '/chetz.png' };
+  chetz = this.chetzImg.imgPath + this.chetzImg.img;
 
   children = [];
-  
+
   constructor(private selectedService: SelectedNevigationService) { }
 
   ngOnInit() {
   }
+  onClickOnArrow(direction) {
+    console.log(direction, "direction");
+  }
   onChange(item) {
-console.log(item,"item");
+    console.log(item, "item");
     if (item.children) {
       this.children = item.children;
     } else {
       this.children = [];
     }
   }
-   
+
 }

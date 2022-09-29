@@ -514,11 +514,27 @@ class ValidatorsService {
      * @param {?} control
      * @return {?}
      */
-    phoneValidator(control) {
+    textValidators(control) {
         console.log(control);
         if (control.value.length) {
             if (control.value.length > 7 && control.value.length < 13) {
                 if (control.value.match(/^[0-9]+(\.?[0-9]+)?$/))
+                    return null;
+            }
+            else {
+                return { invalidPhone: true };
+            }
+        }
+    }
+    /**
+     * @param {?} control
+     * @return {?}
+     */
+    phoneValidator(control) {
+        console.log(control);
+        if (control.value.length) {
+            if (control.value.length > 7 && control.value.length < 13) {
+                if (control.value.match(/^[א-ת]+(\.?[א-ת]+)?$/))
                     return null;
             }
             else {

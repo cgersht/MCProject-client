@@ -630,7 +630,7 @@ var ValidatorsService = /** @class */ (function () {
      * @param {?} control
      * @return {?}
      */
-    ValidatorsService.prototype.phoneValidator = /**
+    ValidatorsService.prototype.textValidators = /**
      * @param {?} control
      * @return {?}
      */
@@ -639,6 +639,26 @@ var ValidatorsService = /** @class */ (function () {
         if (control.value.length) {
             if (control.value.length > 7 && control.value.length < 13) {
                 if (control.value.match(/^[0-9]+(\.?[0-9]+)?$/))
+                    return null;
+            }
+            else {
+                return { invalidPhone: true };
+            }
+        }
+    };
+    /**
+     * @param {?} control
+     * @return {?}
+     */
+    ValidatorsService.prototype.phoneValidator = /**
+     * @param {?} control
+     * @return {?}
+     */
+    function (control) {
+        console.log(control);
+        if (control.value.length) {
+            if (control.value.length > 7 && control.value.length < 13) {
+                if (control.value.match(/^[א-ת]+(\.?[א-ת]+)?$/))
                     return null;
             }
             else {

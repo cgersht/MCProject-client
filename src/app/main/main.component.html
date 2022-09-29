@@ -1,7 +1,10 @@
 <section>
     <app-menu></app-menu>
-    <img [src]="chetz">
+    <div id="right"> 
+        <img  (click)="onClickOnArrow('right')" [src]="chetz">
+    </div>
     <app-view></app-view>
-    <img [src]="chetz">
+    <div id="left"> 
+        <img  (click)="onClickOnArrow('left')" [src]="chetz">
+    </div>
 </section>
- 
