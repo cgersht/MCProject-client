@@ -28,23 +28,23 @@ mat-header-cell {
   overflow: scroll !important;
 }
 
-::ng-deep .mat-table mat-cell:first-child {
-  padding-left: 0px;
-  // border-left: 1px ;
-}
+// ::ng-deep .mat-table mat-cell:first-child {
+//   padding-left: 0px;
+//   // border-left: 1px ;
+// }
 
-.mat-table mat-cell:last-child {
-  padding-right: 0px;
-}
+// .mat-table mat-cell:last-child {
+//   padding-right: 0px;
+// }
 
-.mat-table mat-header-cell:first-child {
-  padding-left: 0px;
-  border-left: 1px solid;
-}
+// .mat-table mat-header-cell:first-child {
+//   padding-left: 0px;
+//   border-left: 1px solid;
+// }
 
-.mat-table mat-header-cell:last-child {
-  padding-right: 0px;
-}
+// .mat-table mat-header-cell:last-child {
+//   padding-right: 0px;
+// }
 
 .mat-table mat-header-cell {
   border-top: 1px solid;

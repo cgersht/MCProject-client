@@ -4,6 +4,7 @@ import { AllPipesModule } from 'pipes';
 import { NEVER, Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { GetEntrepreneurService, GetProjectService, ValidatorsService } from 'services';
+import { environment } from 'src/environments/environment';
 import { Entrepreneur } from 'types';
 import { SubscriptionService } from '../../services/subscription.service';
 
@@ -14,6 +15,8 @@ import { SubscriptionService } from '../../services/subscription.service';
 })
 export class AddProjectComponent implements OnInit {
   formGroup: FormGroup;
+  xImg={imgPath:environment.imgesPath,img: '/close.png'};
+  x=this.xImg.imgPath+this.xImg.img
   rova=['א','ב','ג','ד','ה','ו','ז','ח','ט','י','יא','יב','יג','יד','טו','טז','יז','סיטי']
   projectType=[
               {value: 1, viewValue: 'היתר בלבד'},
@@ -34,7 +37,10 @@ export class AddProjectComponent implements OnInit {
     this.getEntrepreneurs();
     this.initForm();
   }
-
+  cancel(){
+    console.log("cancel");
+    this.subscriptionService.dialogRef.close()
+  }
   initForm() {
     this.formGroup = this.formBuilder.group({
       ProjectName: ['', [Validators.required,Validators.minLength(2),this.validatorService.textValidators]],
