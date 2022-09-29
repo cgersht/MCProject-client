@@ -38,12 +38,13 @@ export class AddProjectComponent implements OnInit {
     this.formGroup = this.formBuilder.group({
       ProjectName: ['', [Validators.required,Validators.minLength(2),]],
       ProjectCompany: ['', [Validators.required,]],
-      ProjectAdress: ['', [Validators.required,]],
+      ProjectAdress: ['', [Validators.required]],
       ProjectType:['',[Validators.required,]],
       EntrepreneurId:['',[Validators.required,]],
       ProjectRova:['',[Validators.required,]],
     });
   }
+  //Validators.pattern("^[א-0]*$")
   getEntrepreneurs(){
     
      this.entrepreneur$ = this.entrepreneurService.getEntrepreneurList$()
@@ -59,7 +60,10 @@ export class AddProjectComponent implements OnInit {
     console.log('is valid? ', this.formGroup.valid);
     this.subscriptionService.value=this.formGroup.value;
     console.log('entrepreneurs',this.entrepreneurs);
-    this.projectService.addProject$(this.formGroup.value).subscribe();
+    this.projectService.addProject$(this.formGroup.value).pipe(
+      tap(_ => this.projectService.getProjectList$().subscribe())
+    )
+    .subscribe();
     this.reset()
   }
   reset() {
@@ -70,6 +74,7 @@ export class AddProjectComponent implements OnInit {
       this.subscriptionService.dialogRef.close();
       console.log(this.subscriptionService.close, "after close");
       console.log("i am closed");
+      
     }
   }
 }

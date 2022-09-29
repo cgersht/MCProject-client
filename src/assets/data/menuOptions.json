@@ -2,18 +2,21 @@
             {
                 "name": "פרויקטים",
                 "img": "building",
-                "displayKey":"project"
+                "displayKey":"project",
+                "displayValue":"ProjectName"
             },            
             {
                 "name": "יזמים",
                 "img": "yazam",
-                "displayKey":"oneYazam"              
+                "displayKey":"oneYazam"  ,
+                "displayValue":"EntrepreneurCompany"            
             },
             {
                 
                 "name": "יועצים",
                 "img": "yoetz",
                 "displayKey": "entrepreneur"  ,
+                "displayValue":"CounselorName",
                 "children":["נגישות","חשמל","בטיחות","תנועה","אינסטלציה","קונסטרוקציה","אוורור","פיתוח ונוף","בדיקות אל-הרס","בדיקות קרקע","מדידות","אגרונום","קרינה","הדמיות","מיגון","בניה ירוקה","אדריכלות"]
             }
         ]

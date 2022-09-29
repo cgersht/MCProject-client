@@ -43,7 +43,7 @@ export class AddEntrepreneurComponent implements OnInit {
       EntrepreneurCompanyAddress:['',Validators.required ],
       EntrepreneurCompanyAddressToSend:['',Validators.required ],
       EntrepreneurCompanyPhone:['',[Validators.required,this.validatorsService.phoneValidator]],
-      EntrepreneurCompanyMail:['',[Validators.required,],this.validatorsService.emailValidator[0-9] ],
+      EntrepreneurCompanyMail:['',[Validators.required,this.validatorsService.emailValidator]],
       EntrepreneurCompanyFax:['',Validators.required ],
  });  
   }
@@ -56,7 +56,9 @@ export class AddEntrepreneurComponent implements OnInit {
     console.log('is dirty? ', this.formGroup.dirty);
     console.log('is valid? ', this.formGroup.valid);
     this.subscriptionService.value=this.formGroup.value;
-    this.entrepreneurService.addEntrepreneur$(this.formGroup.value).subscribe();
+    this.entrepreneurService.addEntrepreneur$(this.formGroup.value).pipe(
+      tap(_ => this.entrepreneurService.getEntrepreneurList$().subscribe())
+    ).subscribe();
    this.reset()
   }
   reset() {

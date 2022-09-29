@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
 import { MatDialog } from '@angular/material';
-import { Menu } from 'projects/types/src/public-api';
+import { Menu } from 'types';
 import { SelectedNevigationService } from '../services/selected-nevigation.service';
 import { SubscriptionService } from '../services/subscription.service';
 import { AddCounselorTypeComponent } from './add-counselor-type/add-counselor-type.component';
@@ -43,6 +43,7 @@ export class ViewComponent implements OnInit {
           height: '630px',
           width: '550px',
           disableClose: true,
+        
         })
         break;
       case 'יזמים':
@@ -62,6 +63,6 @@ export class ViewComponent implements OnInit {
 
       default:
         break;
-    }
+    } 
   }
 }

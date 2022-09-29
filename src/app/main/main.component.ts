@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { SelectedNevigationService } from './services/selected-nevigation.service';
 
 @Component({
@@ -7,8 +8,9 @@ import { SelectedNevigationService } from './services/selected-nevigation.servic
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
-  
-  
+  chetzImg={imgPath:environment.imgesPath,img:'/chetz.png'};
+  chetz=this.chetzImg.imgPath+this.chetzImg.img;
+
   children = [];
   
   constructor(private selectedService: SelectedNevigationService) { }

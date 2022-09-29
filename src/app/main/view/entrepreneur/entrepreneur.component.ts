@@ -24,10 +24,7 @@ export class EntrepreneurComponent implements OnInit {
     private selectedService:SelectedNevigationService
     ) { } 
   ngOnInit() {      
-     this.entrepreneur$ = this.entrepreneurService.getEntrepreneurList$().pipe(
-        map(entrepreneurs=>this.entrepreneurs=entrepreneurs),
-        tap(entrepreneurs => console.log('entrepreneurs:' , entrepreneurs)),
-     );
+    this.init();
      this.columns$ = this.readColumns.getColumns$(environment.enrepreneursTableColumns)
     }
     getEntrepreneurDetalis(entrepreneur){
@@ -35,19 +32,26 @@ export class EntrepreneurComponent implements OnInit {
       
      this.entrepreneurs.forEach(el => {
       console.log({el});      
-        if(el=entrepreneur)
+        if(el === entrepreneur)
          {
             this.entrepreneurDetails.entrepreneur=el
             this.selectedService.updateSelected('oneEntrepreneur')
+            this.selectedService['oneYazam']=el;
             // console.log(this.entrepreneurDetails.entrepreneur,"entrepreneur in getEntrepreneurDetalis after");
         //  break;
          } 
         
       });
     }
+    
+    init(){
+      this.entrepreneur$ = this.entrepreneurService.getEntrepreneurList$().pipe(
+        map(entrepreneurs=>this.entrepreneurs=entrepreneurs),
+        tap(entrepreneurs => console.log('entrepreneurs:' , entrepreneurs)),
+    );
+    }
+
 }
-
-
 
 
 // this.entrepreneurs.forEach(el=>{

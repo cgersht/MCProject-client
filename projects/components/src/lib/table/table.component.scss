@@ -1,8 +1,11 @@
+@import '../.././../../../src/style/main.scss';
+@import '../.././../../../src/style/elements.scss';
+
 :host{
   display:flex;
   flex-direction: column;
   overflow: hidden !important;
-  .example-container.mat-elevation-z8 {    
+   .example-container.mat-elevation-z8 {    
     overflow-y: auto;
   }
   mat-table{
@@ -21,11 +24,11 @@ mat-header-cell {
   // flex: none;
   justify-content: center;
 }
-// mat-elevation-z8{
-//   overflow: scroll !important;
-// }
+::ng-deep .mat-elevation-z8{
+  overflow: scroll !important;
+}
 
-.mat-table mat-cell:first-child {
+::ng-deep .mat-table mat-cell:first-child {
   padding-left: 0px;
   // border-left: 1px ;
 }

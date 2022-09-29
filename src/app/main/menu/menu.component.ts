@@ -28,7 +28,17 @@ export class MenuComponent implements OnInit {
   clicked(){
     console.log("im in clicked");   
   }
-  projectDetails(){
-    this.selectedService.updateSelected('oneProject')
+  selectedObjectDetails(key){
+    switch  (key) {
+        case  'project' :
+            this.selectedService.updateSelected('oneProject');
+            break;
+        case  'oneYazam' :
+              this.selectedService.updateSelected('oneEntrepreneur');
+              break;
+        case  'entrepreneur' :
+              this.selectedService.updateSelected('OneCounselor');
+              break;
+    }
   }
 }

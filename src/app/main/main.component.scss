@@ -4,7 +4,13 @@
         width: 98vw;
         height: 98vh;
         background-color:$dark-gray;
-
     }
-  
+  img{
+    width: 1.5rem;
+    height: 1.5rem;
+    transform: scaleX(-1);
+    margin-top: -650px;
+
+    
+  }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
 import { GetCounselorService } from 'services';
 import { environment } from 'src/environments/environment';
 import { SelectedNevigationService } from '../../services/selected-nevigation.service';
@@ -71,7 +71,9 @@ export class AddCounselorComponent implements OnInit {
     console.log('is dirty? ', this.formGroup.dirty);
     console.log('is valid? ', this.formGroup.valid);
     this.subscriptionService.value=this.formGroup.value;
-    this.counselorService.addCounselor$(this.formGroup.value)
+    this.counselorService.addCounselor$(this.formGroup.value).pipe(
+      tap(_ => this.counselorService.getCounselorList$('').subscribe())
+    )
     .subscribe(
       // this.counselorService.getCounselorList$('').subscribe()
     );

@@ -9,10 +9,13 @@
             margin-right: 2vw;
             display:flex;
             flex-direction:column ;
+            overflow-y: auto;
+            overflow-x:hidden;
         }
-        // app-cunselors{ 
-        // //  bottom: -200px;
-        // }
+        app-cunselors, app-project,app-one-entrepreneur,
+        app-counselors-by-type,app-one-counselor { 
+            overflow: hidden; 
+        }
        
         // .dropdown{  
         //    position: absolute; 
@@ -53,8 +56,9 @@ app-date-and-clock{
  font-family: 'Brush Script MT', cursive;
  color: rgb(9, 51, 135);
 }
-
+// // 
 // app-entrepreneur{
+    // overflow: hidden;
 //     display: flex;
 //     flex-direction: column;
 //     flex-wrap: wrap !important;
@@ -65,6 +69,6 @@ app-date-and-clock{
 //     // align-items: center;
 //     margin-right: 2rem;
 // }
-app-cunselors{
-    right: 150px;
-}
+// app-cunselors{
+//     right: 150px;
+// }

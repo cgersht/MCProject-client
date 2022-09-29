@@ -9,16 +9,16 @@ export class GetErrorPipe implements PipeTransform {
       return [];
     }
     let errorsToDisplay = [];
-    Object.keys(errors).forEach(error => {
-      switch(error){
-        case'required': errorsToDisplay= [...errorsToDisplay, 'שדה חובה']
-             break;
-        case'invalidEmailAddress': errorsToDisplay= [...errorsToDisplay, 'כתובת אמייל לא נכונה']
-             break;
-        case'maxlength': errorsToDisplay= [...errorsToDisplay, 'מספר תווים לא תקין']
-             break;
-      }
-    }); 
+    // Object.keys(errors).forEach(error => {
+    //   switch(error){
+    //     case'required': errorsToDisplay= [...errorsToDisplay, 'שדה חובה']
+    //          break;
+    //     case'invalidEmailAddress': errorsToDisplay= [...errorsToDisplay, 'כתובת אמייל לא נכונה']
+    //          break;
+    //     case'maxlength': errorsToDisplay= [...errorsToDisplay, 'מספר תווים לא תקין']
+    //          break;
+    //   }
+    // }); 
     return errorsToDisplay ;
   }
 
