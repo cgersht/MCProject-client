@@ -3,6 +3,7 @@
     //     // margin-top: -60vh;
     //     width: 6vw;
     // }
+    overflow-x: hidden !important;
     form {
         // width: 40vw !important;
         // height: 85vh !important;
@@ -48,11 +49,11 @@
             color: red;
         }
 
-        //   .buttons{
-        //     position: absolute;
-        //     // background-color: #c00000;
-        //     // margin-top: -250px;
-        //   }
+          .buttons{
+            position: relative;
+            margin-left: 150px !important;
+            background-color: crimson;
+          }
         //   mat-button{
         //     top: 50vh;
         //     background-color: aquamarine;
@@ -63,14 +64,13 @@
     //   }    height:100vh ;
     // color: #c00000;
      }
-   
 } 
 .hide{
         visibility: hidden;
     }
-    ::ng-deep .mat-select-trigger {
-        // overflow: auto;
-          }
+    // ::ng-deep .mat-select-trigger {
+    //     // overflow: auto;
+    //       }
       
     ::ng-deep .mat-select-panel {
     max-height: 65vh !important;
@@ -80,7 +80,7 @@
     overflow:hidden !important;
     border: 5px darkcyan dashed ;
     margin: 2px;
-    padding: 90px;
+    padding: 130px;
     padding-top: -20px !important;
     margin-left: 205vw;
     display: flex;

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { async } from '@angular/core/testing';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AllPipesModule } from 'pipes';
 import { NEVER, Observable } from 'rxjs';
@@ -16,7 +17,7 @@ import { SubscriptionService } from '../../services/subscription.service';
 export class AddProjectComponent implements OnInit {
   formGroup: FormGroup;
   xImg={imgPath:environment.imgesPath,img: '/close.png'};
-  x=this.xImg.imgPath+this.xImg.img
+  x=this.xImg.imgPath+this.xImg.img;
   rova=['א','ב','ג','ד','ה','ו','ז','ח','ט','י','יא','יב','יג','יד','טו','טז','יז','סיטי']
   projectType=[
               {value: 1, viewValue: 'היתר בלבד'},
@@ -71,7 +72,9 @@ export class AddProjectComponent implements OnInit {
       tap(_ => this.projectService.getProjectList$().subscribe())
     )
     .subscribe();
-    this.reset()
+    console.log("after subscribe");
+  
+    this.reset();
   }
   reset() {
     this.subscriptionService.close = true;
