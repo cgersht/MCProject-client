@@ -40,8 +40,8 @@ export class ViewComponent implements OnInit {
         break;
       case 'יועצים':
         this.subscriptionService.dialogRef = this.dialog.open(AddCounselorTypeComponent, {
-          height: '630px',
-          width: '550px',
+          height: '163px',
+          width: '200px',
           disableClose: true,
         
         })

@@ -1,76 +1,89 @@
+@import './../../../../style/main.scss';
+
 :host {
+    border: 5px darkcyan dashed;
     display: flex;
     flex-direction: column !important;
-    border: 5px darkcyan dashed ;
+    direction: ltr !important;
     overflow: hidden;
-    .hide{
+
+    .hide {
         visibility: hidden;
-        }
+    }
     form {
-        // width: 45vw !important;
-        // height: 90vh !important;
-        // right: -170vw;
-        // left: 500px;
-        display: flex;
-        margin:15px !important;
-    
-        // .data{
-        //     display: flex;
-        //     flex-direction: column;
-        //     margin:15px !important;
-        // }
-        .mat-button {
-            margin-top: -60vh;
-            width: 6vw;
-        }
-        .formLabel {
-            margin-bottom: -2px;
-            // text-align: right !important;
+        margin-top: -90vw !important;
 
-            &.required {
-                position: relative;
+        // .mat-option.mat-active {
+        //  background: red !important;
+        //   }  
+        .mat-option-trigger {
+            min-height: 32.5vw;
+            }
+            margin-bottom: 10px;
+            margin: 15px !important;
+            display: flex;
+            flex-direction: column !important;
 
-                &:after {
-                    position: absolute;
-                    top: 0;
-                    left: -8px;
-                    color: #f90707;
+            .mat-select-panel.custom-select .mat-option{
+                height: 100px;
+          }
+            // .mat-option-text {
+            //     font-size: 16px !important;
+            //     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+            // }
+
+            // mat-option {
+            //     height: 200px !important;
+            //   }
+            .details {
+                display: flex;
+                flex-direction: column;
+                margin: 15px !important;
+            }
+
+
+
+            .formLabel {
+                margin-bottom: -2px;
+
+                &.required {
+                    position: relative;
+
+                    &:after {
+                        position: absolute;
+                        top: 0;
+                        // left: -8px;
+                        color: #f90707;
+                    }
                 }
             }
-        }
 
-        //   .ng-invalid {
-        //     // border-color: #c00000;
-        //   }
-        .ng-valid {
-            border-color: rgb(145, 236, 7);
-        }
 
-        .errors {
-            display: flex;
-            flex-direction: column;
-            color: red;
-        }
+            .ng-valid {
+                border-color: rgb(145, 236, 7);
+            }
 
-          .buttons{
-            position: absolute;
-            // background-color: #c00000;
-            margin-bottom: -300px;
-            left: 43vw;
-                  }
-        //   mat-button{
-        //     top: 50vh;
-        //     background-color: aquamarine;
-        //   }
+            .errors {
+                display: flex;
+                flex-direction: column;
+                color: red;
+            }
+
+            .buttons {
+                position: absolute;
+                margin-top: -110px;
+                //  top: 50px;
+                // left: 30vw;
+            }
+        }
     }
-    // .save{
-    //     // cursor: not-allowed;
-    // }
- 
-} 
- img{
-    width: 1.5rem;
-    height: 1.5rem;
-    margin-top:2vh ;
-    margin-right:28vw ;
-   }
+
+    img {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-top: 2vh;
+        margin-right: 28vw;
+    }
+//     .mat-select-panel.custom-select .mat-option{
+//         height:100px;
+//   }

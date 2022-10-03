@@ -586,7 +586,10 @@
     var GetCounselorService = /** @class */ (function (_super) {
         __extends(GetCounselorService, _super);
         function GetCounselorService() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.counselors$ = rxjs.NEVER;
+            _this.counselors = [];
+            return _this;
         }
         Object.defineProperty(GetCounselorService.prototype, "_serverUrl", {
             get: /**
@@ -664,6 +667,14 @@
         /** @nocollapse */ GetCounselorService.ngInjectableDef = core.ɵɵdefineInjectable({ factory: function GetCounselorService_Factory() { return new GetCounselorService(core.ɵɵinject(http.HttpClient), core.ɵɵinject(ConfigurationService)); }, token: GetCounselorService, providedIn: "root" });
         return GetCounselorService;
     }(HttpServiceBase));
+    if (false) {
+        /** @type {?} */
+        GetCounselorService.prototype.counselors$;
+        /** @type {?} */
+        GetCounselorService.prototype.counselors;
+        /** @type {?} */
+        GetCounselorService.prototype.cunselorsOfficeType$;
+    }
 
     /**
      * @fileoverview added by tsickle

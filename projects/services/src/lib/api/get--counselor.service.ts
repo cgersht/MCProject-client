@@ -1,11 +1,15 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { NEVER, Observable } from 'rxjs';
 import { Cunselor, HttpRequestModel } from 'types';
 import { HttpServiceBase } from './http-service.base';
 
 @Injectable({ providedIn: 'root' })
 
 export class GetCounselorService extends HttpServiceBase {
+
+  counselors$: Observable<Cunselor[]> = NEVER;
+  counselors:Cunselor[]=[];
+  cunselorsOfficeType$:Observable<Cunselor[]>
 
   private get _serverUrl(): string {
     return `${this.config.ips.servicePath}counselor/`;

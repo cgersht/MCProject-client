@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { async } from '@angular/core/testing';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AllPipesModule } from 'pipes';
 import { NEVER, Observable } from 'rxjs';
@@ -12,7 +11,8 @@ import { SubscriptionService } from '../../services/subscription.service';
 @Component({
   selector: 'app-add-project',
   templateUrl: './add-project.component.html',
-  styleUrls: ['./add-project.component.scss']
+  styleUrls: ['./add-project.component.scss'],
+
 })
 export class AddProjectComponent implements OnInit {
   formGroup: FormGroup;

@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AddProjectComponent } from './add-project.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatButtonModule,  MatFormFieldModule, MatIconModule, MatInputModule, MatOption, MatOptionModule, MatSelectModule } from '@angular/material';
+import { MatButtonModule,  MatFormFieldModule, MatIconModule,
+   MatInputModule, MatOptionModule, MatSelectModule } from '@angular/material';
 import { PipesModule } from 'pipes';
 
 
@@ -11,7 +12,6 @@ import { PipesModule } from 'pipes';
   declarations: [AddProjectComponent],
   imports: [
     CommonModule,
-    FormsModule,
     MatFormFieldModule,
     FormsModule,
     ReactiveFormsModule,

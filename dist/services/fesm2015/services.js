@@ -1,7 +1,7 @@
 import { Injectable, ɵɵdefineInjectable, Component, NgModule, ɵɵinject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, tap } from 'rxjs/operators';
-import { combineLatest } from 'rxjs';
+import { combineLatest, NEVER } from 'rxjs';
 import { HttpRequestModel } from 'types';
 
 /**
@@ -330,6 +330,11 @@ if (false) {
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 class GetCounselorService extends HttpServiceBase {
+    constructor() {
+        super(...arguments);
+        this.counselors$ = NEVER;
+        this.counselors = [];
+    }
     /**
      * @private
      * @return {?}
@@ -386,6 +391,14 @@ GetCounselorService.decorators = [
     { type: Injectable, args: [{ providedIn: 'root' },] }
 ];
 /** @nocollapse */ GetCounselorService.ngInjectableDef = ɵɵdefineInjectable({ factory: function GetCounselorService_Factory() { return new GetCounselorService(ɵɵinject(HttpClient), ɵɵinject(ConfigurationService)); }, token: GetCounselorService, providedIn: "root" });
+if (false) {
+    /** @type {?} */
+    GetCounselorService.prototype.counselors$;
+    /** @type {?} */
+    GetCounselorService.prototype.counselors;
+    /** @type {?} */
+    GetCounselorService.prototype.cunselorsOfficeType$;
+}
 
 /**
  * @fileoverview added by tsickle

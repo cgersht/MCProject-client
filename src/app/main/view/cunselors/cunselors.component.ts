@@ -6,6 +6,7 @@ import { ReadColumnsService } from 'src/app/services/read-columns.service';
 import { environment } from 'src/environments/environment';
 import { Cunselor, Column } from 'types';
 import { SelectedNevigationService } from '../../services/selected-nevigation.service';
+import { SubscriptionService } from '../../services/subscription.service';
 
 @Component({
   selector: 'app-cunselors',
@@ -21,15 +22,16 @@ export class CunselorsComponent implements OnInit, OnChanges {
   columns$: Observable<Column[]> = NEVER;
   
   constructor(
-    private counselorService:GetCounselorService,
+    public counselorService:GetCounselorService,
     private readColumns: ReadColumnsService,
-    private selectedService:SelectedNevigationService
+    private selectedService:SelectedNevigationService,
+    private subscriptionService:SubscriptionService
   ) { }
   
   ngOnChanges({selectedCunselor}: SimpleChanges): void {
     if(selectedCunselor){
       const {currentValue} = selectedCunselor;
-      this.cunselors$ = this.counselorService.getCounselorList$(currentValue) ; 
+      this.cunselors$ = this.counselorService.getCounselorList$(currentValue) ;
     }
   }
  

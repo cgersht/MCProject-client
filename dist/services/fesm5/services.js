@@ -2,7 +2,7 @@ import { Injectable, ɵɵdefineInjectable, Component, NgModule, ɵɵinject } fro
 import { __assign, __read, __extends } from 'tslib';
 import { HttpClient } from '@angular/common/http';
 import { map, tap } from 'rxjs/operators';
-import { combineLatest } from 'rxjs';
+import { combineLatest, NEVER } from 'rxjs';
 import { HttpRequestModel } from 'types';
 
 /**
@@ -390,7 +390,10 @@ if (false) {
 var GetCounselorService = /** @class */ (function (_super) {
     __extends(GetCounselorService, _super);
     function GetCounselorService() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.counselors$ = NEVER;
+        _this.counselors = [];
+        return _this;
     }
     Object.defineProperty(GetCounselorService.prototype, "_serverUrl", {
         get: /**
@@ -468,6 +471,14 @@ var GetCounselorService = /** @class */ (function (_super) {
     /** @nocollapse */ GetCounselorService.ngInjectableDef = ɵɵdefineInjectable({ factory: function GetCounselorService_Factory() { return new GetCounselorService(ɵɵinject(HttpClient), ɵɵinject(ConfigurationService)); }, token: GetCounselorService, providedIn: "root" });
     return GetCounselorService;
 }(HttpServiceBase));
+if (false) {
+    /** @type {?} */
+    GetCounselorService.prototype.counselors$;
+    /** @type {?} */
+    GetCounselorService.prototype.counselors;
+    /** @type {?} */
+    GetCounselorService.prototype.cunselorsOfficeType$;
+}
 
 /**
  * @fileoverview added by tsickle

@@ -12,13 +12,16 @@
             overflow-y: auto;
             overflow-x:hidden;
         }
+        
         app-cunselors, app-project,app-one-entrepreneur,
         app-counselors-by-type,app-one-counselor,
         app-add-Project,app-add-counselor-type,app-add-entrepreneur,
         app-add-counselor { 
             overflow: hidden !important; 
         }
-       
+        .mat-select-panel.custom-select .mat-option{
+            height: 100px;
+      }
         // .dropdown{  
         //    position: absolute; 
         //    bottom: 80vh;        
@@ -74,3 +77,6 @@ app-date-and-clock{
 // app-cunselors{
 //     right: 150px;
 // }
+.mat-select-panel.custom-select .mat-option{
+    height:100px;
+}
