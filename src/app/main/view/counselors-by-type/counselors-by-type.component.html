@@ -1,6 +1,6 @@
 <!-- <a href="mailto:{{emailAddress}}">לשליחת אימייל</a> -->
 <div class="div">
-    <div *ngFor="let c of counselors$|async">
+    <div *ngFor="let c of counselorService.counselors$|async">
         <div class="counselor">
             <span [innerText]="c.CounselorOfficeName" 
             (click)="getCounselorOfficeDetails(c.CounselorOfficeName)"

@@ -18,7 +18,7 @@ export class EntrepreneurComponent implements OnInit {
   entrepreneurs:Entrepreneur[]=[];
   columns$: Observable<Column[]> = NEVER;
   constructor(
-    private entrepreneurService:GetEntrepreneurService,
+    public entrepreneurService:GetEntrepreneurService,
     private readColumns: ReadColumnsService,
     private entrepreneurDetails:EntrepreneurDetailsService,
     private selectedService:SelectedNevigationService
@@ -45,8 +45,8 @@ export class EntrepreneurComponent implements OnInit {
     }
     
     init(){
-      this.entrepreneur$ = this.entrepreneurService.getEntrepreneurList$().pipe(
-        map(entrepreneurs=>this.entrepreneurs=entrepreneurs),
+      this.entrepreneurService.entrepreneur$ = this.entrepreneurService.getEntrepreneurList$().pipe(
+        map(entrepreneurs=>this.entrepreneurService.entrepreneurs=entrepreneurs),
         tap(entrepreneurs => console.log('entrepreneurs:' , entrepreneurs)),
     );
     }

@@ -29,7 +29,7 @@ export class AddProjectComponent implements OnInit {
     private formBuilder: FormBuilder,
     private subscriptionService: SubscriptionService,
     private entrepreneurService:GetEntrepreneurService,
-    private projectService:GetProjectService,
+    public projectService:GetProjectService,
     public hasErrors:AllPipesModule,
     private validatorService:ValidatorsService,
   ) { }
@@ -69,7 +69,7 @@ export class AddProjectComponent implements OnInit {
     this.subscriptionService.value=this.formGroup.value;
     console.log('entrepreneurs',this.entrepreneurs);
     this.projectService.addProject$(this.formGroup.value).pipe(
-      tap(_ => this.projectService.getProjectList$().subscribe())
+      tap(_ => this.projectService.project$=this.projectService.getProjectList$())
     )
     .subscribe();
     console.log("after subscribe");

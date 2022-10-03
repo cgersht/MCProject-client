@@ -38,7 +38,7 @@ export class AddCounselorTypeComponent implements OnInit {
     console.log('is valid? ', this.formGroup.valid);
     this.subscriptionService.value = this.formGroup.value;
     this.counselorService.addCounselorType$(this.formGroup.value).pipe(
-      tap(_ => this.counselorService.counselors$= this.counselorService.getCounselorList$('')),
+      tap(_ => this.counselorService.cunselorsOfficeType$= this.counselorService.getCounselorOfficeTypeList$()),
     )
       .subscribe();
     this.reset()

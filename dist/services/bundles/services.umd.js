@@ -684,7 +684,10 @@
     var GetProjectService = /** @class */ (function (_super) {
         __extends(GetProjectService, _super);
         function GetProjectService() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.project$ = rxjs.NEVER;
+            _this.projects = [];
+            return _this;
         }
         Object.defineProperty(GetProjectService.prototype, "_serverUrl", {
             get: /**
@@ -736,6 +739,10 @@
     if (false) {
         /** @type {?} */
         GetProjectService.prototype.selectedProject;
+        /** @type {?} */
+        GetProjectService.prototype.project$;
+        /** @type {?} */
+        GetProjectService.prototype.projects;
     }
 
     /**
@@ -746,7 +753,9 @@
     var GetEntrepreneurService = /** @class */ (function (_super) {
         __extends(GetEntrepreneurService, _super);
         function GetEntrepreneurService() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.entrepreneurs = [];
+            return _this;
         }
         Object.defineProperty(GetEntrepreneurService.prototype, "_serverUrl", {
             get: /**
@@ -793,6 +802,12 @@
         /** @nocollapse */ GetEntrepreneurService.ngInjectableDef = core.ɵɵdefineInjectable({ factory: function GetEntrepreneurService_Factory() { return new GetEntrepreneurService(core.ɵɵinject(http.HttpClient), core.ɵɵinject(ConfigurationService)); }, token: GetEntrepreneurService, providedIn: "root" });
         return GetEntrepreneurService;
     }(HttpServiceBase));
+    if (false) {
+        /** @type {?} */
+        GetEntrepreneurService.prototype.entrepreneur$;
+        /** @type {?} */
+        GetEntrepreneurService.prototype.entrepreneurs;
+    }
 
     /**
      * @fileoverview added by tsickle

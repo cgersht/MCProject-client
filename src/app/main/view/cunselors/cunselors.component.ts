@@ -37,7 +37,7 @@ export class CunselorsComponent implements OnInit, OnChanges {
  
   ngOnInit() {
    this.cunselors$ = this.counselorService.getCounselorList$('') ; 
-   this.cunselorsOfficeType$ = this.counselorService.getCounselorOfficeTypeList$() ; 
+   this.counselorService.cunselorsOfficeType$ = this.counselorService.getCounselorOfficeTypeList$() ; 
    this.columns$ = this.readColumns.getColumns$(environment.counselorsTableColumns)
    
   }

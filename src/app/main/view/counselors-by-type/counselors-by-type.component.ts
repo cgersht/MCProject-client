@@ -18,22 +18,20 @@ export class CounselorsByTypeComponent implements OnInit {
   entrepreneurs: Entrepreneur[] = [];
    constructor(
     public selectedService:SelectedNevigationService,
-    private counselorService:GetCounselorService,
+    public counselorService:GetCounselorService,
     private entrepreneurService:GetEntrepreneurService,
-
     ) { }
 
   ngOnInit() {     
-  this.counselors$ = this.counselorService.getCounselorList$(this.selectedService.counselorType.TypeName)
+  this.counselorService.counselors$ = this.counselorService.getCounselorList$(this.selectedService.counselorType.TypeName)
   .pipe(
-    map(result=>this.counselors=result),
+    map(result=>this.counselorService.counselors=result),
     tap(result => console.log('counselors:' , result))    
         );
          
   }
   getCounselorOfficeDetails(counselor){
-    // console.log(counselor,"counselor");    
-    this.counselors.forEach(el => {
+    this.counselorService.counselors.forEach(el => {
       if (el.CounselorOfficeName == counselor) {
         console.log(el,"selected");
         this.selectedService.counselor=el

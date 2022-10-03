@@ -11,7 +11,8 @@ export class GetEntrepreneurService extends HttpServiceBase {
   private get _serverUrl(): string {
     return `${this.config.ips.servicePath}entrepreneur/`;
   }
-
+  entrepreneur$:Observable<Entrepreneur[]>;
+  entrepreneurs:Entrepreneur[]=[];
 
 
   getEntrepreneurList$(): Observable<Entrepreneur[]> {

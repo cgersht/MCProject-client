@@ -406,6 +406,11 @@ if (false) {
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 class GetProjectService extends HttpServiceBase {
+    constructor() {
+        super(...arguments);
+        this.project$ = NEVER;
+        this.projects = [];
+    }
     /**
      * @private
      * @return {?}
@@ -444,6 +449,10 @@ GetProjectService.decorators = [
 if (false) {
     /** @type {?} */
     GetProjectService.prototype.selectedProject;
+    /** @type {?} */
+    GetProjectService.prototype.project$;
+    /** @type {?} */
+    GetProjectService.prototype.projects;
 }
 
 /**
@@ -452,6 +461,10 @@ if (false) {
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 class GetEntrepreneurService extends HttpServiceBase {
+    constructor() {
+        super(...arguments);
+        this.entrepreneurs = [];
+    }
     /**
      * @private
      * @return {?}
@@ -485,6 +498,12 @@ GetEntrepreneurService.decorators = [
     { type: Injectable, args: [{ providedIn: 'root' },] }
 ];
 /** @nocollapse */ GetEntrepreneurService.ngInjectableDef = ɵɵdefineInjectable({ factory: function GetEntrepreneurService_Factory() { return new GetEntrepreneurService(ɵɵinject(HttpClient), ɵɵinject(ConfigurationService)); }, token: GetEntrepreneurService, providedIn: "root" });
+if (false) {
+    /** @type {?} */
+    GetEntrepreneurService.prototype.entrepreneur$;
+    /** @type {?} */
+    GetEntrepreneurService.prototype.entrepreneurs;
+}
 
 /**
  * @fileoverview added by tsickle

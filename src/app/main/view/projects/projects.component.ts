@@ -14,27 +14,23 @@ import { SelectedNevigationService } from '../../services/selected-nevigation.se
 })
 export class ProjectsComponent implements OnInit {
   @Output() selectedProject = new EventEmitter<Project>();
-  project$: Observable<Project[]> = NEVER;
-  projects: Project[] = [];
+  // project$: Observable<Project[]> = NEVER;
+  // projects: Project[] = [];
   columns$: Observable<Column[]> = NEVER;
   constructor(
-    private projectService: GetProjectService,
+    public projectService: GetProjectService,
     private readColumns: ReadColumnsService,
     private selectedService:SelectedNevigationService,
   ) { }
   ngOnInit() {
-    this.project$ = this.projectService.getProjectList$().pipe(
-      map(project => this.projects = project),
-      // map(project => this.projectInput = project),
-      // tap(project => console.log('this.projectInput:', this.projectInput)),
+    this.projectService.project$ = this.projectService.getProjectList$().pipe(
+      map(project => this.projectService.projects = project),
       tap(project => console.log('projects:', project)),
     );
     this.columns$ = this.readColumns.getColumns$(environment.projectsTableColumns)
-    // this.selectedService.
   }
   selectProject(project) {
     this.selectedService.project=project
-    // this.selectedProject.emit(project);
     this.selectedService.updateSelected('oneProject');
   }
 }

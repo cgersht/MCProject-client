@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Project } from 'types';
-import { Observable } from 'rxjs';
+import { NEVER, Observable } from 'rxjs';
 import { HttpRequestModel } from 'types';
 import { HttpServiceBase } from './http-service.base';
 
@@ -9,6 +9,8 @@ import { HttpServiceBase } from './http-service.base';
 })
 export class GetProjectService extends HttpServiceBase {
 selectedProject:any;
+project$: Observable<Project[]> = NEVER;
+projects: Project[] = [];
   private get _serverUrl(): string {
     return `${this.config.ips.servicePath}project/`;
   }

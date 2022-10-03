@@ -16,12 +16,12 @@ export class AddEntrepreneurComponent implements OnInit {
   xImg={imgPath:environment.imgesPath,img: '/close.png'};
   x=this.xImg.imgPath+this.xImg.img
   formGroup: FormGroup;
-  entrepreneur$:Observable<Entrepreneur[]>;
-  entrepreneurs:Entrepreneur[]=[];
+  // entrepreneur$:Observable<Entrepreneur[]>;
+  // entrepreneurs:Entrepreneur[]=[];
   constructor(
     private formBuilder: FormBuilder,
     private subscriptionService: SubscriptionService,
-    private entrepreneurService:GetEntrepreneurService,
+    public entrepreneurService:GetEntrepreneurService,
     private validatorsService:ValidatorsService,
   ) { }
 
@@ -57,7 +57,7 @@ export class AddEntrepreneurComponent implements OnInit {
     console.log('is valid? ', this.formGroup.valid);
     this.subscriptionService.value=this.formGroup.value;
     this.entrepreneurService.addEntrepreneur$(this.formGroup.value).pipe(
-      tap(_ => this.entrepreneurService.getEntrepreneurList$().subscribe())
+      tap(_ =>this.entrepreneurService.entrepreneur$= this.entrepreneurService.getEntrepreneurList$())
     ).subscribe();
    this.reset()
   }
