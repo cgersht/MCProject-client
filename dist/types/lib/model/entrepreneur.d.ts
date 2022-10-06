@@ -1,9 +1,16 @@
 export interface Entrepreneur {
-    entrepreneurID: number;
-    entrepreneurCompany: string;
-    entrepreneurName: string;
-    entrepreneurMail: string;
-    entrepreneurPhone: string;
-    entrepreneurAddress: string;
-    entrepreneurSecretary: string;
+    EntrepreneurId?: number;
+    EntrepreneurCompany: string;
+    EntrepreneurName: string;
+    EntrepreneurPhone: string;
+    EntrepreneurMail: string;
+    OfficeAdress?: string;
+    EntrepreneurSecretary: string;
+    EntrepreneurSecretaryPhone?: string;
+    EntrepreneurSecretaryMail?: string;
+    EntrepreneurCompanyFax?: string;
+    EntrepreneurCompanyPhone?: string;
+    EntrepreneurCompanyMail?: string;
+    EntrepreneurCompanyAddress?: string;
+    EntrepreneurCompanyAddressToSend?: string;
 }

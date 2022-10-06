@@ -1,9 +1,9 @@
 import { Injectable, ɵɵdefineInjectable, Component, NgZone, ChangeDetectorRef, NgModule, EventEmitter, ViewEncapsulation, Input, Output, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatTableDataSource, MatPaginatorModule } from '@angular/material';
-import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource, MatDialog, MatPaginator, MatPaginatorModule, MatButtonModule, MatDialogModule } from '@angular/material';
 import { MatTableModule } from '@angular/material/table';
 import { DirectivesModule } from 'directives';
+import { FormsModule } from '@angular/forms';
 
 /**
  * @fileoverview added by tsickle
@@ -116,7 +116,7 @@ var ClockAndDateComponent = /** @class */ (function () {
     ClockAndDateComponent.decorators = [
         { type: Component, args: [{
                     selector: 'lib-clock-and-date',
-                    template: "<p>clock-and-date works!</p>\n",
+                    template: "<p>clock-and-date works!</p>\r\n",
                     styles: [""]
                 }] }
     ];
@@ -168,7 +168,9 @@ var ComponentsModule = /** @class */ (function () {
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var TableComponent = /** @class */ (function () {
-    function TableComponent() {
+    function TableComponent(dialog) {
+        this.dialog = dialog;
+        // @Input() tableType:tableTypeEnum;
         this.dbClick = new EventEmitter();
         this.displayedColumns = [];
     }
@@ -194,7 +196,7 @@ var TableComponent = /** @class */ (function () {
             }));
         }), 200);
         this.dataSource = new MatTableDataSource(this.rows);
-        //this.dataSource.paginator = this.paginator;
+        this.dataSource.paginator = this.paginator;
     };
     /**
      * @param {?} changes
@@ -225,13 +227,15 @@ var TableComponent = /** @class */ (function () {
     TableComponent.decorators = [
         { type: Component, args: [{
                     selector: 'lib-table',
-                    template: " \n<div class=\"mat-elevation-z8\">\n  <mat-table [dataSource]=\"dataSource\" >\n  <ng-container *ngFor=\"let column of columns\" [matColumnDef]=  \"column.name\">\n \n      <mat-header-cell *matHeaderCellDef [innerText]=\"column.header\"> </mat-header-cell>\n       <mat-cell *matCellDef=\"let element\" > \n            <span [innerText]=\"element[column.name]\" libCopy></span> \n\n       </mat-cell> \n     \n  </ng-container>\n    <mat-header-row *matHeaderRowDef=\"displayedColumns\" ></mat-header-row>  \n    <mat-row *matRowDef=\"let row; columns: displayedColumns;\" (dblclick)=\"getRecord(row)\"></mat-row>\n  \n  </mat-table>  \n  <!-- <mat-paginator  [pageSizeOptions]=\"[5, 10, 20]\"  showFirstLastButtons ></mat-paginator>   -->\n\n</div>\n ",
+                    template: " \r\n<div class=\"mat-elevation-z8 mat-table\">\r\n  <mat-table [dataSource]=\"dataSource\" >\r\n  <ng-container *ngFor=\"let column of columns\" [matColumnDef]=  \"column.name\">\r\n \r\n      <mat-header-cell *matHeaderCellDef [innerText]=\"column.header\"> </mat-header-cell>\r\n       <mat-cell *matCellDef=\"let element\" > \r\n            <span [innerText]=\"element[column.name]\" libCopy></span> \r\n\r\n       </mat-cell> \r\n     \r\n  </ng-container>\r\n    <mat-header-row *matHeaderRowDef=\"displayedColumns\" ></mat-header-row>  \r\n    <mat-row *matRowDef=\"let row; columns: displayedColumns;\" (dblclick)=\"getRecord(row)\"></mat-row>\r\n  \r\n  </mat-table>  \r\n\r\n<!-- <div class=\"paginator\">\r\n  <mat-paginator  [pageSizeOptions]=\"[5, 10, 20]\"  showFirstLastButtons ></mat-paginator>  \r\n  </div> -->\r\n</div>\r\n\r\n ",
                     encapsulation: ViewEncapsulation.None,
-                    styles: [".mat-elevation-z8{margin-top:-260px}.mat-table{width:100%;overflow:auto;top:200px}mat-cell,mat-footer-cell,mat-header-cell{width:150px;flex:none;justify-content:center}.mat-table mat-cell:first-child{padding-left:0;border-left:1px solid}.mat-table mat-cell:last-child{padding-right:0}.mat-table mat-header-cell:first-child{padding-left:0;border-left:1px solid}.mat-table mat-header-cell:last-child{padding-right:0}.mat-table mat-header-cell{border-top:1px solid;border-right:1px solid;border-bottom:1px solid;cursor:col-resize}.mat-table mat-cell{border-right:1px solid;border-bottom:1px solid}"]
+                    styles: ["body{font-family:\"Segoe UI\",Tahoma,Geneva,Verdana,sans-serif;direction:rtl}body *{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;display:flex;justify-content:center;align-items:center;text-decoration:none}body a{color:#000}body .mat-select-panel.custom-select .mat-option{height:100px}:host{display:flex;flex-direction:column;overflow:hidden!important}:host .example-container.mat-elevation-z8{overflow-y:auto}:host mat-table{overflow:hidden;overflow-y:auto}:host .newButton{top:250px}mat-cell,mat-footer-cell,mat-header-cell{width:150px;justify-content:center}::ng-deep .mat-elevation-z8{overflow:scroll!important}.mat-table mat-header-cell{border-top:1px solid;border-right:1px solid;border-bottom:1px solid;cursor:col-resize}.mat-table mat-cell{border-right:1px solid;border-bottom:1px solid}.mat-button-base{top:37vh!important;box-sizing:border-box;position:relative}"]
                 }] }
     ];
     /** @nocollapse */
-    TableComponent.ctorParameters = function () { return []; };
+    TableComponent.ctorParameters = function () { return [
+        { type: MatDialog }
+    ]; };
     TableComponent.propDecorators = {
         columns: [{ type: Input }],
         rows: [{ type: Input }],
@@ -253,7 +257,123 @@ if (false) {
     TableComponent.prototype.dataSource;
     /** @type {?} */
     TableComponent.prototype.paginator;
+    /** @type {?} */
+    TableComponent.prototype.dialog;
 }
+
+/**
+ * @fileoverview added by tsickle
+ * Generated from: lib/clock/clock.component.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+var ClockComponent = /** @class */ (function () {
+    function ClockComponent(zone, cd) {
+        this.zone = zone;
+        this.cd = cd;
+        this.time = '00:00';
+        this.isDestroy = false;
+    }
+    /**
+     * @return {?}
+     */
+    ClockComponent.prototype.ngOnInit = /**
+     * @return {?}
+     */
+    function () {
+        var _this = this;
+        this.cd.detach();
+        this.zone.runOutsideAngular((/**
+         * @return {?}
+         */
+        function () { return _this.setTime(); }));
+    };
+    /**
+     * @return {?}
+     */
+    ClockComponent.prototype.setTime = /**
+     * @return {?}
+     */
+    function () {
+        if (this.isDestroy) {
+            return;
+        }
+        /** @type {?} */
+        var now = new Date();
+        this.time = now.getHours() + ":" + this.formatNum(now.getMinutes());
+        this.cd.detectChanges();
+        setTimeout(this.setTime.bind(this), 6000);
+    };
+    /**
+     * @param {?} i
+     * @return {?}
+     */
+    ClockComponent.prototype.formatNum = /**
+     * @param {?} i
+     * @return {?}
+     */
+    function (i) {
+        return i < 10 ? "0" + i : i;
+    };
+    /**
+     * @return {?}
+     */
+    ClockComponent.prototype.ngOnDestroy = /**
+     * @return {?}
+     */
+    function () {
+        this.isDestroy = true;
+    };
+    ClockComponent.decorators = [
+        { type: Component, args: [{
+                    selector: 'lib-clock',
+                    template: "<span [innerText]=\"'time'\"></span>\r\n",
+                    styles: [""]
+                }] }
+    ];
+    /** @nocollapse */
+    ClockComponent.ctorParameters = function () { return [
+        { type: NgZone },
+        { type: ChangeDetectorRef }
+    ]; };
+    return ClockComponent;
+}());
+if (false) {
+    /** @type {?} */
+    ClockComponent.prototype.time;
+    /** @type {?} */
+    ClockComponent.prototype.isDestroy;
+    /**
+     * @type {?}
+     * @private
+     */
+    ClockComponent.prototype.zone;
+    /**
+     * @type {?}
+     * @private
+     */
+    ClockComponent.prototype.cd;
+}
+
+/**
+ * @fileoverview added by tsickle
+ * Generated from: lib/clock/clock.module.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+var ClockModule = /** @class */ (function () {
+    function ClockModule() {
+    }
+    ClockModule.decorators = [
+        { type: NgModule, args: [{
+                    declarations: [ClockComponent],
+                    imports: [
+                        CommonModule
+                    ],
+                    exports: [ClockComponent],
+                    entryComponents: [ClockComponent]
+                },] }
+    ];
+    return ClockModule;
+}());
 
 /**
  * @fileoverview added by tsickle
@@ -270,9 +390,13 @@ var TableModule = /** @class */ (function () {
                         CommonModule,
                         MatTableModule,
                         MatPaginatorModule,
-                        DirectivesModule
+                        MatButtonModule,
+                        DirectivesModule,
+                        MatDialogModule,
+                        FormsModule,
+                        ClockModule,
                     ],
-                    exports: [TableComponent]
+                    exports: [TableComponent],
                 },] }
     ];
     return TableModule;
@@ -290,5 +414,5 @@ var TableModule = /** @class */ (function () {
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
-export { ComponentsComponent, ComponentsModule, ComponentsService, TableModule, ClockAndDateComponent as ɵa, TableComponent as ɵb };
+export { ComponentsComponent, ComponentsModule, ComponentsService, TableModule, ClockAndDateComponent as ɵa, TableComponent as ɵb, ClockModule as ɵc, ClockComponent as ɵd };
 //# sourceMappingURL=components.js.map

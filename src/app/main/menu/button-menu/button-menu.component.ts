@@ -7,27 +7,23 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ButtonMenuComponent implements OnInit {
   @Input() option = {};
-  @Input() selectingProject={} ;
   projName=''
-  // selectingProject={}
+  children
   constructor() { }
 
   ngOnInit() {
-    if(this.selectingProject){
-    }
+   this.onChange(this.option)
   }
-
+  onChange(item) {
+    console.log(item,"item");
+        if (item.children) {
+          this.children = item.children;
+        } else {
+          this.children = [];
+        }
+      }
   handleClick(selectedOption ) {
     console.log(selectedOption.name);
   }
-  //******************************************* */
-  // sendProjectName(projectName){
-  //     this.projName=projectName.sendProjectName
-  // }
 
-
-  // goToMenu(project){
-  //   console.log(project.projectName);
-  //   this.selectingProject=project.projectName
-  // }
 }

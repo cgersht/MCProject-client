@@ -7,8 +7,14 @@ body{
     *{
         user-select: none;
         display: flex;
-        //flex-direction: row;
         justify-content: center;
         align-items: center;
+        text-decoration: none; 
     }
+    a{
+        color: black;
+    }
+    .mat-select-panel.custom-select .mat-option{
+        height: 100px;
+  }
 }

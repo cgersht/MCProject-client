@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { GetEntrepreneurService } from 'projects/services/src/public-api';
-// import { GetEntrepreneurService } from 'services';
+import { EntrepreneurDetailsService, GetEntrepreneurService } from 'services';
 import { NEVER, Observable } from 'rxjs';
 import {  map, tap } from 'rxjs/operators';
-// import { GetCunselorService } from 'services';
 import { ReadColumnsService } from 'src/app/services/read-columns.service';
 import { environment } from 'src/environments/environment';
 import { Entrepreneur, Column } from 'types';
+import { SelectedNevigationService } from '../../services/selected-nevigation.service';
 
 
 @Component({
@@ -19,20 +18,45 @@ export class EntrepreneurComponent implements OnInit {
   entrepreneurs:Entrepreneur[]=[];
   columns$: Observable<Column[]> = NEVER;
   constructor(
-    private entrepreneurService:GetEntrepreneurService,
-    private readColumns: ReadColumnsService
-    ) { }
-   
-    
-    ngOnInit() {
-      
-     this.entrepreneur$ = this.entrepreneurService.getEntrepreneurList$().pipe(
-        map(entrepreneurs=>this.entrepreneurs=entrepreneurs),
-        tap(entrepreneurs => console.log('entrepreneurs:' , entrepreneurs)),
-     );
+    public entrepreneurService:GetEntrepreneurService,
+    private readColumns: ReadColumnsService,
+    private entrepreneurDetails:EntrepreneurDetailsService,
+    private selectedService:SelectedNevigationService
+    ) { } 
+  ngOnInit() {      
+    this.init();
      this.columns$ = this.readColumns.getColumns$(environment.enrepreneursTableColumns)
-     console.log("yes");
-
+    }
+    getEntrepreneurDetalis(entrepreneur){
+      console.log(entrepreneur,"entrepreneur in getEntrepreneurDetalis before");
+      
+     this.entrepreneurs.forEach(el => {
+      console.log({el});      
+        if(el === entrepreneur)
+         {
+            this.entrepreneurDetails.entrepreneur=el
+            this.selectedService.updateSelected('oneEntrepreneur')
+            this.selectedService['oneYazam']=el;
+            // console.log(this.entrepreneurDetails.entrepreneur,"entrepreneur in getEntrepreneurDetalis after");
+        //  break;
+         } 
+        
+      });
+    }
+    
+    init(){
+      this.entrepreneurService.entrepreneur$ = this.entrepreneurService.getEntrepreneurList$().pipe(
+        map(entrepreneurs=>this.entrepreneurService.entrepreneurs=entrepreneurs),
+        tap(entrepreneurs => console.log('entrepreneurs:' , entrepreneurs)),
+    );
     }
 
 }
+
+
+// this.entrepreneurs.forEach(el=>{
+//   console.log(el);    
+//   if(el.EntrepreneurName==entrepreneur){
+//     this.oneEntrepreneur=el;
+//   }
+// })

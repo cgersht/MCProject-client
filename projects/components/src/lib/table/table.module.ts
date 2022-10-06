@@ -2,8 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TableComponent } from './table.component';
 import {MatTableModule} from '@angular/material/table';
-import { MatPaginatorModule } from '@angular/material';
+import { MatButtonModule, MatDialogModule, MatPaginatorModule } from '@angular/material';
 import { DirectivesModule } from 'directives';
+import { FormsModule } from '@angular/forms';
+// import { AddProjectModule } from 'src/app/main/view/add-project/add-project.module';
+import { ClockModule } from '../clock/clock.module';
 
 
 @NgModule({
@@ -12,8 +15,12 @@ import { DirectivesModule } from 'directives';
     CommonModule,
     MatTableModule,
     MatPaginatorModule,
-    DirectivesModule
+    MatButtonModule,
+    DirectivesModule,
+    MatDialogModule,
+    FormsModule,
+    ClockModule,
   ],
-  exports:[TableComponent]
+  exports:[TableComponent],
 })
 export class TableModule { }

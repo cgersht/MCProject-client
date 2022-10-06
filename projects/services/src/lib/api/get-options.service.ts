@@ -14,7 +14,7 @@ export class GetOptionsService {
     return this.http.get<any[] >(path).pipe(
       map(result => result.map(item => ({ ...item, imgSource: `${imagesPath}/${ item['img']}.png`}))),
       tap(result => this.options = result),
-      tap(result => console.log(`**************${result}`)),
+      tap(result => console.log(`**************${{result}}`)),
      ).toPromise();
   }
   getOptions() {

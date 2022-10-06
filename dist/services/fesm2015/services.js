@@ -1,7 +1,7 @@
 import { Injectable, ɵɵdefineInjectable, Component, NgModule, ɵɵinject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, tap } from 'rxjs/operators';
-import { combineLatest } from 'rxjs';
+import { combineLatest, NEVER } from 'rxjs';
 import { HttpRequestModel } from 'types';
 
 /**
@@ -98,7 +98,7 @@ class GetOptionsService {
          * @param {?} result
          * @return {?}
          */
-        result => console.log(`**************${result}`)))).toPromise();
+        result => console.log(`**************${{ result }}`)))).toPromise();
     }
     /**
      * @return {?}
@@ -181,6 +181,36 @@ if (false) {
      * @private
      */
     ConfigurationService.prototype.http;
+}
+
+/**
+ * @fileoverview added by tsickle
+ * Generated from: lib/api/project-details.service.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+class ProjectDetailsService {
+    constructor() {
+        this.project = {
+            ProjectName: '',
+            ProjectCompany: '',
+            ProjectAdress: '',
+            ProjectType: 0,
+            EntrepreneurId: '',
+            ProjectRova: ''
+        };
+    }
+}
+ProjectDetailsService.decorators = [
+    { type: Injectable, args: [{
+                providedIn: 'root'
+            },] }
+];
+/** @nocollapse */
+ProjectDetailsService.ctorParameters = () => [];
+/** @nocollapse */ ProjectDetailsService.ngInjectableDef = ɵɵdefineInjectable({ factory: function ProjectDetailsService_Factory() { return new ProjectDetailsService(); }, token: ProjectDetailsService, providedIn: "root" });
+if (false) {
+    /** @type {?} */
+    ProjectDetailsService.prototype.project;
 }
 
 /**
@@ -300,12 +330,27 @@ if (false) {
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 class GetCounselorService extends HttpServiceBase {
+    constructor() {
+        super(...arguments);
+        this.counselors$ = NEVER;
+        this.counselors = [];
+    }
     /**
      * @private
      * @return {?}
      */
     get _serverUrl() {
         return `${this.config.ips.servicePath}counselor/`;
+    }
+    /**
+     * @return {?}
+     */
+    getCounselorOfficeTypeList$() {
+        return this.get$(new HttpRequestModel({
+            url: this._serverUrl,
+            action: 'getCounselorOfficeType',
+        }));
+        // return this.http.get<Cunselor[]>('http://localhost:3030/counselor/getCounselor');
     }
     /**
      * @param {?} counselorType
@@ -319,11 +364,41 @@ class GetCounselorService extends HttpServiceBase {
         }));
         // return this.http.get<Cunselor[]>('http://localhost:3030/counselor/getCounselor');
     }
+    /**
+     * @param {?} counselorType
+     * @return {?}
+     */
+    addCounselorType$(counselorType) {
+        return this.post$(new HttpRequestModel({
+            url: this._serverUrl,
+            action: 'addCounselorType',
+            body: counselorType
+        }));
+    }
+    /**
+     * @param {?} counselor
+     * @return {?}
+     */
+    addCounselor$(counselor) {
+        return this.post$(new HttpRequestModel({
+            url: this._serverUrl,
+            action: 'addCounselor',
+            body: counselor
+        }));
+    }
 }
 GetCounselorService.decorators = [
     { type: Injectable, args: [{ providedIn: 'root' },] }
 ];
 /** @nocollapse */ GetCounselorService.ngInjectableDef = ɵɵdefineInjectable({ factory: function GetCounselorService_Factory() { return new GetCounselorService(ɵɵinject(HttpClient), ɵɵinject(ConfigurationService)); }, token: GetCounselorService, providedIn: "root" });
+if (false) {
+    /** @type {?} */
+    GetCounselorService.prototype.counselors$;
+    /** @type {?} */
+    GetCounselorService.prototype.counselors;
+    /** @type {?} */
+    GetCounselorService.prototype.cunselorsOfficeType$;
+}
 
 /**
  * @fileoverview added by tsickle
@@ -331,6 +406,11 @@ GetCounselorService.decorators = [
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 class GetProjectService extends HttpServiceBase {
+    constructor() {
+        super(...arguments);
+        this.project$ = NEVER;
+        this.projects = [];
+    }
     /**
      * @private
      * @return {?}
@@ -348,6 +428,17 @@ class GetProjectService extends HttpServiceBase {
         }));
         // return this.http.get<Project[]>('localhost:3030/project/getProject');
     }
+    /**
+     * @param {?} project
+     * @return {?}
+     */
+    addProject$(project) {
+        return this.post$(new HttpRequestModel({
+            url: this._serverUrl,
+            action: 'addProject',
+            body: project
+        }));
+    }
 }
 GetProjectService.decorators = [
     { type: Injectable, args: [{
@@ -355,6 +446,14 @@ GetProjectService.decorators = [
             },] }
 ];
 /** @nocollapse */ GetProjectService.ngInjectableDef = ɵɵdefineInjectable({ factory: function GetProjectService_Factory() { return new GetProjectService(ɵɵinject(HttpClient), ɵɵinject(ConfigurationService)); }, token: GetProjectService, providedIn: "root" });
+if (false) {
+    /** @type {?} */
+    GetProjectService.prototype.selectedProject;
+    /** @type {?} */
+    GetProjectService.prototype.project$;
+    /** @type {?} */
+    GetProjectService.prototype.projects;
+}
 
 /**
  * @fileoverview added by tsickle
@@ -362,24 +461,140 @@ GetProjectService.decorators = [
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 class GetEntrepreneurService extends HttpServiceBase {
-    // private get _serverUrl(): string {
-    //   return `${this.config.ips.servicePath}counselor/`;
-    // }
+    constructor() {
+        super(...arguments);
+        this.entrepreneurs = [];
+    }
+    /**
+     * @private
+     * @return {?}
+     */
+    get _serverUrl() {
+        return `${this.config.ips.servicePath}entrepreneur/`;
+    }
     /**
      * @return {?}
      */
     getEntrepreneurList$() {
-        // return this.get$(new HttpRequestModel({
-        //   url: this._serverUrl,
-        //   action: 'getCounselor',
-        // }));
-        return this.http.get('http://localhost:3030/entrepreneur/getEntrepreneur');
+        return this.get$(new HttpRequestModel({
+            url: this._serverUrl,
+            action: 'getEntrepreneur',
+        }));
+        // return this.http.get<Entrepreneur[]>('http://localhost:3030/entrepreneur/getEntrepreneur');
+    }
+    /**
+     * @param {?} entrepreneur
+     * @return {?}
+     */
+    addEntrepreneur$(entrepreneur) {
+        return this.post$(new HttpRequestModel({
+            url: this._serverUrl,
+            action: 'addEntrepreneur',
+            body: entrepreneur
+        }));
     }
 }
 GetEntrepreneurService.decorators = [
     { type: Injectable, args: [{ providedIn: 'root' },] }
 ];
 /** @nocollapse */ GetEntrepreneurService.ngInjectableDef = ɵɵdefineInjectable({ factory: function GetEntrepreneurService_Factory() { return new GetEntrepreneurService(ɵɵinject(HttpClient), ɵɵinject(ConfigurationService)); }, token: GetEntrepreneurService, providedIn: "root" });
+if (false) {
+    /** @type {?} */
+    GetEntrepreneurService.prototype.entrepreneur$;
+    /** @type {?} */
+    GetEntrepreneurService.prototype.entrepreneurs;
+}
+
+/**
+ * @fileoverview added by tsickle
+ * Generated from: lib/api/entrepreneur-details.service.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+class EntrepreneurDetailsService {
+    // :Entrepreneur={
+    //   EntrepreneurCompany: '',
+    //   EntrepreneurName: '',
+    //   EntrepreneurPhone: '',
+    //   EntrepreneurMail: '',
+    //   EntrepreneurSecretary: ''
+    // }
+    constructor() {
+        this.entrepreneur = {};
+    }
+}
+EntrepreneurDetailsService.decorators = [
+    { type: Injectable, args: [{
+                providedIn: 'root'
+            },] }
+];
+/** @nocollapse */
+EntrepreneurDetailsService.ctorParameters = () => [];
+/** @nocollapse */ EntrepreneurDetailsService.ngInjectableDef = ɵɵdefineInjectable({ factory: function EntrepreneurDetailsService_Factory() { return new EntrepreneurDetailsService(); }, token: EntrepreneurDetailsService, providedIn: "root" });
+if (false) {
+    /** @type {?} */
+    EntrepreneurDetailsService.prototype.entrepreneur;
+}
+
+/**
+ * @fileoverview added by tsickle
+ * Generated from: lib/api/validators.service.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+class ValidatorsService {
+    constructor() { }
+    /**
+     * @param {?} control
+     * @return {?}
+     */
+    textValidators(control) {
+        console.log(control);
+        if (control.value.length) {
+            if (control.value.length > 7 && control.value.length < 13) {
+                if (control.value.match(/^[0-9]+(\.?[0-9]+)?$/))
+                    return null;
+            }
+            else {
+                return { invalidPhone: true };
+            }
+        }
+    }
+    /**
+     * @param {?} control
+     * @return {?}
+     */
+    phoneValidator(control) {
+        console.log(control);
+        if (control.value.length) {
+            if (control.value.length > 7 && control.value.length < 13) {
+                if (control.value.match(/^[א-ת]+(\.?[א-ת]+)?$/))
+                    return null;
+            }
+            else {
+                return { invalidPhone: true };
+            }
+        }
+    }
+    /**
+     * @param {?} control
+     * @return {?}
+     */
+    emailValidator(control) {
+        if (control.value.match(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)) {
+            return null;
+        }
+        else {
+            return { invalidEmailAddress: true };
+        }
+    }
+}
+ValidatorsService.decorators = [
+    { type: Injectable, args: [{
+                providedIn: 'root'
+            },] }
+];
+/** @nocollapse */
+ValidatorsService.ctorParameters = () => [];
+/** @nocollapse */ ValidatorsService.ngInjectableDef = ɵɵdefineInjectable({ factory: function ValidatorsService_Factory() { return new ValidatorsService(); }, token: ValidatorsService, providedIn: "root" });
 
 /**
  * @fileoverview added by tsickle
@@ -393,5 +608,5 @@ GetEntrepreneurService.decorators = [
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
-export { ConfigurationService, GetCounselorService, GetEntrepreneurService, GetOptionsService, GetProjectService, ServicesComponent, ServicesModule, ServicesService, HttpServiceBase as ɵa };
+export { ConfigurationService, EntrepreneurDetailsService, GetCounselorService, GetEntrepreneurService, GetOptionsService, GetProjectService, ProjectDetailsService, ServicesComponent, ServicesModule, ServicesService, ValidatorsService, HttpServiceBase as ɵa };
 //# sourceMappingURL=services.js.map

@@ -1,35 +1,22 @@
-[
-    {
-        "header":"מספר מזהה", 
-        "name":"projectID"
-    },
-    {
-        "header":"חברה המבצעת", 
-        "name":"projectCompany"
-    },
+[   
     {
         "header":"שם הפרויקט", 
-        "name":"projectName"
-    },
-    {
-        "header":"מייל", 
-        "name":"projectMail"
-    },
-    {
-        "header":"טלפון", 
-        "name":"projectPhone"
+        "name":"ProjectName"
     },
     {
         "header":"כתובת", 
-        "name":"projectAddress"
+        "name":"ProjectAdress"
     } ,   
     {
-        "header":"מזכירה ראשית", 
-        "name":"projectSecretary"
-    }, 
-    {
         "header":"סוג הפרויקט", 
-        "name":"projectType"
-    }   
-
+        "name":"ProjectTypeName"
+    }  ,
+    {
+        "header":"שם היזם", 
+        "name":"EntrepreneurName"
+    },
+    {
+        "header":"רובע", 
+        "name":"ProjectRova"
+    } 
 ]

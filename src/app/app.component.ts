@@ -7,17 +7,10 @@ import { Component, Input, OnInit, QueryList, ViewChildren } from '@angular/core
 })
 export class AppComponent implements OnInit {
 
-  @Input() sendToMenu:any=null;
 
   constructor() { }
 
   ngOnInit(): void {
 
   }
-
-  // sendToTheMenu(p){
-  //   console.log("p");    
-  //   this.sendToMenu=p
-  // }
-
 }

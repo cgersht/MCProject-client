@@ -1,7 +1,8 @@
-<!-- <div *ngFor="let p of cunselors"> -->
-    <lib-table [columns]="columns$ | async"  [rows]="entrepreneur$ | async"></lib-table> 
- 
-    <!-- (click)="selectedName(p.counselorName)" -->
-    <!-- </div> -->
-    
-    
+<!-- <lib-table [columns]="columns$ | async"  [rows]="entrepreneur$ | async"></lib-table>  -->
+<div *ngFor="let e of entrepreneurService.entrepreneur$ | async">
+    <div class="entrepreneur">
+        <span [innerText]="e.EntrepreneurCompany" 
+        (click)="getEntrepreneurDetalis(e)">
+        </span>&nbsp;&nbsp;&nbsp;
+    </div>
+</div>

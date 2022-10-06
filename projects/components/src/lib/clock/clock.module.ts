@@ -9,7 +9,8 @@ import { ClockComponent } from './clock.component';
   imports: [
     CommonModule
   ],
-  exports:[ClockComponent]
+  exports:[ClockComponent],
+  entryComponents:[ClockComponent]
 })
 export class ClockModule { }
 

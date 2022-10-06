@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { environment } from 'src/environments/environment';
+import { SelectedNevigationService } from './services/selected-nevigation.service';
 
 @Component({
   selector: 'app-main',
@@ -6,29 +8,25 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
-  @Output() sendMaterial: EventEmitter<any> = new EventEmitter();
-  goToMenu:any;
-  singleProject={}
-  selected = '';
+  chetzImg = { imgPath: environment.imgesPath, img: '/chetz.png' };
+  chetz = this.chetzImg.imgPath + this.chetzImg.img;
+
   children = [];
-  constructor() { }
+
+  constructor(private selectedService: SelectedNevigationService) { }
 
   ngOnInit() {
   }
+  onClickOnArrow(direction) {
+    console.log(direction, "direction");
+  }
   onChange(item) {
-    this.selected = item.name
+    console.log(item, "item");
     if (item.children) {
       this.children = item.children;
     } else {
       this.children = [];
     }
-
   }
 
-  sendToTheMenu(nameOfTheProject){
-    this.goToMenu=nameOfTheProject;
-    console.log(this.goToMenu);
-    console.log("this.goToMenu");
-    
-  }
 }

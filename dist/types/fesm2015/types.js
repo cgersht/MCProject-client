@@ -193,11 +193,27 @@ if (false) {
 function Cunselor() { }
 if (false) {
     /** @type {?} */
-    Cunselor.prototype.counselorID;
+    Cunselor.prototype.CounselorOfficeId;
     /** @type {?} */
-    Cunselor.prototype.counselorName;
-    /** @type {?} */
-    Cunselor.prototype.counselorType;
+    Cunselor.prototype.CounselorOfficeName;
+    /** @type {?|undefined} */
+    Cunselor.prototype.CounselorOfficeAdress;
+    /** @type {?|undefined} */
+    Cunselor.prototype.CounselorOfficePhone;
+    /** @type {?|undefined} */
+    Cunselor.prototype.CounselorOfficeType;
+    /** @type {?|undefined} */
+    Cunselor.prototype.CounselorOfficeManager;
+    /** @type {?|undefined} */
+    Cunselor.prototype.CounselorOfficeManagerPhone;
+    /** @type {?|undefined} */
+    Cunselor.prototype.CounselorOfficeManagerMail;
+    /** @type {?|undefined} */
+    Cunselor.prototype.CounselorOfficeMainSecretary;
+    /** @type {?|undefined} */
+    Cunselor.prototype.CounselorOfficeMainSecretaryPhone;
+    /** @type {?|undefined} */
+    Cunselor.prototype.CounselorOfficeMainSecretaryMail;
 }
 
 /**
@@ -254,20 +270,34 @@ if (false) {
  */
 function Entrepreneur() { }
 if (false) {
+    /** @type {?|undefined} */
+    Entrepreneur.prototype.EntrepreneurId;
     /** @type {?} */
-    Entrepreneur.prototype.entrepreneurID;
+    Entrepreneur.prototype.EntrepreneurCompany;
     /** @type {?} */
-    Entrepreneur.prototype.entrepreneurCompany;
+    Entrepreneur.prototype.EntrepreneurName;
     /** @type {?} */
-    Entrepreneur.prototype.entrepreneurName;
+    Entrepreneur.prototype.EntrepreneurPhone;
     /** @type {?} */
-    Entrepreneur.prototype.entrepreneurMail;
+    Entrepreneur.prototype.EntrepreneurMail;
+    /** @type {?|undefined} */
+    Entrepreneur.prototype.OfficeAdress;
     /** @type {?} */
-    Entrepreneur.prototype.entrepreneurPhone;
-    /** @type {?} */
-    Entrepreneur.prototype.entrepreneurAddress;
-    /** @type {?} */
-    Entrepreneur.prototype.entrepreneurSecretary;
+    Entrepreneur.prototype.EntrepreneurSecretary;
+    /** @type {?|undefined} */
+    Entrepreneur.prototype.EntrepreneurSecretaryPhone;
+    /** @type {?|undefined} */
+    Entrepreneur.prototype.EntrepreneurSecretaryMail;
+    /** @type {?|undefined} */
+    Entrepreneur.prototype.EntrepreneurCompanyFax;
+    /** @type {?|undefined} */
+    Entrepreneur.prototype.EntrepreneurCompanyPhone;
+    /** @type {?|undefined} */
+    Entrepreneur.prototype.EntrepreneurCompanyMail;
+    /** @type {?|undefined} */
+    Entrepreneur.prototype.EntrepreneurCompanyAddress;
+    /** @type {?|undefined} */
+    Entrepreneur.prototype.EntrepreneurCompanyAddressToSend;
 }
 
 /**
@@ -275,29 +305,43 @@ if (false) {
  * Generated from: lib/model/project.ts
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
-// import { Cunselor } from "types";
-// import { Entrepreneur } from "./entrepreneur";
 /**
  * @record
  */
 function Project() { }
 if (false) {
+    /** @type {?|undefined} */
+    Project.prototype.ProjectId;
     /** @type {?} */
-    Project.prototype.projectID;
+    Project.prototype.ProjectName;
     /** @type {?} */
-    Project.prototype.projectCompany;
+    Project.prototype.ProjectCompany;
     /** @type {?} */
-    Project.prototype.projectName;
+    Project.prototype.ProjectAdress;
     /** @type {?} */
-    Project.prototype.projectMail;
+    Project.prototype.ProjectType;
     /** @type {?} */
-    Project.prototype.projectPhone;
+    Project.prototype.EntrepreneurId;
     /** @type {?} */
-    Project.prototype.projectAddress;
+    Project.prototype.ProjectRova;
+}
+
+/**
+ * @fileoverview added by tsickle
+ * Generated from: lib/model/menu.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @record
+ */
+function Menu() { }
+if (false) {
     /** @type {?} */
-    Project.prototype.projectSecretary;
+    Menu.prototype.Project;
     /** @type {?} */
-    Project.prototype.projectType;
+    Menu.prototype.Cunselor;
+    /** @type {?} */
+    Menu.prototype.Entrepreneur;
 }
 
 /**

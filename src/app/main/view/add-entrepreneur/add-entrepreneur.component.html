@@ -1,0 +1,51 @@
+  <img [src]="x" (click)="cancel()">
+<form [formGroup]="formGroup" >
+   <div class="data">
+  <mat-form-field class="formLabel required matInput">
+    <input matInput type="text"  placeholder=" שם החברה היוזמת" formControlName="EntrepreneurCompany">
+  </mat-form-field>
+    <mat-form-field class="formLabel required matInput">
+        <input matInput type="text"  placeholder=" שם היזם" formControlName="EntrepreneurName">
+      </mat-form-field>
+      <mat-form-field class="formLabel required matInput">
+        <input matInput type="text"  placeholder="כתובת החברה" formControlName="EntrepreneurCompanyAddress">
+      </mat-form-field> 
+      <mat-form-field class="formLabel required matInput">
+        <input matInput type="text"  placeholder="כתובת החברה למשלוח דואר" formControlName="EntrepreneurCompanyAddressToSend">
+      </mat-form-field>
+      <mat-form-field class="formLabel required matInput">
+        <input matInput type="text"   placeholder="טלפון החברה" formControlName="EntrepreneurCompanyPhone">
+      </mat-form-field>
+      <mat-form-field class="formLabel required matInput">
+        <input matInput type="text"  placeholder="מייל החברה" formControlName="EntrepreneurCompanyMail">
+      </mat-form-field>
+      <mat-form-field class="formLabel required matInput">
+        <input matInput type="text"  placeholder="פקס החברה" formControlName="EntrepreneurCompanyFax">
+      </mat-form-field>
+        </div>
+    <div  class="data">
+      <mat-form-field class="formLabel required matInput">
+        <input matInput type="text"  placeholder="טלפון היזם" formControlName="EntrepreneurPhone">
+      </mat-form-field>
+      <mat-form-field class="formLabel required matInput">
+        <input matInput type="text"  placeholder="מייל היזם" formControlName="EntrepreneurMail">
+      </mat-form-field> 
+      <mat-form-field class="formLabel required matInput">
+        <input matInput type="text"  placeholder="כתובת המשרד" formControlName="OfficeAdress">
+      </mat-form-field>
+      <mat-form-field class="formLabel required matInput">
+        <input matInput type="text"  placeholder="מזכירה ראשית" formControlName="EntrepreneurSecretary">
+      </mat-form-field>
+      <mat-form-field class="formLabel required matInput">
+        <input matInput type="text"  placeholder=" טלפון מזכירה ראשית" formControlName="EntrepreneurSecretaryPhone">
+      </mat-form-field>
+      <mat-form-field class="formLabel required matInput">
+        <input matInput type="text"  placeholder=" מייל מזכירה ראשית"  formControlName="EntrepreneurSecretaryMail">
+      </mat-form-field>      
+    </div>
+  </form>
+  <div class="buttons">       
+    <button mat-button class="mat-button save"  (click)="save()">אישור</button>
+    <button mat-button class="mat-button"  (click)="reset()">ביטול</button>
+  </div>
+  

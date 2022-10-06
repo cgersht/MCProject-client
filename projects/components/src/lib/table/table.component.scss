@@ -1,65 +1,50 @@
-//  lib-table {
-//    display: flex;
-//    flex-direction: column;
+@import '../.././../../../src/style/main.scss';
+@import '../.././../../../src/style/elements.scss';
 
-//    table {
-//      tbody {
-//        color: red;
-//      }
-//    }
-
-// //    .mat-elevation-z8 {
-// // visibility: hidden;
-// //    }
-
-//    .resize-handle {
-//      background-color: aqua;
-//      position: absolute;
-//      top: 0;
-//      right: 0;
-//      height: 100%;
-//      //  cursor: col-resize;
-//      width: 100%;
-//      //  opacity: 0;
-//    }
-//  }
-
-
-.mat-elevation-z8 {
-  margin-top: -260px;
+:host{
+  display:flex;
+  flex-direction: column;
+  overflow: hidden !important;
+   .example-container.mat-elevation-z8 {    
+    overflow-y: auto;
+  }
+  mat-table{
+    overflow: hidden ;
+    overflow-y: auto;
+  }
+  .newButton{
+    top: 250px;
+  } 
 }
-
-.mat-table {
-  width: 100%;
-  overflow: auto;
-  top: 200px;
-}
-
+ 
 mat-cell,
 mat-footer-cell,
 mat-header-cell {
   width: 150px;
-  flex: none;
+  // flex: none;
   justify-content: center;
 }
-
-.mat-table mat-cell:first-child {
-  padding-left: 0px;
-  border-left: 1px solid;
+::ng-deep .mat-elevation-z8{
+  overflow: scroll !important;
 }
 
-.mat-table mat-cell:last-child {
-  padding-right: 0px;
-}
+// ::ng-deep .mat-table mat-cell:first-child {
+//   padding-left: 0px;
+//   // border-left: 1px ;
+// }
 
-.mat-table mat-header-cell:first-child {
-  padding-left: 0px;
-  border-left: 1px solid;
-}
+// .mat-table mat-cell:last-child {
+//   padding-right: 0px;
+// }
 
-.mat-table mat-header-cell:last-child {
-  padding-right: 0px;
-}
+// .mat-table mat-header-cell:first-child {
+//   padding-left: 0px;
+//   border-left: 1px solid;
+// }
+
+// .mat-table mat-header-cell:last-child {
+//   padding-right: 0px;
+// }
 
 .mat-table mat-header-cell {
   border-top: 1px solid;
@@ -72,3 +57,15 @@ mat-header-cell {
   border-right: 1px solid;
   border-bottom: 1px solid;
 }
+
+// .newButton{
+//   top: 250px;
+// }
+.mat-button-base{
+  top: 37vh !important;
+  box-sizing: border-box;
+  position: relative;
+}
+// .mat-button, .mat-flat-button, .mat-icon-button, .mat-stroked-button {
+//   top:250px !important;
+// }

@@ -1,6 +1,12 @@
-<!-- <div *ngFor="let p of cunselors"> -->
- <lib-table [columns]="columns$ | async"  [rows]="cunselors$ | async" ></lib-table> 
  
-<!-- (click)="selectedName(p.counselorName)" -->
-<!-- </div> -->
+ <!-- <lib-table [columns]="columns$ | async" 
+  [rows]="cunselors$ | async" ></lib-table>  -->
+ <div class="div" >
+<div *ngFor="let c of counselorService.cunselorsOfficeType$ | async">
+    <div class="counselor" (click)="getCounselorsOfficeTypeDetalis(c)">
+        <span [innerText]="c.TypeName"></span> &nbsp;&nbsp;&nbsp;        
+    </div>
+</div>
+</div>
+<p>{{cunselors$ | async}}</p>
 

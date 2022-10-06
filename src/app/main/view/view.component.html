@@ -1,20 +1,28 @@
 <section>
-  <div class="dropdown" *ngIf="children  && children.length">
+  <!-- <div class="dropdown" *ngIf="selectedService.children  && selectedService.children.length">
     <mat-form-field>
       <mat-select>
-        <mat-option *ngFor="let option of  children" [value]="option" class="cl">
+        <mat-option *ngFor="let option of selectedService.children" [value]="option" class="cl">
           <span [innerText]="option" (click)="selectedName(option)"></span>
         </mat-option>
       </mat-select>
     </mat-form-field>
-  </div>
+  </div> -->
   <div class="views">
-<!-- <app-date-and-clock></app-date-and-clock> -->
-    <app-payment *ngIf="selected=='תשלומים'"></app-payment>
-    <app-projects *ngIf="selected=='פרויקטים'" (selectedProject)="initSelectedProject($event)" [projectInput]="projectInput"></app-projects>
-    <app-cunselors *ngIf="selected=='יועצים'" [selectedCunselor]="selectedOption"></app-cunselors>
-    <app-entrepreneur *ngIf="selected=='יזמים'"></app-entrepreneur>
-    <app-project *ngIf="selected=='oneProject'" [project]="project"  (project)="oneProjectToProjects($event)"></app-project>
+<app-date-and-clock></app-date-and-clock>
+    <app-projects *ngIf="selectedService.selected=='פרויקטים'"  ></app-projects>
+    <app-cunselors *ngIf="selectedService.selected=='יועצים'" [selectedCunselor]="selectedService.selectedCounselor"></app-cunselors>
+    <app-entrepreneur *ngIf="selectedService.selected=='יזמים'"></app-entrepreneur>
+    <app-project *ngIf="selectedService.selected=='oneProject'"></app-project>
+    <app-one-entrepreneur *ngIf="selectedService.selected=='oneEntrepreneur'"></app-one-entrepreneur>
+    <app-counselors-by-type *ngIf="selectedService.selected=='CounselorsByType'"></app-counselors-by-type>
+    <app-one-counselor *ngIf="selectedService.selected=='OneCounselor'"></app-one-counselor>
+  </div>
+  <div class="actions">
+    <button class="newButton" *ngIf="selectedService.selected&&selectedService.selected!='oneProject'
+    &&selectedService.selected!='oneEntrepreneur'&&selectedService.selected!='OneCounselor'"
+     mat-stroked-button color="primary" [innerText]="'חדש'" (click)="openDialog()">
+    </button>
   </div>
 </section>
 

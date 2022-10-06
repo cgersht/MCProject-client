@@ -1,0 +1,69 @@
+@import '../../../../style/elements.scss';
+:host {
+    display: flex;
+    flex-direction: column !important;
+    text-align: center;
+    h1 {
+        font-size: 1.5rem;
+        font-weight: 900;
+        text-align: center;
+    }
+    .h1 {
+        font-size: 4rem;
+        margin-top: 1vh;
+        text-align: center;
+    }
+    .section {
+        display: flex;
+        flex-direction: row;
+    }
+    .text {
+        font-size: 1.45rem;
+        margin-top: -1rem;
+    }
+    div {
+        font-size: 25px;
+        margin-top: -20px;
+    }
+    #details {
+        flex-direction: column !important;
+        margin-top :2vh; 
+        font-size: 1.3rem;
+        justify-content: space-between;
+        flex-direction: column;
+        margin-left: 33vw;
+    }
+    .hide {
+        visibility: hidden;
+    }
+    .manager {
+        display: flex;
+        flex-direction: column;
+        padding-top: 10vh;
+    }
+    .SecretaryDetalis {
+        display: flex;
+        flex-direction: column;
+        padding-top: 11vh;
+        margin-right: 5rem;
+    }
+    .details {
+        margin-top: 0.1vh;
+    }
+    .oneDetail {
+        display: flex;
+        flex-direction: row !important;
+        color: $blue;
+        margin-bottom: 1.5vh;
+        margin-right: 33vw;
+    }
+  }
+img {
+    width: 3rem;
+    height: 3rem;
+    right: 150rem;
+    top: 5vh;
+}
+app-view .newButton {
+    visibility: hidden;
+}

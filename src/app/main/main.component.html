@@ -1,7 +1,10 @@
 <section>
-    <app-menu (change)="onChange($event)"  [selectChangingProject]="goToMenu"></app-menu>
-    <app-view [selected]="selected" [children]="children" (sendProjectName)="sendToTheMenu($event)" ></app-view>
+    <app-menu></app-menu>
+    <!-- <div id="right"> 
+        <img  (click)="onClickOnArrow('right')" [src]="chetz">
+    </div> -->
+    <app-view></app-view>
+    <!-- <div id="left"> 
+        <img  (click)="onClickOnArrow('left')" [src]="chetz">
+    </div> -->
 </section>
-<!-- (sendMaterial)="toSend($event)" -->
-<!-- [sendToMenu]="sendMaterial($event)" -->
-<!-- [sendToMenu]="projectName" -->

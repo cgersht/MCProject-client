@@ -1,14 +1,18 @@
 [
     {
-        "header":"מספר מזהה", 
-        "name":"counselorID"
+        "header":"שם החברה המייעצת", 
+        "name":"CounselorOfficeName"
     },
     {
-        "header":"שם היועץ", 
-        "name":"counselorName"
-    },
+        "header":"כתובת המשרד", 
+        "name":"CounselorOfficeAdress"
+    } ,
     {
-        "header":"סוג היועץ", 
-        "name":"counselorType"
+        "header":"טלפון המשרד", 
+        "name":"CounselorOfficePhone"
+    } ,
+    {
+        "header":"מנהל המשרד", 
+        "name":"CounselorOfficeManager"
     }  
 ]

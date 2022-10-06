@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core'; 
 import { GetOptionsService } from 'services';
+import { SelectedNevigationService } from '../services/selected-nevigation.service';
 
 
 @Component({
@@ -9,43 +10,35 @@ import { GetOptionsService } from 'services';
 })
 export class MenuComponent implements OnInit {
   menuOption: string[];
-  projName:string='';
-  @Input() selectChangingProject={} ;
-  @Output() change: EventEmitter<any>  = new EventEmitter ();
-  // @Output() sendTo: EventEmitter<any>  = new EventEmitter ();
-  constructor(private getOptionsService: GetOptionsService) { }
 
-  ngOnInit() {
+  constructor(
+    private getOptionsService: GetOptionsService,
+    public selectedService: SelectedNevigationService
+    ) { }
+
+  ngOnInit() {   
     this.menuOption = this.getOptionsService.getOptions();
-  }
+    console.log(this.menuOption,"menuOption");    
+ }
 
   changeSelected(item) {
-     this.change.emit(item);
+    this.selectedService.updateSelected(item.name);
+    this.selectedService.children=item.children;
   }
   clicked(){
-    console.log("im in clicked");
-    
+    console.log("im in clicked");   
   }
-  onClick(){
-    console.log(this.selectChangingProject,"selectChangingProject");
-    
+  selectedObjectDetails(key){
+    switch  (key) {
+        case  'project' :
+            this.selectedService.updateSelected('oneProject');
+            break;
+        case  'oneYazam' :
+              this.selectedService.updateSelected('oneEntrepreneur');
+              break;
+        case  'entrepreneur' :
+              this.selectedService.updateSelected('OneCounselor');
+              break;
+    }
   }
-  selectingProject(project){
-    console.log("sendToMenu");    
-    this.selectChangingProject=project;
-  }
-  //**************************************************************/
-  // goToMenu(project){
-  //   console.log(project.projectName);
-  //   this.selectingProject=project.projectName
-  // }
-
-  // **********************************************
-  // sendMaterial(project){
-  //   this.projectName=project.projectName
-  //   console.log(this.projectName);
-
-    
-  // }
-
 }

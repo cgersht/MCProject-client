@@ -1,6 +1,6 @@
 @import './../../../style/elements.scss';
-:host{
- 
+:host{     
+    display: flex;
         section{
             width:79vw;
             height: 95vh;
@@ -9,44 +9,74 @@
             margin-right: 2vw;
             display:flex;
             flex-direction:column ;
+            overflow-y: auto;
+            overflow-x:hidden;
         }
-        lib-table{
-            width: 150% ;
+        
+        app-cunselors, app-project,app-one-entrepreneur,
+        app-counselors-by-type,app-one-counselor,
+        app-add-Project,app-add-counselor-type,app-add-entrepreneur,
+        app-add-counselor { 
+            overflow: hidden !important; 
         }
-        // .one{
-    
+        .mat-select-panel.custom-select .mat-option{
+            height: 100px;
+      }
+        // .dropdown{  
+        //    position: absolute; 
+        //    bottom: 80vh;        
+        //    height:80px;
+        //    flex:0 0 auto;
+        //    justify-content: flex-start;
         // }
-        // mat-raised-button{
-        //     // color: crimson;
-        // }
-        .dropdown{           
-           height:80px;
-           flex:0 0 auto;
-           justify-content: flex-start;
-        }
-        .views{
-            height: max-content !important;
-            width: max-content !important;
-            flex:1 1 auto;
-        }
-        // .mat-ink-bar{
-        //     background-color:$green  !important;
-        // }
-   
+        // .views{
+        //     flex:1 1 auto;
+        //     height: max-content !important;
+        //     width: max-content !important;
+           
+        // }   
         .cl{
             width: 150px;
-            //display: flex;
-           // flex-direction:column;
         }
+        .newButton{
+            top: 250px;
+            right:450px;
+          }
+          .actions{
+              flex: 0 0 auto;
+              box-sizing: border-box;
+              position: absolute;
+          }
 }
 ::ng-deep .mat-select-panel{
     display:flex;
-    flex-direction: column  !important;
-
-
+    flex-direction: column  !important;    
 }
 
-
-// app-project{
-//     margin-bottom: 550px;
+app-date-and-clock{
+ margin-right:65vw;
+ margin-bottom:80vh ;
+ font-size: xx-large;
+ position: absolute;
+ font-family: 'Brush Script MT', cursive;
+ color: rgb(9, 51, 135);
+}
+// // 
+// app-entrepreneur{
+    // overflow: hidden;
+//     display: flex;
+//     flex-direction: column;
+//     flex-wrap: wrap !important;
+//     // border: 3px dotted $dark-gray;
+//     // color: $dark-gray;
+//     font-size: 2.5rem;
+//     // justify-content: space-around;
+//     // align-items: center;
+//     margin-right: 2rem;
 // }
+// app-cunselors{
+//     right: 150px;
+// }
+.mat-select-panel.custom-select .mat-option{
+    height:100px;
+}

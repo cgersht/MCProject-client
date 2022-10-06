@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, ViewChild, ViewEncapsulation, OnChanges, SimpleChanges, Output, EventEmitter } from '@angular/core';
 import { Column } from 'types'; 
-import { MatTableDataSource } from '@angular/material';
-import {MatPaginator} from '@angular/material/paginator';
+import { MatDialog, MatPaginator, MatTableDataSource } from '@angular/material';
+
  
 
 @Component({
@@ -11,9 +11,9 @@ import {MatPaginator} from '@angular/material/paginator';
   encapsulation:ViewEncapsulation.None
 })
 export class TableComponent implements OnInit, OnChanges {
- 
   @Input() columns:Column[];
   @Input() rows:any[];
+  // @Input() tableType:tableTypeEnum;
   @Output() dbClick = new EventEmitter<any>();
   displayedColumns: string[] =[]
   dataSource 
@@ -21,7 +21,9 @@ export class TableComponent implements OnInit, OnChanges {
     
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
-  constructor() { }
+  constructor(
+    public dialog: MatDialog
+    ) { }
 
   ngOnInit() {
     setTimeout(() => {
@@ -30,7 +32,7 @@ export class TableComponent implements OnInit, OnChanges {
       
     
      this.dataSource = new MatTableDataSource<any>(this.rows);
-    //this.dataSource.paginator = this.paginator;
+    this.dataSource.paginator = this.paginator;
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -44,4 +46,13 @@ export class TableComponent implements OnInit, OnChanges {
   getRecord(row){
       this.dbClick.emit(row);   
   }
+
+  //  nnn(){
+  //   // switch(this.tableType){
+  //     // case tableTypeEnum.Project:
+  //    console.log("trdfghjkhj");
+
+  //    }
+   
+
 }
